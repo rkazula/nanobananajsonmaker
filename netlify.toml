@@ -1,0 +1,12 @@
+[build]
+  # Komenda budowania aplikacji (zgodna z Twoim package.json)
+  command = "npm run build"
+  # Folder, w którym Vite umieszcza zbudowane pliki (to jest kluczowe!)
+  publish = "dist"
+
+# Obsługa routingu SPA (Single Page Application)
+# Przekierowuje wszystkie ścieżki do index.html, zapobiegając błędom 404 przy odświeżaniu
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
