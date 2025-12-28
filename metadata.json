@@ -1,0 +1,5 @@
+{
+  "name": "NanoBanana JSON Builder",
+  "description": "A sophisticated tool for generating, validating, and auto-fixing JSON configurations for the Nano Banana ultra-realistic image generation model.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NanoBanana JSON Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              banana: {
+                50: '#fffbeb',  // Amber 50
+                100: '#fef3c7', // Amber 100
+                200: '#fde68a', // Amber 200
+                300: '#fcd34d', // Amber 300
+                400: '#fbbf24', // Amber 400
+                500: '#f59e0b', // Amber 500 - Main Brand
+                600: '#d97706', // Amber 600 - Darker for buttons/text
+                700: '#b45309', // Amber 700
+                800: '#92400e', // Amber 800
+                900: '#78350f', // Amber 900 - Text
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "zod": "https://esm.sh/zod@^4.2.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@hookform/resolvers/": "https://esm.sh/@hookform/resolvers@^5.2.2/",
+    "react-hook-form": "https://esm.sh/react-hook-form@^7.69.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900 h-screen overflow-hidden">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
