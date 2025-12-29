@@ -232,6 +232,18 @@ export const LIGHTING_TYPES_DATA = [
   {
     value: "practical_plus_daylight",
     desc: "Window daylight plus warm practical lamps (classic film look). Best for hotel/room portraits and cozy interiors with cool ambient + warm pools of light. AI tip: specify which side the window is on."
+  },
+  {
+    value: "warm_indoor_practical_light",
+    desc: "Warm, soft indoor lighting (ceiling lamp + ambient). Natural shadows, cozy home/evening atmosphere."
+  },
+  {
+    value: "natural_daylight_open_shade",
+    desc: "Bright daylight in open shade (e.g., terrace). Soft fill, no harsh highlights, clean colors."
+  },
+  {
+    value: "studio_softbox_beauty",
+    desc: "Studio beauty lighting (Softbox Key + Fill). Soft, diffused, smooth highlight roll-off, ideal for portraits."
   }
 ] as const;
 
@@ -375,6 +387,18 @@ export const LIGHTING_DIRECTIONS_DATA = [
   {
     value: "motivated_practical_right",
     desc: "Lamp/practical key on camera-right. Same warm motivated realism; great for bedside, desk, and hotel-room setups."
+  },
+  {
+    value: "overhead_soft + ambient_fill",
+    desc: "Softened overhead light with ambient fill (typical for apartments)."
+  },
+  {
+    value: "key_from_open_sky_front_right",
+    desc: "Key light from open sky (front-right), natural contrast."
+  },
+  {
+    value: "key_front_left + fill_front_right",
+    desc: "Classic studio setup: Key from the left, fill from the right."
   }
 ] as const;
 

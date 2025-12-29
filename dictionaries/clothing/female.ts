@@ -42,7 +42,9 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Sexy Maid Headpiece"
   ],
 
-  "Upper Body": [
+    "Upper Body": [
+    "Crochet Bandeau Top",
+    "Bra (Balconette-like)",
     "Blouse",
     "Silk Blouse",
     "Chiffon Blouse",
@@ -152,6 +154,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Lower Body": [
+    "Crochet Bottoms",
+    "Shorts-style Swimwear",
     "Skirt",
     "Mini Skirt",
     "Micro Mini Skirt",
@@ -221,6 +225,7 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Full Body": [
+    "Bodycon Mini Dress",
     "Dress",
     "Mini Dress",
     "Midi Dress",
@@ -370,6 +375,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Intimate": [
+    "Coral Red Bra",
+    "Satin Robe",
     "Bra",
     "Bralette",
     "Sports Bra",

@@ -32,7 +32,8 @@ export const SCENES = [
   ,"Swamp", "Taxi Interior", "Temple", "Terraforming Facility", "Theater", "Thrift Store", "Throne Room", "Tiny House"
   ,"Townhouse", "Trailer Home", "Train Car", "Train Station", "Tropical", "TV Studio", "Underpass", "Underwater"
   ,"Underwater Cave", "University Campus", "Volcanic Field", "Walk-in Closet", "Warehouse", "Waterfall"
-  ,"Wizard's Tower", "Workshop", "Yoga Studio"
+  ,"Wizard's Tower", "Workshop", "Yoga Studio",
+  "Mediterranean Terrace", "Stone Terrace", "Mirror Area"
 ].sort();
 
 export const SCENE_STYLES = [
@@ -77,7 +78,8 @@ export const ATMOSPHERES = [
   ,"scorching", "sensual", "serene", "sleek", "sleepy", "smoky", "snowy_silence", "solemn", "spartan", "spiritual"
   ,"sterile", "storm_front", "stormy", "sun_drenched", "sunset_haze", "surreal", "suspenseful", "tense", "thrilling"
   ,"tragic", "transcendent", "triumphant", "uncomfortable", "uneasy", "uplifting", "urban_isolation", "warm"
-  ,"whimsical", "windswept"
+  ,"whimsical", "windswept",
+  "casual_glam", "indoor_warmth", "clean_realism", "sunlit", "coastal_breeze", "soft_confident", "beauty_editorial"
 ].sort();
 
 export const TIMES_OF_DAY_DATA = [

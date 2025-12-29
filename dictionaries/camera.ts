@@ -110,6 +110,10 @@ export const CAMERA_POV_DATA = [
   {
     value: "observer_pov",
     desc: "Detached, documentary observer angle (the viewer feels present but not participating). Best for reportage, street, and realistic lifestyle—use when first-person feels too game-like."
+  },
+  {
+    value: "mirror_selfie_eye_level",
+    desc: "Mirror selfie perspective at eye level. Phone visible, natural pose."
   }
 ] as const;
 
@@ -197,6 +201,10 @@ export const CAMERA_FRAMING_DATA = [
   {
     value: "negative_space_shot",
     desc: "Subject placed small with intentional empty space (sky/wall/fog). Best for high-end editorial, minimalism, and typography-safe layouts. Great for mood and premium composition."
+  },
+  {
+    value: "three_quarter_full_body",
+    desc: "Framing from the top of the head to around the knees/mid-thigh (wider than a cowboy shot)."
   }
 ] as const;
 
@@ -569,6 +577,10 @@ export const CAMERA_LENS_DATA = [
   {
     value: "anamorphic_50mm",
     desc: "Cinematic anamorphic ‘feel’ (oval bokeh, horizontal flares, widescreen energy). Best for 2.39:1 frames, neon nights, and film-inspired portraits. Mention 'anamorphic lens' in prompts for best effect."
+  },
+  {
+    value: "smartphone_wide_normal",
+    desc: "Emulation of the main smartphone lens (26-35mm equivalent). Slight distortions typical for selfies."
   }
 ] as const;
 

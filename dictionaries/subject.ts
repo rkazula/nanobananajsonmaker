@@ -36,7 +36,7 @@ export const BODY_TYPES = [
     "slim", "athletic", "average", "curvy", "muscular", "bodybuilder", "plus_size", "obese", 
     "skinny/lanky", "petite", "tall", "stocky", "broad-shouldered", "pear_shaped", "hourglass", 
     "rectangular", "inverted_triangle", "soft/flabby", "toned/lean", "wiry", "pregnant", 
-    "elderly_frail", "childlike"
+    "elderly_frail", "childlike", "curvy_fit", "fit_curvy"
 ].sort();
 
 export const SKIN_TONE_MAP: Record<string, string> = {
@@ -53,9 +53,11 @@ export const HAIR_COLORS_MAP: Record<string, string> = {
     "Light Brown": "#8D745C", "Chestnut": "#5D4037", "Auburn": "#7D3F32", "Red": "#8D2818", 
     "Reddish Brown": "#8D4004", // Added
     "Ginger": "#B65F43", "Strawberry Blonde": "#D68E69", "Dark Blonde": "#A78B66", "Golden Blonde": "#D1B26F", 
-    "Platinum Blonde": "#EFE8C9", "White": "#F5F5F5", "Grey": "#9E9E9E", "Salt and Pepper": "#686868", 
+    "Platinum Blonde": "#E5E4E2", "White": "#F5F5F5", "Grey": "#9E9E9E", "Salt and Pepper": "#686868", 
     "Dyed Blue": "#1E3A8A", "Dyed Pink": "#EC4899", "Dyed Green": "#10B981", "Dyed Purple": "#7C3AED", 
-    "Rainbow": "#F59E0B"
+    "Rainbow": "#F59E0B",
+    "bronde balayage": "#967658",
+    "brown with lighter highlights": "#8D745C"
 };
 
 export const HAIR_STYLES = [
@@ -66,7 +68,8 @@ export const HAIR_STYLES = [
     "Quiff", "Faux Hawk", "Bowl Cut", "Layered Cut", "Layered with bangs", "Feathered", "Shag", "Wolf Cut", "Hime Cut", 
     "Bangs (Blunt)", "Bangs (Curtain)", "Bangs (Side)", "Wispy Bangs", "Wet Look", "Windblown", 
     "Bedhead/Messy", "Half-Up Half-Down", "Crown Braid", "Fishtail Braid", "Twists", "Bantu Knots", 
-    "Finger Waves", "Vintage Rolls", "Beehive", "Perm"
+    "Finger Waves", "Vintage Rolls", "Beehive", "Perm",
+    "straight, sleek, side part", "loose waves, middle/soft side part", "straight, middle part"
 ].sort();
 
 export const EYE_COLOR_MAP: Record<string, string> = {
@@ -86,7 +89,14 @@ export const DISTINCT_FEATURES = [
     "Freckles", "Moles", "Acne Scars", "Surgical Scar", "Cleft Chin", "Dimples", "High Cheekbones", 
     "Strong Jawline", "Double Chin", "Hooked Nose", "Button Nose", "Large Ears", "Gap Teeth", 
     "Braces", "Glasses", "Monocle", "Eye Patch", "Nose Ring", "Lip Ring", "Eyebrow Piercing", 
-    "Face Tattoo", "Rosy Cheeks", "Dark Circles", "Wrinkles", "Birthmark", "Smile lines", "Friendly expression"
+    "Face Tattoo", "Rosy Cheeks", "Dark Circles", "Wrinkles", "Birthmark", "Smile lines", "Friendly expression",
+    "glam makeup (defined brows, eyeliner, matte lipstick)",
+    "tattoo sleeves on both arms",
+    "tattoo on upper thigh",
+    "soft makeup",
+    "calm confident expression",
+    "subtelny makijaż beauty (lekki połysk ust, wyrównany koloryt)",
+    "mały, delikatny naszyjnik"
 ].sort();
 
 export const TATTOO_PLACEMENTS = [
