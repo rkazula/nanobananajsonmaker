@@ -425,5 +425,585 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         effect: "soft_shadow_edges"
       }
     }
-  }
-];
+  },
+      {
+        id: "golden_hour_lifestyle",
+        title: "Golden Hour Lifestyle",
+        description: "Warm, backlit, dreamy look typical of influencer travel photography. Flattering skin tones and magical atmosphere.",
+        icon: "Sun",
+        data: {
+          user_intent: "Add: 'sun flare', 'warm haze', 'backlit hair', 'dreamy atmosphere'. Avoid: 'harsh shadows'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "4:5",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "medium_shot",
+            focus_point: "face",
+            depth_of_field: "shallow",
+            lens: "50mm"
+          },
+          lighting: {
+            type: "golden_hour_sunlight",
+            direction: "back_lit",
+            effect: "lens_flare"
+          }
+        }
+      },
+      {
+        id: "cyberpunk_neon_portrait",
+        title: "Cyberpunk Neon Portrait",
+        description: "High contrast, colorful night photography. Teal and orange cinematic look with strong urban energy.",
+        icon: "Zap",
+        data: {
+          user_intent: "Add: 'wet streets', 'reflection on skin', 'futuristic vibe', 'chromatic aberration'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "2.39:1",
+                image_size: "1792"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "low_angle",
+            framing: "close_up",
+            focus_point: "eyes",
+            depth_of_field: "shallow_depth_of_field",
+            lens: "35mm"
+          },
+          lighting: {
+            type: "neon_light",
+            direction: "side_lit_left",
+            effect: "color_contrast_teal_orange"
+          }
+        }
+      },
+      {
+        id: "vintage_90s_flash",
+        title: "90s Flash aesthetic",
+        description: "Direct on-camera flash look. High contrast, hard shadows, nostalgic 'disposable camera' vibe.",
+        icon: "Camera",
+        data: {
+          user_intent: "Add: 'direct flash', 'point and shoot aesthetic', 'hard shadows on wall', 'vignette'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "3:2",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "medium_shot",
+            focus_point: "center_focus",
+            depth_of_field: "deep",
+            lens: "35mm"
+          },
+          lighting: {
+            type: "on_camera_flash",
+            direction: "front_lit",
+            effect: "hard_shadow_edges"
+          }
+        }
+      },
+      {
+        id: "corporate_clean_headshot",
+        title: "Corporate Headshot (LinkedIn)",
+        description: "Professional, trustworthy, and clean. Even lighting, neutral background, sharp focus on eyes.",
+        icon: "Briefcase",
+        data: {
+          user_intent: "Add: 'business attire', 'confident smile', 'neutral grey background', 'high quality'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "1:1",
+                image_size: "1024"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "headshot",
+            focus_point: "eyes",
+            depth_of_field: "medium",
+            lens: "85mm"
+          },
+          lighting: {
+            type: "softbox",
+            direction: "broad_lighting_left",
+            effect: "catchlights"
+          }
+        }
+      },
+      {
+        id: "cinematic_anamorphic",
+        title: "Cinematic Anamorphic",
+        description: "The Hollywood movie look. Widescreen aspect ratio, oval bokeh, horizontal flares.",
+        icon: "Film",
+        data: {
+          user_intent: "Add: 'anamorphic lens artifacts', 'cinematic color grading', 'film grain', 'letterbox'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "2.39:1",
+                image_size: "1792"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "shoulder_level",
+            framing: "medium_close_up",
+            focus_point: "rack_focus",
+            depth_of_field: "shallow",
+            lens: "anamorphic_50mm"
+          },
+          lighting: {
+            type: "practical_plus_daylight",
+            direction: "side_lit_right",
+            effect: "anamorphic_flare"
+          }
+        }
+      },
+      {
+        id: "beauty_macro_details",
+        title: "Beauty Macro (Eyes/Lips)",
+        description: "Extreme close-up for makeup or skincare. Hyper-detailed texture, sharp focus.",
+        icon: "Eye",
+        data: {
+          user_intent: "Add: 'visible skin pores', 'iris detail', 'makeup texture', 'no airbrushing'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "1:1",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "extreme_close_up",
+            focus_point: "eyes",
+            depth_of_field: "macro_focus",
+            lens: "100mm"
+          },
+          lighting: {
+            type: "ring_light",
+            direction: "front_lit",
+            effect: "specular_highlights"
+          }
+        }
+      },
+      {
+        id: "moody_rainy_window",
+        title: "Moody Rainy Window",
+        description: "Melancholic vibe shot through glass with raindrops. Soft focus, cool tones.",
+        icon: "CloudRain",
+        data: {
+          user_intent: "Add: 'raindrops on glass', 'condensation', 'city lights in bokeh background', 'melancholy'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "4:5",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "through_foreground",
+            framing: "close_up",
+            focus_point: "raindrops_on_glass_focus",
+            depth_of_field: "shallow",
+            lens: "50mm"
+          },
+          lighting: {
+            type: "overcast_daylight",
+            direction: "diffused_daylight",
+            effect: "bokeh_emphasis"
+          }
+        }
+      },
+      {
+        id: "architectural_interior_wide",
+        title: "Architectural Interior (Wide)",
+        description: "Clean, spacious interior design photography. Straight lines, deep depth of field.",
+        icon: "Home",
+        data: {
+          user_intent: "Add: 'interior design magazine', 'symmetrical composition', 'leading lines', 'decluttered'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "16:9",
+                image_size: "1792"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "chest_level",
+            framing: "wide_shot",
+            focus_point: "hyperfocal_focus",
+            depth_of_field: "deep",
+            lens: "16mm"
+          },
+          lighting: {
+            type: "north_window_light",
+            direction: "ambient_wraparound",
+            effect: "soft_shadows"
+          }
+        }
+      },
+      {
+        id: "high_fashion_studio",
+        title: "High Fashion Studio",
+        description: "Dramatic, sculpted lighting typical of Vogue editorials. Strong shapes and confidence.",
+        icon: "Star",
+        data: {
+          user_intent: "Add: 'avant-garde pose', 'designer clothing', 'confident expression', 'studio backdrop'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "2:3",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "low_angle",
+            framing: "cowboy_shot",
+            focus_point: "face",
+            depth_of_field: "medium",
+            lens: "70mm"
+          },
+          lighting: {
+            type: "beauty_dish",
+            direction: "butterfly_angle",
+            effect: "chiaroscuro"
+          }
+        }
+      },
+      {
+        id: "black_and_white_noir",
+        title: "Film Noir (B&W)",
+        description: "Classic detective style. High contrast black and white, shadows, mystery.",
+        icon: "Moon",
+        data: {
+          user_intent: "Add: 'black and white', 'film grain', 'smoke', 'shadows', 'mystery', '1940s vibe'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "4:3",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "dutch_angle",
+            framing: "medium_shot",
+            focus_point: "spotlight_focus",
+            depth_of_field: "medium",
+            lens: "50mm"
+          },
+          lighting: {
+            type: "fresnel_light",
+            direction: "side_lit_left",
+            effect: "venetian_blinds_shadows"
+          }
+        }
+      },
+      {
+        id: "analog_70s_warmth",
+        title: "70s Analog (Kodak)",
+        description: "Vintage, warm, grainy look. Nostalgic colors and imperfect composition.",
+        icon: "Image",
+        data: {
+          user_intent: "Add: 'vintage film stock', 'Kodak Portra', 'warm hues', 'film grain', 'nostalgia'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "3:2",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "medium_shot",
+            focus_point: "soft_focus",
+            depth_of_field: "medium",
+            lens: "35mm"
+          },
+          lighting: {
+            type: "natural_sunlight",
+            direction: "back_lit",
+            effect: "halation"
+          }
+        }
+      },
+      {
+        id: "product_clean_ecommerce",
+        title: "E-Commerce Product (Clean)",
+        description: "Pure white background, shadowless, perfectly lit product photography.",
+        icon: "ShoppingBag",
+        data: {
+          user_intent: "Add: 'pure white background', 'studio lighting', 'sharp details', 'commercial photography'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "1:1",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "medium_shot",
+            focus_point: "focus_stacking",
+            depth_of_field: "deep",
+            lens: "90mm"
+          },
+          lighting: {
+            type: "studio_strobe",
+            direction: "front_lit",
+            effect: "high_key_lighting"
+          }
+        }
+      },
+      {
+        id: "dramatic_silhouette",
+        title: "Dramatic Silhouette",
+        description: "Subject dark against a bright background. Graphic, mysterious, form-focused.",
+        icon: "User",
+        data: {
+          user_intent: "Add: 'silhouette', 'contour only', 'bright background', 'mystery', 'no face detail'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "16:9",
+                image_size: "1792"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "low_angle",
+            framing: "full_body",
+            focus_point: "silhouette_edge_focus",
+            depth_of_field: "deep",
+            lens: "24mm"
+          },
+          lighting: {
+            type: "natural_sunlight",
+            direction: "back_lit",
+            effect: "silhouette"
+          }
+        }
+      },
+      {
+        id: "action_sports_freeze",
+        title: "Sports / Action Freeze",
+        description: "High shutter speed look. Freezing movement, sweat, intensity, telephoto compression.",
+        icon: "Activity",
+        data: {
+          user_intent: "Add: 'frozen motion', 'flying particles', 'intense expression', 'high shutter speed'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "3:2",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "ground_level",
+            framing: "full_body",
+            focus_point: "subject",
+            depth_of_field: "shallow",
+            lens: "200mm"
+          },
+          lighting: {
+            type: "hmi_daylight",
+            direction: "three_quarter_front_lit",
+            effect: "hard_shadow_edges"
+          }
+        }
+      },
+      {
+        id: "ethereal_dreamy_soft",
+        title: "Ethereal / Dreamy",
+        description: "Soft focus, pastel colors, angelcore aesthetic. Very gentle and romantic.",
+        icon: "Feather",
+        data: {
+          user_intent: "Add: 'soft focus', 'diffusion filter', 'pastel colors', 'angelic', 'glow'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "4:5",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "pov_from_above_eyes",
+            framing: "close_up",
+            focus_point: "soft_focus",
+            depth_of_field: "shallow",
+            lens: "50mm"
+          },
+          lighting: {
+            type: "soft_diffused",
+            direction: "ambient_wraparound",
+            effect: "bloom"
+          }
+        }
+      },
+      {
+        id: "top_down_flatlay",
+        title: "Top-Down Flat Lay",
+        description: "Overhead shot for food, desk setups, or products. Graphic and organized.",
+        icon: "Coffee",
+        data: {
+          user_intent: "Add: 'knolling', 'organized', 'symmetrical', 'tabletop photography'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "1:1",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "bird_eye",
+            framing: "medium_shot",
+            focus_point: "center_focus",
+            depth_of_field: "deep",
+            lens: "35mm"
+          },
+          lighting: {
+            type: "window_light",
+            direction: "side_lit_left",
+            effect: "soft_shadows"
+          }
+        }
+      },
+      {
+        id: "gothic_dark_fantasy",
+        title: "Gothic Dark Fantasy",
+        description: "Dark, moody, ancient atmosphere. Candlelight, deep shadows, rich textures.",
+        icon: "Ghost",
+        data: {
+          user_intent: "Add: 'dark atmosphere', 'mystery', 'ancient vibe', 'rich textures', 'subtle horror'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "2:3",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "medium_shot",
+            focus_point: "eyes",
+            depth_of_field: "shallow",
+            lens: "85mm"
+          },
+          lighting: {
+            type: "candlelight",
+            direction: "under_lit",
+            effect: "chiaroscuro"
+          }
+        }
+      },
+      {
+        id: "street_paparazzi_chaos",
+        title: "Paparazzi / Chaos",
+        description: "Telephoto lens, chaotic framing, sense of urgency and movement.",
+        icon: "Zap",
+        data: {
+          user_intent: "Add: 'unposed', 'caught off guard', 'motion blur', 'chaotic background', 'flash'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "2:3",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "observer_pov",
+            framing: "medium_shot",
+            focus_point: "subject",
+            depth_of_field: "shallow",
+            lens: "200mm"
+          },
+          lighting: {
+            type: "on_camera_flash",
+            direction: "front_lit",
+            effect: "motion_blur_subject"
+          }
+        }
+      },
+      {
+        id: "minimalist_pastel",
+        title: "Minimalist Pastel",
+        description: "Clean lines, soft colors, negative space. Wes Anderson aesthetic.",
+        icon: "Layout",
+        data: {
+          user_intent: "Add: 'pastel color palette', 'symmetry', 'minimalism', 'clean lines', 'soft light'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "1:1",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "front_on",
+            framing: "wide_shot",
+            focus_point: "deep",
+            depth_of_field: "deep",
+            lens: "35mm"
+          },
+          lighting: {
+            type: "high_key_studio",
+            direction: "front_lit",
+            effect: "soft_shadows"
+          }
+        }
+      },
+      {
+        id: "documentary_war_correspondent",
+        title: "Documentary / Grit",
+        description: "Raw, gritty, high contrast black and white or desaturated. Intense realism.",
+        icon: "Globe",
+        data: {
+          user_intent: "Add: 'grainy', 'high contrast', 'gritty realism', 'reportage', 'emotional intensity'.",
+          api: {
+            generation_config: {
+              image_config: {
+                aspect_ratio: "3:2",
+                image_size: "1536"
+              }
+            }
+          },
+          camera_perspective: {
+            pov: "eye_level",
+            framing: "close_up",
+            focus_point: "eyes",
+            depth_of_field: "medium",
+            lens: "35mm"
+          },
+          lighting: {
+            type: "overcast_daylight",
+            direction: "ambient_wraparound",
+            effect: "crushed_blacks"
+          }
+        }
+      }
+    ];
