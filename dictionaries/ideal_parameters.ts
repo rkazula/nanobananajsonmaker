@@ -1092,5 +1092,150 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         effect: "film_grain" // Kluczowy element estetyki analogowej
       }
     }
+  },
+  {
+    id: "studio_bw_noir_headshot",
+    title: "Studio Noir Headshot (B&W)",
+    description: "Classic high-contrast black & white portrait with a pitch-black background. Intense, sharp, and focused on facial texture.",
+    icon: "User",
+    data: {
+      user_intent: "Add: 'black and white photography', 'monochrome', 'pitch black background', 'high contrast', 'sharp skin texture', 'serious expression'. Avoid: 'color', 'background details'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "1:1", // Zdjęcie jest kwadratowe/bliskie kwadratu
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level", // Poziom oczu, bardzo bezpośredni
+        framing: "close_up", // Ciasny kadr na twarz
+        focus_point: "eyes", // Ostrość na oczy
+        depth_of_field: "medium", // Cała twarz jest ostra, nie tylko oczy
+        lens: "85mm" // Klasyczna ogniskowa portretowa, minimalne zniekształcenia
+      },
+      lighting: {
+        type: "studio_strobe", // Mocne, studyjne światło błyskowe
+        direction: "butterfly_angle", // Światło z góry/na wprost (cień pod nosem)
+        effect: "low_key_lighting" // Ciemne tło, światło tylko na twarzy
+      }
+    }
+  },
+  {
+    id: "fashion_editorial_moody_grey",
+    title: "Fashion Editorial (Moody Grey Studio)",
+    description: "High-end fashion lookbook style. Moody, cool-toned lighting with a dark grey gradient background. Sculpted shadows and sharp styling details.",
+    icon: "Coat", // Ikona płaszcza pasuje idealnie do mody
+    data: {
+      user_intent: "Add: 'fashion editorial', 'male model in grey coat', 'turtleneck', 'glasses', 'dark grey studio background', 'moody lighting', 'cool tones', 'looking away', 'pensive pose'. Avoid: 'smiling', 'bright sunlight', 'flat lighting', 'pitch black background'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "2:3", // Standardowa proporcja portretowa w modzie/Instagramie
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level", // Poziom wzroku lub delikatnie niżej dla powagi
+        framing: "three_quarter_shot", // Kadr 3/4 (od ud w górę) by pokazać płaszcz
+        focus_point: "subject", // Ostrość na całą sylwetkę/stylizację
+        depth_of_field: "medium", // Tło jest gładkie (gradient), postać w pełni ostra
+        lens: "85mm" // Klasyczna ogniskowa modowa, dobra kompresja
+      },
+      lighting: {
+        type: "octabox", // Daje miękkie, ale plastyczne światło (charakterystyczne dla mody)
+        direction: "rembrandt_angle_left", // Światło boczne/górne tworzące rzeźbę na twarzy
+        effect: "low_key_lighting" // Utrzymanie nastroju, ale bez całkowitej czerni
+      }
+    }
+  },
+  {
+    id: "corporate_lifestyle_rooftop",
+    title: "Corporate Lifestyle (City Rooftop)",
+    description: "Modern business portrait on a sunny rooftop with a blurred city skyline. Bright, airy, and optimistic 'success' vibe.",
+    icon: "Building",
+    data: {
+      user_intent: "Add: 'modern businessman', 'navy suit', 'white shirt no tie', 'glasses', 'rooftop terrace', 'blurred city skyline background', 'skyscrapers', 'bright natural daylight', 'sun flare', 'smiling', 'looking away'. Avoid: 'dark studio', 'night', 'flash', 'gloomy'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "3:2", // Poziomy kadr (landscape) typowy dla tego typu zdjęć stockowych/lifestyle
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level",
+        framing: "medium_shot", // Kadr od ud/pasa w górę (tzw. plan amerykański)
+        focus_point: "subject", // Postać ostra, miasto w tle rozmyte
+        depth_of_field: "shallow", // Wyraźne odcięcie od tła (bokeh na budynkach)
+        lens: "85mm" // Idealna ogniskowa do portretów w plenerze (kompresja tła)
+      },
+      lighting: {
+        type: "natural_sunlight", // Jasne słońce
+        direction: "back_rim_right", // Światło konturowe z tyłu/boku dodające "blasku" + wypełnienie z przodu
+        effect: "high_key_lighting" // Ogólna jasna tonacja zdjęcia
+      }
+    }
+  },
+  {
+    id: "casual_business_cafe_window",
+    title: "Casual Business (Cafe/Window Light)",
+    description: "Relaxed professional portrait in a bright interior (cafe or modern office). Soft, directional window light with a blurred background containing greenery/lifestyle elements.",
+    icon: "Coffee",
+    data: {
+      user_intent: "Add: 'professional woman', 'black blazer', 'sitting at table', 'hands clasped', 'modern cafe interior', 'large window', 'green plants in background', 'soft natural window light', 'shallow depth of field'. Avoid: 'dark studio', 'formal backdrop', 'artificial light'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "2:3", // Pionowy kadr portretowy
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level", // Naturalna perspektywa siedzącej osoby
+        framing: "medium_shot", // Ujęcie od pasa w górę, obejmujące ręce na stole
+        focus_point: "face",
+        depth_of_field: "shallow", // Tło (rośliny, wnętrze) jest rozmyte
+        lens: "50mm" // Ogniskowa zbliżona do ludzkiego oka, naturalna
+      },
+      lighting: {
+        type: "window_light", // Główne źródło światła z boku (z okna)
+        direction: "side_lit_left", // Światło pada z lewej strony kadru
+        effect: "soft_shadows" // Łagodne przejścia światłocienia na twarzy
+      }
+    }
+  },
+  {
+    id: "dramatic_bw_studio_portrait",
+    title: "Dramatic Studio Portrait (B&W Intensity)",
+    description: "Intense, masculine black & white studio portrait. Strong directional lighting sculpts the face with deep shadows. Best for confident, serious 'power' looks.",
+    icon: "User",
+    data: {
+      user_intent: "Add: 'black and white', 'intense portrait', 'man in dark suit and dark shirt', 'hands holding jacket', 'serious expression', 'sculpted lighting', 'dark grey studio background', 'masculine', 'high contrast'. Avoid: 'flat lighting', 'smiling', 'bright colors'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "2:3", // Klasyczny pionowy format portretowy
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level",
+        framing: "medium_shot", // Ujęcie od pasa w górę, pokazujące dłonie
+        focus_point: "face",
+        depth_of_field: "medium", // Postać ostra, tło gładkie
+        lens: "85mm" // Klasyczna ogniskowa portretowa
+      },
+      lighting: {
+        type: "fresnel_light", // Światło o charakterystyce "filmowej", bardziej skupione i kontrastowe
+        direction: "side_lit_left", // Wyraźne światło boczne tworzące cień na drugiej połowie twarzy
+        effect: "chiaroscuro" // Malarskie operowanie światłocieniem
+      }
+    }
   }
     ];

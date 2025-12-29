@@ -1,4 +1,3 @@
-
 import { ClothingPlacement } from "../wardrobe_common";
 
 export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
@@ -24,9 +23,20 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Motorcycle Helmet",
     "Ski Helmet",
     "Hard Hat",
-    "Ski Goggles"
+    "Ski Goggles",
+    "Fallout Series: T-60 Power Armor Helmet",
+    "Fallout Series: NCR Ranger Combat Helmet",
+    "Fallout Series: Vault-Tec Security Helmet",
+    "Fallout Series: Weathered Cowboy Hat",
+    "Fallout Series: Raider Sack Hood",
+    "Fallout Series: Brotherhood Scribe Hood",
+    "Fallout Series: Enclave X-01 Helmet",
+    "Fallout Series: Pre-War Fedora",
+    "Fallout Series: Armored Newsboy Cap",
+    "Fallout Series: Gas Mask with Goggles",
+    "Fallout Series: Mining Helmet with Headlamp",
+    "Fallout Series: Combat Armor Helmet"
   ],
-
   "Upper Body": [
     "T-Shirt",
     "Basic Tee",
@@ -75,7 +85,19 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Trench Coat",
     "Vest",
     "Puffer Vest",
-    "Utility Vest"
+    "Utility Vest",
+    "Fallout Series: Brotherhood of Steel Bomber Jacket",
+    "Fallout Series: Distressed Road Leather Jacket",
+    "Fallout Series: NCR Ranger Duster Coat",
+    "Fallout Series: Vault-Tec Scientist Lab Coat",
+    "Fallout Series: Tunnel Snakes Leather Jacket",
+    "Fallout Series: Heavy Combat Armor Chest Piece",
+    "Fallout Series: Minuteman General's Overcoat",
+    "Fallout Series: Raider Cage Armor Top",
+    "Fallout Series: Brotherhood Scribe Robe Top",
+    "Fallout Series: Mercenary Charmer Shirt",
+    "Fallout Series: Metal Armor Chest Plate",
+    "Fallout Series: T-60 Power Armor Torso"
   ],
 
   "Lower Body": [
@@ -105,7 +127,18 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Running Shorts",
     "Athletic Shorts",
     "Basketball Shorts",
-    "Swim Shorts"
+    "Swim Shorts",
+    "Fallout Series: Distressed Leather Raider Pants",
+    "Fallout Series: Heavy Combat Armor Greaves",
+    "Fallout Series: T-60 Power Armor Leg Plating",
+    "Fallout Series: NCR Trooper Fatigues Bottoms",
+    "Fallout Series: Pre-War Dirty Slacks",
+    "Fallout Series: Armored Vault Suit Trousers",
+    "Fallout Series: Mercenary Cargo Pants with Knee Pads",
+    "Fallout Series: Metal Armor Leg Guards",
+    "Fallout Series: Brotherhood Scribe Pants",
+    "Fallout Series: Reinforced Road Leathers Bottoms",
+    "Fallout Series: Vault-Tec Security Leg Guards"
   ],
 
   "Full Body": [
@@ -122,7 +155,21 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Bathrobe",
     "Robe",
     "Poncho",
-    "Rain Poncho"
+    "Rain Poncho",
+
+    "Fallout Series Uniform: Form-fitting blue Vault-Tec utility jumpsuit featuring a vertical gold stripe running parallel to the central zipper, gold foil trim on the mandarin collar and waistband, horizontal ribbed quilting on the upper chest and shoulders, and reinforced articulated knee pads",
+    "Fallout Series: T-60 Power Armor Full Suit",
+    "Fallout Series: Radiation Hazmat Suit",
+    "Fallout Series: NCR Ranger Combat Armor Set",
+    "Fallout Series: Brotherhood of Steel Scribe Robes",
+    "Fallout Series: Enclave Officer Uniform",
+    "Fallout Series: Silver Shroud Costume",
+    "Fallout Series: Red Rocket Mechanic Jumpsuit",
+    "Fallout Series: Grognak the Barbarian Costume",
+    "Fallout Series: Nuka-Girl Rocketsuit",
+    "Fallout Series: Minutemen General's Uniform",
+    "Fallout Series: Children of Atom Robes",
+    "Fallout Series: Clean Pre-War Business Suit"
   ],
 
   "Feet": [
@@ -137,6 +184,7 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Hiking Boots",
     "Work Boots",
     "Snow Boots",
+    "Black Combat Boots",
 
     "Sandals",
     "Slide Sandals",
@@ -148,16 +196,28 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Ankle Socks",
     "Wool Socks",
 
-    "Barefoot"
+    "Barefoot",
+    "Fallout Series: T-60 Power Armor Boots",
+    "Fallout Series: Vault-Tec Issued Work Boots",
+    "Fallout Series: Heavy Combat Armor Boots",
+    "Fallout Series: Scavenged Raider Boots",
+    "Fallout Series: Brotherhood Knight Greaves",
+    "Fallout Series: Weathered Wanderer Boots",
+    "Fallout Series: Metal Armor Footwear",
+    "Fallout Series: Enclave X-01 Power Armor Boots",
+    "Fallout Series: NCR Trooper Combat Boots",
+    "Fallout Series: Pre-War Dress Shoes",
+    "Fallout Series: Legion Gladiator Sandals"
   ],
-
   "Hands": [
     "Gloves",
     "Leather Gloves",
     "Wool Gloves",
     "Touchscreen Gloves",
     "Mittens",
-    "Fingerless Gloves"
+    "Fingerless Gloves",
+    "Fallout Series: Pip-Boy",
+    "Bulky Wrist-Mounted Computer"
   ],
 
   "Intimate": [
