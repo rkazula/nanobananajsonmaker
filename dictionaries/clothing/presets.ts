@@ -291,5 +291,187 @@ export const WARDROBE_PRESETS = {
     { category: "Menswear", item: "Swim Trunks", fit: "mid-length", color: "Navy", fabric: "Nylon", placement: "Lower Body", coverage: "Partial Coverage" },
     { category: "Menswear", item: "Sunglasses", fit: "aviator", color: "Gold", fabric: "Metal", placement: "Head", coverage: "Partial Coverage" },
     { category: "Menswear", item: "Slides", fit: "luxury", color: "Black", fabric: "Rubber", placement: "Feet", coverage: "Partial Coverage" }
+  ],
+
+  // --- Holiday & Themed Costumes ---
+  "Santa Claus": [
+    { category: "Unisex", item: "Santa Hat", fit: "", color: "Red", fabric: "Felt", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Santa Suit Top", fit: "oversized", color: "Red", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Santa Suit Pants", fit: "loose", color: "Red", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Santa Boots", fit: "fur trimmed", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Christmas Elf": [
+    { category: "Unisex", item: "Elf Hat with Pointed Ears", fit: "", color: "Green", fabric: "Felt", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Elf Tunic", fit: "fitted", color: "Green", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Elf Pants", fit: "tight", color: "Green", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Elf Shoes", fit: "curled toe", color: "Red", fabric: "Felt", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Sexy Santa": [
+    { category: "Womenswear", item: "Sexy Santa Hat", fit: "", color: "Red", fabric: "Fur", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Santa Top", fit: "cropped", color: "Red", fabric: "Velvet", placement: "Upper Body", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Santa Skirt", fit: "mini", color: "Red", fabric: "Velvet", placement: "Lower Body", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Sexy Santa Heels", fit: "stiletto", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Fishnet Stockings", fit: "sheer", color: "Black", fabric: "Nylon", placement: "Intimate", coverage: "Partial Coverage" }
+  ],
+
+  "Sexy Elf": [
+    { category: "Womenswear", item: "Sexy Elf Hat", fit: "", color: "Green", fabric: "Felt", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Elf Top", fit: "cropped bodysuit", color: "Green", fabric: "Spandex", placement: "Upper Body", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Elf Skirt", fit: "mini", color: "Red", fabric: "Velvet", placement: "Lower Body", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Sexy Elf Heels", fit: "stiletto", color: "Red", fabric: "Patent Leather", placement: "Feet", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Thigh-High Stockings", fit: "sheer", color: "Green", fabric: "Silk", placement: "Intimate", coverage: "Partial Coverage" }
+  ],
+
+  "Bedroom Seduction": [
+    { category: "Womenswear", item: "Sexy Lingerie Set Full", fit: "lace", color: "Black", fabric: "Lace", placement: "Full Body", coverage: "Revealing" },
+    { category: "Womenswear", item: "Fishnet Stockings", fit: "thigh-high", color: "Black", fabric: "Nylon", placement: "Intimate", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Bedroom Heels", fit: "stiletto", color: "Black", fabric: "Patent Leather", placement: "Feet", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Robe (Lingerie)", fit: "open front", color: "Black", fabric: "Satin", placement: "Upper Body", coverage: "Sheer" }
+  ],
+
+  "Cowboy Theme": [
+    { category: "Unisex", item: "Cowboy Hat", fit: "", color: "Brown", fabric: "Felt", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Cowboy Shirt", fit: "western", color: "Tan", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Cowboy Chaps", fit: "leather", color: "Brown", fabric: "Leather", placement: "Lower Body", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Cowboy Boots", fit: "western", color: "Brown", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Rock Star": [
+    { category: "Unisex", item: "Rock Star Headband", fit: "", color: "Black", fabric: "Cotton", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Sequined Rock Star Top", fit: "fitted", color: "Black", fabric: "Sequin", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "70s Disco Pants", fit: "tight", color: "Black", fabric: "Spandex", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Rock Star Boots", fit: "platform", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "CFO Executive": [
+    { category: "Menswear", item: "Business Suit Jacket", fit: "tailored", color: "Navy", fabric: "Wool", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Dress Shirt", fit: "classic", color: "White", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Business Formal Pants", fit: "tailored", color: "Navy", fabric: "Wool", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "CEO Dress Shoes", fit: "oxfords", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Neck Tie", fit: "silk", color: "Red", fabric: "Silk", placement: "Upper Body", coverage: "Minimal Coverage" }
+  ],
+
+  "CEO Power": [
+    { category: "Menswear", item: "CEO Blazer", fit: "power suit", color: "Black", fabric: "Wool", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Dress Shirt", fit: "crisp", color: "White", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Business Formal Pants", fit: "sharp", color: "Black", fabric: "Wool", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "CEO Dress Shoes", fit: "polished", color: "Black", fabric: "Patent Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "CEO Casual": [
+    { category: "Menswear", item: "CEO Blazer", fit: "unstructured", color: "Navy", fabric: "Wool", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Henley Shirt", fit: "casual", color: "Light Blue", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Chinos", fit: "relaxed", color: "Khaki", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Casual Loafers", fit: "", color: "Brown", fabric: "Suede", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Ninja Warrior": [
+    { category: "Unisex", item: "Ninja Mask", fit: "wrapped", color: "Black", fabric: "Cotton", placement: "Head", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Ninja Suit Top", fit: "fitted", color: "Black", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Ninja Pants", fit: "tapered", color: "Black", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Ninja Tabi Boots", fit: "split toe", color: "Black", fabric: "Cotton", placement: "Feet", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Ninja Gloves", fit: "fitted", color: "Black", fabric: "Cotton", placement: "Hands", coverage: "Full Coverage" }
+  ],
+
+  "Priest": [
+    { category: "Unisex", item: "Priest Collar Hat", fit: "", color: "Black", fabric: "Cotton", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Priest Cassock", fit: "long", color: "Black", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Priest Pants", fit: "formal", color: "Black", fabric: "Wool", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Priest Dress Shoes", fit: "formal", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Priest Gloves", fit: "formal", color: "Black", fabric: "Leather", placement: "Hands", coverage: "Full Coverage" }
+  ],
+
+  "Nun": [
+    { category: "Unisex", item: "Nun's Veil", fit: "wimple", color: "White", fabric: "Cotton", placement: "Head", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Nun's Habit Top", fit: "long sleeves", color: "Black", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Nun's Habit Skirt", fit: "ankle length", color: "Black", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Nun's Shoes", fit: "modest", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Sexy Nun": [
+    { category: "Womenswear", item: "Nun's Veil", fit: "revealing", color: "White", fabric: "Lace", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Nun Top", fit: "cropped", color: "Black", fabric: "Satin", placement: "Upper Body", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Nun's Habit Skirt", fit: "mini", color: "Black", fabric: "Satin", placement: "Lower Body", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Thigh-High Stockings", fit: "fishnet", color: "Black", fabric: "Nylon", placement: "Intimate", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Nun Heels", fit: "stiletto", color: "Black", fabric: "Patent Leather", placement: "Feet", coverage: "Minimal Coverage" }
+  ],
+
+  "Geisha": [
+    { category: "Womenswear", item: "Geisha Headdress", fit: "ornate", color: "Gold", fabric: "Wood/Fabric", placement: "Head", coverage: "Full Coverage" },
+    { category: "Womenswear", item: "Geisha Kimono Top", fit: "traditional", color: "Red", fabric: "Silk", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Womenswear", item: "Geisha Skirt", fit: "traditional", color: "Red", fabric: "Silk", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Womenswear", item: "Geisha Zori Sandals", fit: "traditional", color: "Gold", fabric: "Wood", placement: "Feet", coverage: "Minimal Coverage" }
+  ],
+
+  "Samurai": [
+    { category: "Unisex", item: "Samurai Helmet", fit: "ornate", color: "Silver", fabric: "Metal", placement: "Head", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Samurai Armor Chest Plate", fit: "layered", color: "Silver", fabric: "Metal", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Samurai Hakama", fit: "traditional", color: "Black", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Samurai Boots", fit: "wrapped", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Samurai Gauntlets", fit: "armored", color: "Silver", fabric: "Metal", placement: "Hands", coverage: "Full Coverage" }
+  ],
+
+  "Roman Legionnaire": [
+    { category: "Unisex", item: "Roman Legionnaire Helmet", fit: "crested", color: "Bronze", fabric: "Metal", placement: "Head", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Roman Legionnaire Armor", fit: "segmented", color: "Bronze", fabric: "Metal", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Roman Legionnaire Skirt", fit: "pteruges", color: "Red", fabric: "Leather", placement: "Lower Body", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Roman Legionnaire Sandals", fit: "military", color: "Tan", fabric: "Leather", placement: "Feet", coverage: "Minimal Coverage" },
+    { category: "Unisex", item: "Roman Legionnaire Gauntlets", fit: "armored", color: "Bronze", fabric: "Metal", placement: "Hands", coverage: "Full Coverage" }
+  ],
+
+  "Prison Inmate": [
+    { category: "Unisex", item: "Prison Cap", fit: "", color: "Orange", fabric: "Cotton", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Prison Jumpsuit Top", fit: "loose", color: "Orange", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Prison Orange Pants", fit: "straight leg", color: "Orange", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Prison Shoes", fit: "institutional", color: "Grey", fabric: "Canvas", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Police Officer": [
+    { category: "Unisex", item: "Police Officer Hat", fit: "peaked", color: "Black", fabric: "Cotton", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Police Officer Uniform Top", fit: "fitted", color: "Navy", fabric: "Polyester", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Police Officer Pants", fit: "straight leg", color: "Navy", fabric: "Polyester", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Police Officer Boots", fit: "tactical", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Firefighter": [
+    { category: "Unisex", item: "Firefighter Helmet", fit: "protective", color: "Red", fabric: "Plastic", placement: "Head", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Firefighter Turnout Gear", fit: "heavy duty", color: "Red", fabric: "Nomex", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Firefighter Pants", fit: "rugged", color: "Red", fabric: "Nomex", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Firefighter Boots", fit: "steel-toed", color: "Black", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "70s Computer Geek": [
+    { category: "Menswear", item: "70s Disco Hat", fit: "retro", color: "Brown", fabric: "Wool", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Menswear", item: "70s Disco Shirt", fit: "wide collar", color: "Orange", fabric: "Polyester", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "70s Disco Pants", fit: "bell bottom", color: "Brown", fabric: "Polyester", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Menswear", item: "70s Disco Boots", fit: "platform", color: "Brown", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" },
+    { category: "Menswear", item: "Glasses", fit: "thick frame", color: "Brown", fabric: "Plastic", placement: "Head", coverage: "Partial Coverage" }
+  ],
+
+  "Doctor": [
+    { category: "Unisex", item: "Doctor's Cap", fit: "", color: "White", fabric: "Cotton", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Unisex", item: "Doctor's White Coat", fit: "professional", color: "White", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Doctor's Pants", fit: "straight leg", color: "White", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Doctor's Professional Shoes", fit: "comfortable", color: "White", fabric: "Leather", placement: "Feet", coverage: "Full Coverage" },
+    { category: "Unisex", item: "Doctor's Latex Gloves", fit: "clinical", color: "White", fabric: "Latex", placement: "Hands", coverage: "Full Coverage" }
+  ],
+
+  "Nurse": [
+    { category: "Womenswear", item: "Nurse's Cap", fit: "", color: "White", fabric: "Cotton", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Nurse's Scrubs Top", fit: "loose", color: "White", fabric: "Cotton", placement: "Upper Body", coverage: "Full Coverage" },
+    { category: "Womenswear", item: "Nurse's Pants", fit: "straight leg", color: "White", fabric: "Cotton", placement: "Lower Body", coverage: "Full Coverage" },
+    { category: "Womenswear", item: "Nurse's Professional Shoes", fit: "comfortable", color: "White", fabric: "Rubber", placement: "Feet", coverage: "Full Coverage" }
+  ],
+
+  "Sexy Nurse": [
+    { category: "Womenswear", item: "Sexy Nurse Cap", fit: "", color: "White", fabric: "Satin", placement: "Head", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Nurse Top Deluxe", fit: "cropped", color: "White", fabric: "Satin", placement: "Upper Body", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Nurse Skirt", fit: "mini", color: "White", fabric: "Satin", placement: "Lower Body", coverage: "Minimal Coverage" },
+    { category: "Womenswear", item: "Fishnet Stockings", fit: "thigh-high", color: "White", fabric: "Nylon", placement: "Intimate", coverage: "Partial Coverage" },
+    { category: "Womenswear", item: "Sexy Nurse Heels", fit: "stiletto", color: "White", fabric: "Leather", placement: "Feet", coverage: "Minimal Coverage" }
   ]
 };
+
+

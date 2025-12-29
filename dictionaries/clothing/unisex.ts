@@ -35,7 +35,24 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Fallout Series: Armored Newsboy Cap",
     "Fallout Series: Gas Mask with Goggles",
     "Fallout Series: Mining Helmet with Headlamp",
-    "Fallout Series: Combat Armor Helmet"
+    "Fallout Series: Combat Armor Helmet",
+
+    // Theme Costumes
+    "Santa Hat",
+    "Elf Hat with Pointed Ears",
+    "Cowboy Hat",
+    "Ninja Mask",
+    "Priest Collar Hat",
+    "Nun's Veil",
+    "Geisha Headdress",
+    "Samurai Helmet",
+    "Roman Legionnaire Helmet",
+    "Rock Star Headband",
+    "Police Officer Hat",
+    "Firefighter Helmet",
+    "70s Disco Hat",
+    "Doctor's Cap",
+    "Nurse's Cap"
   ],
   "Upper Body": [
     "T-Shirt",
@@ -97,7 +114,30 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Fallout Series: Brotherhood Scribe Robe Top",
     "Fallout Series: Mercenary Charmer Shirt",
     "Fallout Series: Metal Armor Chest Plate",
-    "Fallout Series: T-60 Power Armor Torso"
+    "Fallout Series: T-60 Power Armor Torso",
+
+    // Theme Costumes
+    "Santa Suit Top",
+    "Elf Tunic",
+    "Cowboy Shirt",
+    "Sequined Rock Star Top",
+    "Business Suit Jacket",
+    "CEO Power Suit",
+    "CEO Blazer",
+    "Ninja Suit Top",
+    "Priest Cassock",
+    "Nun's Habit Top",
+    "Geisha Kimono Top",
+    "Samurai Armor Chest Plate",
+    "Roman Legionnaire Armor",
+    "Prison Jumpsuit Top",
+    "Police Officer Uniform Top",
+    "Firefighter Turnout Gear",
+    "70s Disco Shirt",
+    "Doctor's White Coat",
+    "Nurse's Scrubs Top",
+    "Sexy Nurse Top",
+    "Sexy Maid Top"
   ],
 
   "Lower Body": [
@@ -138,7 +178,26 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Fallout Series: Metal Armor Leg Guards",
     "Fallout Series: Brotherhood Scribe Pants",
     "Fallout Series: Reinforced Road Leathers Bottoms",
-    "Fallout Series: Vault-Tec Security Leg Guards"
+    "Fallout Series: Vault-Tec Security Leg Guards",
+
+    // Theme Costumes
+    "Santa Suit Pants",
+    "Elf Pants",
+    "Cowboy Chaps",
+    "Ninja Pants",
+    "Priest Pants",
+    "Nun's Habit Skirt",
+    "Samurai Hakama",
+    "Roman Legionnaire Skirt",
+    "Prison Orange Pants",
+    "Police Officer Pants",
+    "Firefighter Pants",
+    "70s Disco Pants",
+    "Doctor's Pants",
+    "Nurse's Pants",
+    "Sexy Maid Skirt",
+    "Stockings with Garters",
+    "Bedroom Satin Robe"
   ],
 
   "Full Body": [
@@ -169,7 +228,33 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Fallout Series: Nuka-Girl Rocketsuit",
     "Fallout Series: Minutemen General's Uniform",
     "Fallout Series: Children of Atom Robes",
-    "Fallout Series: Clean Pre-War Business Suit"
+    "Fallout Series: Clean Pre-War Business Suit",
+
+    // Theme Costumes
+    "Santa Suit Full Outfit",
+    "Elf Costume Full Outfit",
+    "Cowboy Full Outfit",
+    "Rock Star Full Stage Outfit",
+    "Business Formal Full Suit",
+    "CEO Formal Full Suit",
+    "Ninja Full Outfit",
+    "Priest Full Cassock",
+    "Nun's Full Habit",
+    "Geisha Full Kimono Outfit",
+    "Samurai Full Armor Outfit",
+    "Roman Legionnaire Full Armor",
+    "Prison Orange Jumpsuit",
+    "Police Officer Full Uniform",
+    "Firefighter Full Turnout Gear",
+    "70s Disco Full Outfit",
+    "Doctor's Full Medical Outfit",
+    "Nurse's Full Scrubs",
+    "Sexy Nurse Full Outfit",
+    "Sexy Maid Full Outfit",
+    "Sexy Santa Outfit",
+    "Sexy Elf Outfit",
+    "Bedroom Lingerie Set",
+    "Sexy Bodysuit"
   ],
 
   "Feet": [
@@ -207,7 +292,31 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Fallout Series: Enclave X-01 Power Armor Boots",
     "Fallout Series: NCR Trooper Combat Boots",
     "Fallout Series: Pre-War Dress Shoes",
-    "Fallout Series: Legion Gladiator Sandals"
+    "Fallout Series: Legion Gladiator Sandals",
+
+    // Theme Costumes
+    "Santa Boots",
+    "Elf Shoes",
+    "Cowboy Boots",
+    "Rock Star Boots",
+    "Business Dress Shoes",
+    "CEO Dress Shoes",
+    "Ninja Tabi Boots",
+    "Priest Dress Shoes",
+    "Nun's Shoes",
+    "Geisha Zori Sandals",
+    "Samurai Boots",
+    "Roman Legionnaire Sandals",
+    "Prison Shoes",
+    "Police Officer Boots",
+    "Firefighter Boots",
+    "70s Disco Boots",
+    "Doctor's Professional Shoes",
+    "Nurse's Professional Shoes",
+    "Sexy Nurse Heels",
+    "Sexy Maid Heels",
+    "Bedroom Slippers",
+    "Fishnet Stockings Heels"
   ],
   "Hands": [
     "Gloves",
@@ -217,7 +326,22 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Mittens",
     "Fingerless Gloves",
     "Fallout Series: Pip-Boy",
-    "Bulky Wrist-Mounted Computer"
+    "Bulky Wrist-Mounted Computer",
+
+    // Theme Costumes
+    "Santa Gloves",
+    "Elf Gloves",
+    "Ninja Gloves",
+    "Priest Gloves",
+    "Nun's Gloves",
+    "Samurai Gauntlets",
+    "Roman Legionnaire Gauntlets",
+    "Police Officer Gloves",
+    "Firefighter Gloves",
+    "Doctor's Latex Gloves",
+    "Nurse's Latex Gloves",
+    "Sexy Gloves",
+    "Opera Length Gloves"
   ],
 
   "Intimate": [
@@ -225,6 +349,16 @@ export const UNISEX_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Base Layer Set",
     "Undershirt",
     "Thermal Undershirt",
-    "Compression Base Layer"
+    "Compression Base Layer",
+
+    // Sexy Lingerie & Bedroom
+    "Sexy Lingerie",
+    "Fishnet Stockings",
+    "Garters",
+    "Silk Stockings",
+    "Lace Stockings",
+    "Bodystocking",
+    "Lingerie Set",
+    "Bedroom Set"
   ]
 };

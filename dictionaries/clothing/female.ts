@@ -30,7 +30,16 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Headscarf",
     "Hijab",
     "Chiffon Hijab",
-    "Ear Muffs"
+    "Ear Muffs",
+
+    // Theme Costumes
+    "Sexy Santa Hat",
+    "Sexy Elf Hat",
+    "Cowgirl Hat",
+    "Geisha Headdress Deluxe",
+    "Rock Star Headpiece",
+    "Sexy Nurse Cap",
+    "Sexy Maid Headpiece"
   ],
 
   "Upper Body": [
@@ -129,7 +138,17 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Faux Fur Coat",
     "Cape",
     "Longline Coat",
-    "Parka"
+    "Parka",
+
+    // Sexy & Theme Costumes
+    "Sexy Santa Top",
+    "Sexy Elf Top",
+    "Cowgirl Top",
+    "Sexy Nurse Top Deluxe",
+    "Sexy Maid Top Deluxe",
+    "Geisha Kimono Deluxe",
+    "Sexy Bedroom Top",
+    "Sexy Lingerie Top"
   ],
 
   "Lower Body": [
@@ -187,7 +206,18 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Bike Shorts",
     "Hot Pants",
     "Pleated Shorts",
-    "Tailored Shorts"
+    "Tailored Shorts",
+
+    // Sexy & Theme Costumes
+    "Sexy Santa Skirt",
+    "Sexy Elf Skirt",
+    "Cowgirl Shorts",
+    "Sexy Nurse Skirt",
+    "Sexy Maid Skirt Deluxe",
+    "Geisha Skirt",
+    "Sexy Bedroom Bottoms",
+    "Lingerie Bottoms",
+    "Hot Pants Sexy"
   ],
 
   "Full Body": [
@@ -252,7 +282,18 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Babydoll Lingerie",
     "Chemise",
     "Slip (Lingerie)",
-    "Robe (Lingerie)"
+    "Robe (Lingerie)",
+
+    // Sexy & Theme Costumes
+    "Sexy Santa Full Outfit",
+    "Sexy Elf Full Outfit",
+    "Cowgirl Full Outfit",
+    "Sexy Nurse Full Outfit Deluxe",
+    "Sexy Maid Full Outfit Deluxe",
+    "Geisha Full Kimono Deluxe",
+    "Sexy Bedroom Outfit",
+    "Sexy Lingerie Set Full",
+    "Lingerie Bodysuit"
   ],
 
   "Feet": [
@@ -295,7 +336,18 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Sneakers",
     "High-Top Sneakers",
     "Running Shoes",
-    "Canvas Sneakers"
+    "Canvas Sneakers",
+
+    // Sexy & Theme Costumes
+    "Sexy Santa Heels",
+    "Sexy Elf Heels",
+    "Cowgirl Boots Sexy",
+    "Sexy Nurse Heels",
+    "Sexy Maid Heels",
+    "Geisha Heels",
+    "Bedroom Heels",
+    "Thigh-High Stockings Heels",
+    "Fishnet Heels"
   ],
 
   "Hands": [
@@ -305,7 +357,16 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
     "Opera Gloves",
     "Lace Gloves",
     "Fingerless Gloves",
-    "Mittens"
+    "Mittens",
+
+    // Sexy & Theme Costumes
+    "Sexy Santa Gloves",
+    "Sexy Elf Gloves",
+    "Cowgirl Gloves",
+    "Sexy Nurse Gloves",
+    "Sexy Maid Gloves",
+    "Geisha Gloves",
+    "Bedroom Gloves"
   ],
 
   "Intimate": [
