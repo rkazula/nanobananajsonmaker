@@ -1005,5 +1005,92 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
             effect: "crushed_blacks"
           }
         }
+      },
+      {
+    id: "corporate_studio_black_bg",
+    title: "Corporate Studio (Black Background)",
+    description: "Modern professional headshot with a clean black background. Unlike 'Noir', the subject is brightly and softly lit, creating a sleek, high-contrast separation.",
+    icon: "Briefcase",
+    data: {
+      user_intent: "Add: 'professional headshot', 'clean black background', 'soft even lighting', 'business casual', 'light blue shirt', 'friendly expression', 'bright face'. Avoid: 'shadows covering face', 'dramatic noir', 'dark clothes blending in'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "4:3", // Klasyczna proporcja cyfrowa, dobra do prezentacji na ekranach
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level",
+        framing: "medium_close_up", // Ujęcie popiersia (ramiona i głowa), lekko pod kątem
+        focus_point: "face",
+        depth_of_field: "deep", // Przy jednolitym czarnym tle głębia jest mniej istotna wizualnie, ale twarz musi być w pełni ostra
+        lens: "85mm"
+      },
+      lighting: {
+        type: "softbox", // Duże, miękkie źródło światła
+        direction: "three_quarter_front_lit", // Klasyczne oświetlenie pod kątem 45 stopni
+        effect: "soft_shadow_edges" // Miękkie, nierzucające się w oczy cienie na twarzy
       }
+    }
+  },
+  {
+    id: "outdoor_business_natural",
+    title: "Outdoor Business Portrait (Natural Light)",
+    description: "Professional portrait taken outdoors with a blurred nature background. Soft, diffused daylight and authentic colors. Approachable and realistic.",
+    icon: "Sun", // Lub 'Camera' / 'User'
+    data: {
+      user_intent: "Add: 'outdoor portrait', 'blurred green foliage background', 'natural daylight', 'soft bokeh', 'business attire', 'beige suit', 'realistic colors'. Avoid: 'studio lighting', 'harsh shadows', 'black and white'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "3:2", // Standardowa proporcja lustrzanki
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level",
+        framing: "bust_shot", // Kadr od klatki piersiowej w górę
+        focus_point: "face",
+        depth_of_field: "shallow", // Tło jest wyraźnie rozmyte (separacja)
+        lens: "85mm" // Klasyczna portretówka dająca ładny bokeh i kompresję
+      },
+      lighting: {
+        type: "overcast_daylight", // Miękkie światło dzienne (brak ostrego słońca)
+        direction: "ambient_wraparound", // Światło otacza modela równomiernie
+        effect: "soft_shadows" // Bardzo łagodne przejścia tonalne
+      }
+    }
+  },
+  {
+    id: "classic_analog_actor_portrait",
+    title: "Classic Analog Portrait (Soft B&W)",
+    description: "Traditional editorial/actor headshot with soft lighting and visible background texture. mimic the look of 35mm film with grain and a draped background.",
+    icon: "Film",
+    data: {
+      user_intent: "Add: 'black and white', '35mm film grain', 'soft studio light', 'draped curtain background', 'distinguished look', 'mid-key lighting'. Avoid: 'pitch black background', 'harsh shadows'.",
+      api: {
+        generation_config: {
+          image_config: {
+            aspect_ratio: "3:4", // Klasyczne proporcje portretowe
+            image_size: "1536"
+          }
+        }
+      },
+      camera_perspective: {
+        pov: "eye_level",
+        framing: "bust_shot", // Kadr obejmujący ramiona i krawat/ubiór
+        focus_point: "face",
+        depth_of_field: "medium", // Tło (kurtyna) jest lekko nieostre, ale czytelne
+        lens: "85mm"
+      },
+      lighting: {
+        type: "softbox", // Miękkie źródło światła
+        direction: "broad_lighting_left", // Twarz oświetlona szeroko, łagodne cienie
+        effect: "film_grain" // Kluczowy element estetyki analogowej
+      }
+    }
+  }
     ];
