@@ -1,6 +1,4 @@
-
-import React from 'react';
-import { 
+import {
     MALE_CLOTHING, FEMALE_CLOTHING, UNISEX_CLOTHING, ClothingPlacement,
     FITS_BY_PLACEMENT, ALL_FITS
 } from '../../constants';

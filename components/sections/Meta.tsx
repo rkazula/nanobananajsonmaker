@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { UseFormReturn, useWatch, Controller } from 'react-hook-form';
+import { UseFormReturn, Controller } from 'react-hook-form';
 import { NanoBananaType } from '../../schema';
 import { TextInput, Select, MultiSelect, Toggle } from '../ui/FormComponents';
 import { 
