@@ -1,13 +1,13 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm, useWatch, Resolver } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { NanoBananaSchema, NanoBananaType, DEFAULT_VALUES } from './schema';
 import { SectionRenderer } from './components/sections/SectionRenderer';
 import { autoFixJson } from './utils/autoFix';
 import { 
-  Clipboard, Download, Upload, AlertTriangle, CheckCircle, 
-  ChevronRight, ChevronLeft, Save, FileJson, Wand2, Code
+  Clipboard, Download, Upload, CheckCircle,
+  ChevronRight, ChevronLeft, Save, FileJson, Wand2, Code, RotateCcw
 } from 'lucide-react';
 
 // Sections definition for the Wizard
@@ -39,12 +39,18 @@ function App() {
     mode: "onChange"
   });
 
-  const { reset, handleSubmit, control } = form;
+  const { reset, control } = form;
   
   // Watch all values for Live Preview
   const allValues = useWatch({ control });
 
   // --- Handlers ---
+  const handleReset = () => {
+    if (confirm("Are you sure you want to reset all fields to default values?")) {
+      reset(DEFAULT_VALUES);
+    }
+  };
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(JSON.stringify(allValues, null, 2));
     alert("JSON copied to clipboard!");
@@ -146,6 +152,9 @@ function App() {
                     <span className="hidden sm:inline">JSON Preview</span>
                  </button>
                  <div className="h-6 w-px bg-slate-200 mx-1"></div>
+                 <button onClick={handleReset} className="p-2.5 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Reset to Defaults">
+                    <RotateCcw size={20} />
+                 </button>
                  <button onClick={copyToClipboard} className="p-2.5 text-slate-500 hover:text-banana-600 hover:bg-banana-50 rounded-lg transition-colors" title="Copy JSON">
                     <Clipboard size={20} />
                  </button>
