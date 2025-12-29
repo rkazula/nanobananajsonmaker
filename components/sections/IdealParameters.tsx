@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { NanoBananaType } from '../../schema';
-import { IDEAL_PARAMETERS_DATA } from '../../constants';
-import { RandomizerService, RandomizedContext } from '../../utils/RandomizerService';
-import { Star, Check, Dice5, RefreshCcw } from 'lucide-react';
+import { IDEAL_PARAMETERS_DATA } from '../../dictionaries/ideal_parameters';
+import { RandomizerService } from '../../utils/RandomizerService';
+import { Star, Check, Dice5 } from 'lucide-react';
 
 interface Props {
     form: UseFormReturn<NanoBananaType>;
