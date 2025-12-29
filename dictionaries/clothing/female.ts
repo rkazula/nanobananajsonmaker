@@ -225,6 +225,10 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Full Body": [
+    "Triangle Bikini Top",
+    "Halter Bikini Top",
+    "High-cut Bikini Bottom",
+    "Tie-side Bikini Bottom",
     "Bodycon Mini Dress",
     "Dress",
     "Mini Dress",

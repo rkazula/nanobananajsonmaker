@@ -33,7 +33,8 @@ export const SCENES = [
   ,"Townhouse", "Trailer Home", "Train Car", "Train Station", "Tropical", "TV Studio", "Underpass", "Underwater"
   ,"Underwater Cave", "University Campus", "Volcanic Field", "Walk-in Closet", "Warehouse", "Waterfall"
   ,"Wizard's Tower", "Workshop", "Yoga Studio",
-  "Mediterranean Terrace", "Stone Terrace", "Mirror Area"
+  "Mediterranean Terrace", "Stone Terrace", "Mirror Area",
+  "Tropical Resort", "Tropical Lagoon", "Overwater Bungalow", "Wooden Boardwalk", "Tropical Beach", "Palm Grove", "Shallow Surf", "Sunset Beach Shoreline"
 ].sort();
 
 export const SCENE_STYLES = [
@@ -79,7 +80,8 @@ export const ATMOSPHERES = [
   ,"sterile", "storm_front", "stormy", "sun_drenched", "sunset_haze", "surreal", "suspenseful", "tense", "thrilling"
   ,"tragic", "transcendent", "triumphant", "uncomfortable", "uneasy", "uplifting", "urban_isolation", "warm"
   ,"whimsical", "windswept",
-  "casual_glam", "indoor_warmth", "clean_realism", "sunlit", "coastal_breeze", "soft_confident", "beauty_editorial"
+  "casual_glam", "indoor_warmth", "clean_realism", "sunlit", "coastal_breeze", "soft_confident", "beauty_editorial",
+  "vacation_vibe", "fresh_breeze", "salty_air", "windy_hair", "carefree", "relaxed_luxury"
 ].sort();
 
 export const TIMES_OF_DAY_DATA = [
@@ -169,7 +171,8 @@ export const PROPS = [
   ,"Violin", "VR Headset", "Wall Clock", "Watch", "Water Bottle", "Wedding Ring Box", "Whiskey Tumbler"
   ,"White Canvas Tote", "White Ceramic Vase", "White Glass Bottle", "White Leather Notebook", "White LED Strip"
   ,"White Metal Tray", "White Neon Tube", "White Paper Bag", "White Plastic Chair", "White Silk Ribbon"
-  ,"White Wooden Chair", "Wine Bottle", "Wine Glass", "Wool Coat", "Wrench", "Yoga Mat"
+  ,"White Wooden Chair", "Wine Bottle", "Wine Glass", "Wool Coat", "Wrench", "Yoga Mat",
+  "Sunglasses (on head)", "Palapa / Thatched Umbrella", "Resort Wristband", "Tropical Drink", "Coconut", "Beach Towel"
 ].sort();
 
 export const INTERIOR_STYLES = [
@@ -205,7 +208,8 @@ export const MATERIALS = [
   ,"Sandstone", "Satin", "Shearling", "Silicone", "Silk", "Slate", "Smoke", "Snow", "Soapstone", "Spandex"
   ,"Stained Glass", "Stainless Steel", "Steel", "Stone", "Stucco", "Suede", "Terrazzo", "Tile", "Tinted Glass"
   ,"Travertine", "Tulle", "Varnished Wood", "Velvet", "Walnut Wood", "Wallpaper", "Water", "Wet Pavement", "White Brick", "Wicker"
-  ,"Wood", "Wool"
+  ,"Wood", "Wool",
+  "Wooden Planks (Weathered)", "Rope (Thick/Nautical)", "Turquoise Water", "Wet Sand", "Sea Foam", "Thatched Roof (Straw)"
 ].sort();
 
 export const CLUTTER_LEVELS = [

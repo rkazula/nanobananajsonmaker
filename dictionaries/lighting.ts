@@ -244,6 +244,14 @@ export const LIGHTING_TYPES_DATA = [
   {
     value: "studio_softbox_beauty",
     desc: "Studio beauty lighting (Softbox Key + Fill). Soft, diffused, smooth highlight roll-off, ideal for portraits."
+  },
+  {
+    value: "bright_natural_daylight",
+    desc: "Intense, clean daylight (noon/early afternoon). High contrast, saturated colors."
+  },
+  {
+    value: "golden_hour_to_twilight_natural",
+    desc: "Transition from golden hour to blue hour (twilight). Soft, pastel light, low contrast."
   }
 ] as const;
 
@@ -399,6 +407,18 @@ export const LIGHTING_DIRECTIONS_DATA = [
   {
     value: "key_front_left + fill_front_right",
     desc: "Classic studio setup: Key from the left, fill from the right."
+  },
+  {
+    value: "sun_high + soft_fill_from_water",
+    desc: "High sun + turquoise/cool fill reflected from water (blue bounce)."
+  },
+  {
+    value: "sun_high + soft_fill_from_sand_and_sky",
+    desc: "High sun + warm fill from sand and soft fill from sky."
+  },
+  {
+    value: "soft_sky_light + low_sun_fill",
+    desc: "Soft sky light (key) + gentle low sun backlight near the horizon."
   }
 ] as const;
 

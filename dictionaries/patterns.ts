@@ -74,5 +74,8 @@ export const CLOTHING_PATTERNS = [
   "Logo Print",
   "Pop Art",
   "Galaxy / Space",
-  "Digital Glitch"
+  "Digital Glitch",
+  "Leopard Print (Brown/Black)",
+  "Greek Key / Meander (Geometric)",
+  "Tropical Foliage"
 ].sort();

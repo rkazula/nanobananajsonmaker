@@ -129,5 +129,24 @@ export const POSE_TEMPLATES = [
   "Documentary Candid Pose",
   "Dynamic Action",
   "Relaxed Sitting",
-  "Fashion Pose"
+  "Fashion Pose",
+
+  // New: Hands / Upper Body Interactions
+  "Hands Adjusting Sunglasses on Head",
+  "Both Hands Holding Sunglasses",
+  
+  // New: Selfie Variations
+  "Selfie: Arms Extended Front",
+  "Selfie: High Angle (Look Up)",
+  "Selfie: Head Tilted (Cute)",
+  
+  // New: Movement / Water / Beach
+  "Walking Out of Water",
+  "Walking in Shallow Surf",
+  "Splashing Water",
+  
+  // New: Mood / Expression focused
+  "Laughing Head Thrown Back",
+  "Genuine Joyful Smile (Walking)",
+  "Relaxed Vacation Stance"
 ].sort();

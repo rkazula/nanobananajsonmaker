@@ -69,7 +69,8 @@ export const HAIR_STYLES = [
     "Bangs (Blunt)", "Bangs (Curtain)", "Bangs (Side)", "Wispy Bangs", "Wet Look", "Windblown", 
     "Bedhead/Messy", "Half-Up Half-Down", "Crown Braid", "Fishtail Braid", "Twists", "Bantu Knots", 
     "Finger Waves", "Vintage Rolls", "Beehive", "Perm",
-    "straight, sleek, side part", "loose waves, middle/soft side part", "straight, middle part"
+    "straight, sleek, side part", "loose waves, middle/soft side part", "straight, middle part",
+    "Wet Beach Waves", "Damp / Towel Dried", "Wind-swept", "Salt-spray Texture"
 ].sort();
 
 export const EYE_COLOR_MAP: Record<string, string> = {
@@ -96,7 +97,12 @@ export const DISTINCT_FEATURES = [
     "soft makeup",
     "calm confident expression",
     "subtelny makijaż beauty (lekki połysk ust, wyrównany koloryt)",
-    "mały, delikatny naszyjnik"
+    "mały, delikatny naszyjnik",
+    "Navel Piercing",
+    "Tan Lines",
+    "Sun-kissed Skin",
+    "Wet Skin",
+    "Sand on Skin"
 ].sort();
 
 export const TATTOO_PLACEMENTS = [

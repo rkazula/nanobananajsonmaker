@@ -114,6 +114,10 @@ export const CAMERA_POV_DATA = [
   {
     value: "mirror_selfie_eye_level",
     desc: "Mirror selfie perspective at eye level. Phone visible, natural pose."
+  },
+  {
+    value: "handheld_selfie_front_camera",
+    desc: "Handheld selfie perspective (front camera). Features characteristic wide-angle arm distortion, close contact, and intimacy."
   }
 ] as const;
 
@@ -581,6 +585,10 @@ export const CAMERA_LENS_DATA = [
   {
     value: "smartphone_wide_normal",
     desc: "Emulation of the main smartphone lens (26-35mm equivalent). Slight distortions typical for selfies."
+  },
+  {
+    value: "smartphone_wide",
+    desc: "Smartphone wide angle (approx. 24-28mm). Typical for selfies and travel photography."
   }
 ] as const;
 
@@ -793,3 +801,9 @@ export const ANGLES_DATA = [
     desc: "Slightly above eye level, aimed downward subtly. Flattering to eyes/cheekbones and softens the body. Best for gentle portraits and dreamy window light."
   }
 ] as const;
+
+export const CAMERA_MODELS = [
+    "Smartphone front camera (selfie look)",
+    "DSLR/ML travel portrait look",
+    "Action Camera (GoPro style)"
+];
