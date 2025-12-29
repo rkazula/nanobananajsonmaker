@@ -43,6 +43,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
     "Upper Body": [
+    "Sports Bra (Matte Performance)",
+    "Off-shoulder Ruched Dress",
     "Crochet Bandeau Top",
     "Bra (Balconette-like)",
     "Blouse",
@@ -154,6 +156,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Lower Body": [
+    "High-waist Athletic Shorts",
+    "Mini Dress (Flared Hem)",
     "Crochet Bottoms",
     "Shorts-style Swimwear",
     "Skirt",
@@ -225,6 +229,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Full Body": [
+    "Mini Dress (White with Black Trim)",
+    "Off-shoulder Ruched Mini Dress",
     "Triangle Bikini Top",
     "Halter Bikini Top",
     "High-cut Bikini Bottom",
@@ -306,6 +312,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Feet": [
+    "Crew Socks (Mid-calf)",
+    "Strappy Heels (Ankle Strap)",
     "Heels",
     "Stilettos",
     "Pumps",

@@ -252,6 +252,14 @@ export const LIGHTING_TYPES_DATA = [
   {
     value: "golden_hour_to_twilight_natural",
     desc: "Transition from golden hour to blue hour (twilight). Soft, pastel light, low contrast."
+  },
+  {
+    value: "warm_indoor_practical + soft_fill",
+    desc: "Warm indoor practical light from lamps/ceiling + soft fill. Typical for lobbies/hallways."
+  },
+  {
+    value: "warm_fairylights + soft_fill",
+    desc: "Main light motivated by fairy lights/Christmas lights + gentle fill. Glow and bokeh effect."
   }
 ] as const;
 
@@ -419,6 +427,18 @@ export const LIGHTING_DIRECTIONS_DATA = [
   {
     value: "soft_sky_light + low_sun_fill",
     desc: "Soft sky light (key) + gentle low sun backlight near the horizon."
+  },
+  {
+    value: "key_front_high + ambient_hallway_glow",
+    desc: "Primary light from above/front + general hallway glow."
+  },
+  {
+    value: "motivated_from_garland_left + gentle_front_fill",
+    desc: "Light motivated by decorations on the left + gentle front fill (no harsh flash)."
+  },
+  {
+    value: "tree_lights_sparkle",
+    desc: "Light originating from the Christmas tree, creating reflections and glint."
   }
 ] as const;
 

@@ -148,5 +148,15 @@ export const POSE_TEMPLATES = [
   // New: Mood / Expression focused
   "Laughing Head Thrown Back",
   "Genuine Joyful Smile (Walking)",
-  "Relaxed Vacation Stance"
+  "Relaxed Vacation Stance",
+
+  // Fitness / Seated
+  "Seated on Edge (Fitness)",
+  "Seated with Hands on Knees",
+
+  // Holiday / Elegant
+  "Standing with Hand Near Neck (Elegant)",
+  "Arm Folded Across Waist",
+  "Standing Weight Shift (Holding Bag)",
+  "Looking Down (Demure/Romantic)"
 ].sort();
