@@ -158,5 +158,24 @@ export const POSE_TEMPLATES = [
   "Standing with Hand Near Neck (Elegant)",
   "Arm Folded Across Waist",
   "Standing Weight Shift (Holding Bag)",
-  "Looking Down (Demure/Romantic)"
+  "Looking Down (Demure/Romantic)",
+
+  // Beach / Back View
+  "Back to Camera, Looking Over Shoulder",
+  "Torso Twisted, Looking Back",
+
+  // Glamour / Stairs
+  "Seated on Stairs, Legs Crossed",
+  "Elegant Seated Pose (Gown)",
+
+  // Lifestyle / Profile
+  "Profile View, Looking Away (Distant)",
+  "Three-Quarter Profile (Lifestyle)",
+
+  // Water Park / Casual
+  "Standing, Hand on Hip, Hand on Neck",
+  "Dutch Angle Stance (Dynamic)",
+
+  // Selfie
+  "Night Selfie (Hood Up)"
 ].sort();

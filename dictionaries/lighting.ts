@@ -260,6 +260,22 @@ export const LIGHTING_TYPES_DATA = [
   {
     value: "warm_fairylights + soft_fill",
     desc: "Main light motivated by fairy lights/Christmas lights + gentle fill. Glow and bokeh effect."
+  },
+  {
+    value: "night_selfie_key + ambient_snow_bounce",
+    desc: "Phone screen light (warm on face) + cool reflection from snow in the background."
+  },
+  {
+    value: "bright_indoor_daylight_through_glass",
+    desc: "Bright daylight coming through a glass roof (atrium), diffused, with turquoise reflection from the water."
+  },
+  {
+    value: "soft_natural_daylight",
+    desc: "Soft daylight (slightly overcast sky), ideal for lifestyle portraits."
+  },
+  {
+    value: "warm_indoor_practicals + soft_key",
+    desc: "Warm decorative lamps in the background + soft key light on the character (glamour vibe)."
   }
 ] as const;
 
@@ -439,6 +455,18 @@ export const LIGHTING_DIRECTIONS_DATA = [
   {
     value: "tree_lights_sparkle",
     desc: "Light originating from the Christmas tree, creating reflections and glint."
+  },
+  {
+    value: "sun_high + soft_sky_fill",
+    desc: "Sun high (beach) + soft sky fill."
+  },
+  {
+    value: "soft_key_front + ambient_glow_from_garlands",
+    desc: "Soft key from the front + glow from Christmas garlands."
+  },
+  {
+    value: "soft_front_light_from_phone + cool_ambient",
+    desc: "Frontal light from the phone + cool ambient light (night)."
   }
 ] as const;
 

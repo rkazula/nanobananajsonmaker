@@ -13,13 +13,170 @@ export const CONSISTENCY_TAGS = [
 ].sort();
 
 export const ETHNICITIES = [
-    "Caucasian", "Nordic", "Slavic", "Mediterranean", "Celtic", "Germanic",
-    "African", "West African", "East African", "South African", "African American", "Afro-Caribbean",
-    "Asian", "East Asian (Chinese)", "East Asian (Japanese)", "East Asian (Korean)", "Southeast Asian (Thai/Vietnamese)", "South Asian (Indian)", "South Asian (Pakistani)",
-    "Latino/Hispanic", "Mexican", "Brazilian", "Colombian", "Indigenous American",
-    "Middle Eastern", "Arab", "Persian", "Turkish", "Israeli",
-    "Pacific Islander", "Polynesian", "Maori", "Filipino",
-    "Mixed Race", "Eurasian", "Blasian", "Mestizo", "Mulatto"
+    // Broad / umbrella groupings
+    "African",
+    "Asian",
+    "Caucasian",
+    "Indigenous",
+    "Indigenous American",
+    "Middle Eastern",
+    "Mixed Race",
+    "Pacific Islander",
+
+    // Europe (broad)
+    "Celtic",
+    "Germanic",
+    "Mediterranean",
+    "Nordic",
+    "Slavic",
+    "Southern European",
+    "Eastern European",
+    "Western European",
+    "Northern European",
+    "Central European",
+    "Balkan",
+    "Iberian",
+    "Baltic",
+
+    // Specific European identities (requested + common additions)
+    "Polish",
+    "Ukrainian",
+    "Russian",
+    "Belarusian",
+    "Czech",
+    "Slovak",
+    "Lithuanian",
+    "Latvian",
+    "Estonian",
+    "Swedish",
+    "Finnish",
+    "Norwegian",
+    "Danish",
+    "Icelandic",
+    "British",
+    "English",
+    "Scottish",
+    "Welsh",
+    "Irish",
+    "French",
+    "German",
+    "Dutch",
+    "Belgian",
+    "Swiss",
+    "Austrian",
+    "Hungarian",
+    "Romanian",
+    "Bulgarian",
+    "Serbian",
+    "Croatian",
+    "Bosnian",
+    "Montenegrin",
+    "Macedonian",
+    "Albanian",
+    "Greek",
+    "Italian",
+    "Sicilian",
+    "Spanish",
+    "Portuguese",
+    "Maltese",
+    "Georgian",
+    "Armenian",
+    "Azerbaijani",
+
+    // Africa (regional)
+    "West African",
+    "East African",
+    "North African",
+    "Central African",
+    "South African",
+    "African American",
+    "Afro-Caribbean",
+
+    // MENA (Middle East & North Africa) more granular
+    "Arab",
+    "Berber/Amazigh",
+    "Egyptian",
+    "Levantine",
+    "Israeli",
+    "Kurdish",
+    "Persian",
+    "Turkish",
+
+    // Americas (identity / nationality-ish — as in your current list)
+    "American",
+    "Canadian",
+    "Mexican",
+    "Latino/Hispanic",
+    "Brazilian",
+    "Colombian",
+    "Argentinian",
+    "Chilean",
+    "Peruvian",
+    "Venezuelan",
+    "Cuban",
+    "Puerto Rican",
+    "Dominican",
+
+    // Indigenous Americas (broader)
+    "Native American",
+    "First Nations",
+    "Inuit",
+    "Metis",
+
+    // Asia (regional)
+    "Central Asian",
+    "East Asian",
+    "South Asian",
+    "Southeast Asian",
+
+    // East Asia (requested + clearer structure)
+    "Chinese",
+    "Japanese",
+    "Korean",
+    "Mongolian",
+
+    // Southeast Asia (requested + common additions)
+    "Thai",
+    "Vietnamese",
+    "Filipino",
+    "Indonesian",
+    "Malaysian",
+    "Singaporean",
+    "Cambodian",
+    "Laotian",
+    "Burmese/Myanmarese",
+
+    // South Asia (requested + common additions)
+    "Indian",
+    "Pakistani",
+    "Bangladeshi",
+    "Sri Lankan",
+    "Nepalese",
+    "Bhutanese",
+
+    // Central Asia (requested)
+    "Uzbek",
+    "Kazakh",
+    "Kyrgyz",
+    "Tajik",
+    "Turkmen",
+
+    // Pacific / Oceania (requested + common additions)
+    "Hawaiian",
+    "Polynesian",
+    "Maori",
+    "Samoan",
+    "Tongan",
+    "Guamanian/Chamorro",
+    "Melanesian",
+    "Micronesian",
+
+    // Mixed (your current set + a couple popular)
+    "Blasian",
+    "Eurasian",
+    "Mestizo",
+    "Mulatto",
+    "Afro-Latino"
 ].sort();
 
 export const SKIN_QUALITIES = [
@@ -40,51 +197,505 @@ export const BODY_TYPES = [
 ].sort();
 
 export const SKIN_TONE_MAP: Record<string, string> = {
-    "Albino": "#FDFDFD", "Pale Porcelain": "#F5EBE0", "Fair Ivory": "#F2D8C9", "Light Beige": "#EAC0A6", 
-    "Medium Beige": "#D9A988", "Olive Light": "#C6A07E", "Olive Medium": "#B0885F", "Tan": "#C68642", 
-    "Golden": "#D29851", "Honey": "#BB7E42", "Bronze": "#A26435", "Rich Brown": "#8D5524", 
-    "Copper": "#965424", "Mocha": "#6F3C1B", "Deep Chocolate": "#4F2B16", "Dark Ebony": "#3B2219", 
-    "Blue-Black": "#1E1312", "Reddish": "#C77A58", "Cool Pink": "#E8C3B7", "Warm Yellow": "#EED2B2",
-    "Light": "#F5DEB3" // Added for "Light" skin tone
+    // Lightest → darkest
+
+    // Ultra-light
+    "Albino": "#FDFDFD",
+    "Alabaster": "#FBF2EA",
+    "Porcelain": "#F5EBE0",
+    "Milk": "#F7E6D5",
+    "Ivory": "#F2D8C9",
+    "Pearl": "#F1D6C6",
+
+    // Undertone markers (still in tone order)
+    "Pink (Cool Undertone)": "#E8C3B7",
+    "Yellow (Warm Undertone)": "#EED2B2",
+
+    // Light range
+    "Wheat": "#F5DEB3",
+    "Sand (Light)": "#EFD2B5",
+    "Beige (Light)": "#EAC0A6",
+    "Beige (Neutral)": "#E2B79C",
+    "Buff": "#DCB08F",
+
+    // Light-medium / medium
+    "Beige (Medium)": "#D9A988",
+    "Oat": "#D2A27F",
+    "Olive (Light)": "#C6A07E",
+    "Golden (Light)": "#D5A06A",
+    "Golden": "#D29851",
+    "Tan (Light)": "#CF9254",
+    "Tan": "#C68642",
+    "Caramel (Light)": "#C37C3F",
+
+    // Undertone marker in the mid-range
+    "Reddish (Warm Undertone)": "#C77A58",
+
+    // Medium-deep
+    "Honey": "#BB7E42",
+    "Caramel": "#B8743A",
+    "Olive (Medium)": "#B0885F",
+    "Bronze": "#A26435",
+    "Copper": "#965424",
+
+    // Deep range
+    "Amber Brown": "#8F522C",
+    "Brown (Rich)": "#8D5524",
+    "Chestnut": "#7E4524",
+    "Mocha": "#6F3C1B",
+    "Cocoa": "#5E331A",
+    "Chocolate (Deep)": "#4F2B16",
+    "Espresso": "#3F2416",
+
+    // Darkest
+    "Ebony (Dark)": "#3B2219",
+    "Onyx": "#2A1A16",
+    "Blue-Black": "#1E1312",
 };
 
 export const HAIR_COLORS_MAP: Record<string, string> = {
-    "Black": "#090909", "Off-Black": "#2C2C2C", "Dark Brown": "#3B3024", "Medium Brown": "#4E433F", 
-    "Light Brown": "#8D745C", "Chestnut": "#5D4037", "Auburn": "#7D3F32", "Red": "#8D2818", 
-    "Reddish Brown": "#8D4004", // Added
-    "Ginger": "#B65F43", "Strawberry Blonde": "#D68E69", "Dark Blonde": "#A78B66", "Golden Blonde": "#D1B26F", 
-    "Platinum Blonde": "#E5E4E2", "White": "#F5F5F5", "Grey": "#9E9E9E", "Salt and Pepper": "#686868", 
-    "Dyed Blue": "#1E3A8A", "Dyed Pink": "#EC4899", "Dyed Green": "#10B981", "Dyed Purple": "#7C3AED", 
+    // --- Blacks (natural) ---
+    "Jet Black": "#050505",
+    "Black": "#090909",
+    "Soft Black": "#121212",
+    "Off Black": "#2C2C2C",
+    "Blue Black": "#0B0F1A",
+
+    // --- Dark Browns ---
+    "Espresso Brown": "#1B120E",
+    "Dark Chocolate Brown": "#2A1C16",
+    "Chocolate Brown": "#3B3024",
+    "Dark Brown": "#3B3024",
+    "Cool Dark Brown": "#2F2A28",
+    "Warm Dark Brown": "#3A261C",
+
+    // --- Medium Browns ---
+    "Medium Brown": "#4E433F",
+    "Mocha Brown": "#3F2C25",
+    "Coffee Brown": "#4A332B",
+    "Walnut Brown": "#4A372F",
+    "Chestnut Brown": "#5D4037",
+    "Mahogany Brown": "#5A2D2D",
+    "Cocoa Brown": "#5B4036",
+
+    // --- Light Browns / Brunettes ---
+    "Light Brown": "#8D745C",
+    "Sandy Brown": "#8A6B55",
+    "Caramel Brown": "#8B5A2B",
+    "Honey Brown": "#9A6B3C",
+    "Toffee Brown": "#7A5536",
+    "Ash Brown (Light)": "#7C6F66",
+    "Ash Brown (Medium)": "#6B5E55",
+
+    // --- Brunette Highlights / Sun-kissed ---
+    "Brown With Caramel Highlights": "#8A6A4F",
+    "Brown With Honey Highlights": "#8D745C",
+    "Brown With Golden Highlights": "#916B4A",
+
+    // --- Red / Auburn spectrum ---
+    "Reddish Brown": "#8D4004",
+    "Auburn (Dark)": "#5A2A22",
+    "Auburn": "#7D3F32",
+    "Copper Auburn": "#8A3B2A",
+    "Cinnamon": "#7A3A2A",
+    "Rust": "#8B3A2B",
+    "True Red": "#8D2818",
+    "Copper Red": "#B34A2E",
+    "Ginger": "#B65F43",
+    "Light Copper": "#C56E4A",
+
+    // --- Strawberry / Rose tones (natural-leaning) ---
+    "Strawberry Blonde": "#D68E69",
+    "Rose Gold": "#C98A7A",
+
+    // --- Blondes (dark → light) ---
+    "Dark Blonde": "#A78B66",
+    "Dirty Blonde": "#A38B6A",
+    "Beige Blonde": "#C7A985",
+    "Golden Blonde": "#D1B26F",
+    "Honey Blonde": "#D6B07A",
+    "Warm Blonde": "#D8B58A",
+    "Sandy Blonde": "#D4B08F",
+    "Ash Blonde": "#BFAE9A",
+    "Champagne Blonde": "#E2D2B8",
+    "Light Blonde": "#E4C79A",
+    "Butter Blonde": "#E3C27A",
+
+    // --- Ultra-light blondes / platinum ---
+    "Platinum Blonde": "#E5E4E2",
+    "Icy Platinum": "#EEEFF2",
+    "Silver Blonde": "#D9DCE1",
+
+    // --- Grey / White ---
+    "Salt And Pepper": "#686868",
+    "Steel Grey": "#7A7F86",
+    "Grey": "#9E9E9E",
+    "Silver": "#C0C0C0",
+    "White": "#F5F5F5",
+
+    // --- Fantasy / Dyed (cool tones) ---
+    "Dyed Blue (Deep)": "#1E3A8A",
+    "Dyed Blue (Electric)": "#2563EB",
+    "Dyed Teal": "#0EA5A4",
+    "Dyed Green (Emerald)": "#10B981",
+    "Dyed Green (Lime)": "#84CC16",
+    "Dyed Purple (Deep)": "#4C1D95",
+    "Dyed Purple": "#7C3AED",
+    "Dyed Lavender": "#A78BFA",
+
+    // --- Fantasy / Dyed (warm tones) ---
+    "Dyed Pink": "#EC4899",
+    "Dyed Hot Pink": "#FF2D95",
+    "Dyed Rose": "#F472B6",
+    "Dyed Coral": "#FB7185",
+    "Dyed Orange": "#F97316",
+    "Dyed Yellow": "#F59E0B",
+
+    // --- Pastels (photo-real friendly) ---
+    "Pastel Pink": "#FBCFE8",
+    "Pastel Peach": "#FED7AA",
+    "Pastel Mint": "#BBF7D0",
+    "Pastel Blue": "#BFDBFE",
+    "Pastel Lilac": "#E9D5FF",
+
+    // --- Multi / gradients / techniques (single representative hex) ---
+    "Brunette Balayage": "#7C5A45",
+    "Bronde Balayage": "#967658",
+    "Blonde Balayage": "#C9AD86",
+    "Ombré (Brown To Blonde)": "#A48366",
+    "Money Piece Highlights": "#D6B07A",
+
+    // --- Special ---
     "Rainbow": "#F59E0B",
-    "bronde balayage": "#967658",
-    "brown with lighter highlights": "#8D745C"
 };
 
 export const HAIR_STYLES = [
-    "Bald/Shaved", "Buzz Cut", "Crew Cut", "Fade", "Undercut", "Short Textured", "Pixie Cut", "Bob", 
-    "Long Bob (Lob)", "Shoulder Length", "Long Straight", "Long Wavy", "Long Curly", "Afro", "Short Dreads", 
-    "Long Dreads", "Braids (Box)", "Cornrows", "French Braid", "Ponytail High", "Ponytail Low", "Messy Bun", 
-    "Top Knot", "Space Buns", "Pigtails", "Mohawk", "Mullet", "Curtains", "Slicked Back", "Pompadour", 
-    "Quiff", "Faux Hawk", "Bowl Cut", "Layered Cut", "Layered with bangs", "Feathered", "Shag", "Wolf Cut", "Hime Cut", 
-    "Bangs (Blunt)", "Bangs (Curtain)", "Bangs (Side)", "Wispy Bangs", "Wet Look", "Windblown", 
-    "Bedhead/Messy", "Half-Up Half-Down", "Crown Braid", "Fishtail Braid", "Twists", "Bantu Knots", 
-    "Finger Waves", "Vintage Rolls", "Beehive", "Perm",
-    "straight, sleek, side part", "loose waves, middle/soft side part", "straight, middle part",
-    "Wet Beach Waves", "Damp / Towel Dried", "Wind-swept", "Salt-spray Texture"
-].sort();
+    // Natural / Everyday
+    "Straight",
+    "Wavy",
+    "Curly",
+    "Coily",
+    "Layered Cut",
+    "Feathered",
+    "Shag",
+    "Wolf Cut",
+    "Bob",
+    "Lob",
+    "Pixie Cut",
+    "Afro",
+    "Buzz Cut",
+    "Crew Cut",
+    "Undercut",
+    "Fade",
+    "Pompadour",
+    "Quiff",
+    "Slick Back",
+    "Side Part",
+    "Curtains",
+    "Bowl Cut",
+
+    // Braids / Protective
+    "Box Braids",
+    "Knotless Braids",
+    "Cornrows",
+    "Dreads",
+    "Faux Locs",
+    "Twists",
+    "Bantu Knots",
+
+    // Updos / Styling
+    "High Ponytail",
+    "Low Ponytail",
+    "Messy Bun",
+    "Sleek Bun",
+    "Top Knot",
+    "Space Buns",
+    "Half-Up Half-Down",
+
+    // Alternative
+    "Mohawk",
+    "Faux Hawk",
+    "Mullet",
+    "Modern Mullet",
+    "Shullet",
+
+    // Historical
+    "Beehive",
+    "Finger Waves",
+    "Victory Rolls",
+    "Pageboy",
+    "Roman Curls",
+    "Medieval Braids",
+    "Victorian Updo",
+
+    // Futuristic / Sci-Fi
+    "Cyber Undercut",
+    "Neon Fade",
+    "Holographic Bob",
+    "Synthetic Dreads",
+    "Chrome Buzz",
+    "Asymmetrical Tech Cut",
+
+    // Iconic – Football
+    "Beckham 1998 Curtains",
+    "Ronaldo Nazario 2002",
+    "Cristiano Ronaldo Fade",
+    "Neymar Frosted Tips",
+    "Messi Short Fade",
+    "Mbappe Buzz Fade",
+
+    // Iconic – Film / Pop Culture
+    "Matrix Neo Cut",
+    "Blade Runner Undercut",
+    "Leia Space Buns",
+    "Daenerys Braids",
+    "Viking Undercut",
+    "Elvis Pompadour",
+    "James Bond Classic Side Part",
+];
+
+export const HAIR_STYLE_GENDER_MAP: Record<string, ("Male" | "Female" | "Unisex")[]> = {
+    "Buzz Cut": ["Male", "Unisex"],
+    "Crew Cut": ["Male"],
+    "Fade": ["Male"],
+    "Pompadour": ["Male"],
+    "Quiff": ["Male"],
+    "Side Part": ["Male", "Unisex"],
+    "Curtains": ["Male"],
+    "Undercut": ["Male", "Unisex"],
+    "Mohawk": ["Male", "Unisex"],
+    "Faux Hawk": ["Male"],
+    "Mullet": ["Unisex"],
+    "Modern Mullet": ["Unisex"],
+
+    "Pixie Cut": ["Female"],
+    "Bob": ["Female", "Unisex"],
+    "Lob": ["Female", "Unisex"],
+    "Layered Cut": ["Female", "Unisex"],
+    "Feathered": ["Female"],
+    "Shag": ["Unisex"],
+    "Wolf Cut": ["Unisex"],
+
+    "Box Braids": ["Female", "Unisex"],
+    "Knotless Braids": ["Female"],
+    "Cornrows": ["Unisex"],
+    "Dreads": ["Unisex"],
+    "Faux Locs": ["Female"],
+    "Twists": ["Unisex"],
+
+    "High Ponytail": ["Female"],
+    "Low Ponytail": ["Unisex"],
+    "Messy Bun": ["Unisex"],
+    "Sleek Bun": ["Female"],
+    "Top Knot": ["Unisex"],
+    "Space Buns": ["Female"],
+    "Half-Up Half-Down": ["Female"],
+
+    // history & sci-fi
+    "Beehive": ["Female"],
+    "Finger Waves": ["Female"],
+    "Victory Rolls": ["Female"],
+    "Pageboy": ["Unisex"],
+    "Cyber Undercut": ["Unisex"],
+    "Neon Fade": ["Unisex"],
+    "Holographic Bob": ["Female"],
+    "Synthetic Dreads": ["Unisex"],
+
+    // iconic
+    "Beckham 1998 Curtains": ["Male"],
+    "Ronaldo Nazario 2002": ["Male"],
+    "Cristiano Ronaldo Fade": ["Male"],
+    "Neymar Frosted Tips": ["Male"],
+    "Messi Short Fade": ["Male"],
+    "Mbappe Buzz Fade": ["Male"],
+
+    "Leia Space Buns": ["Female"],
+    "Daenerys Braids": ["Female"],
+    "Viking Undercut": ["Male"],
+    "Elvis Pompadour": ["Male"],
+    "James Bond Classic Side Part": ["Male"],
+};
+
+export const HAIR_LENGTHS = [
+    "Bald",
+    "Buzz",
+    "Very Short",
+    "Short",
+    "Medium",
+    "Medium-Long",
+    "Long",
+    "Very Long",
+    "Ultra Long",
+];
+
+export const HAIR_STYLE_LENGTH_MAP: Record<string, typeof HAIR_LENGTHS[number][]> = {
+    "Buzz Cut": ["Buzz"],
+    "Crew Cut": ["Very Short"],
+    "Fade": ["Very Short", "Short"],
+    "Pixie Cut": ["Short"],
+    "Bob": ["Short", "Medium"],
+    "Lob": ["Medium"],
+    "Layered Cut": ["Medium", "Long"],
+    "Feathered": ["Medium", "Long"],
+    "Shag": ["Medium", "Long"],
+    "Wolf Cut": ["Medium", "Long"],
+    "Afro": ["Short", "Medium"],
+    "Dreads": ["Medium", "Long", "Very Long"],
+    "Box Braids": ["Medium", "Long", "Very Long"],
+    "Cornrows": ["Short", "Medium"],
+    "High Ponytail": ["Long", "Very Long"],
+    "Messy Bun": ["Medium", "Long"],
+    "Top Knot": ["Medium", "Long"],
+
+    // iconic
+    "Beckham 1998 Curtains": ["Medium"],
+    "Cristiano Ronaldo Fade": ["Short"],
+    "Neymar Frosted Tips": ["Short"],
+    "Daenerys Braids": ["Very Long"],
+    "Leia Space Buns": ["Medium"],
+    "Viking Undercut": ["Medium", "Long"],
+
+    // futuristic
+    "Cyber Undercut": ["Short", "Medium"],
+    "Holographic Bob": ["Medium"],
+    "Synthetic Dreads": ["Long", "Very Long"],
+};
 
 export const EYE_COLOR_MAP: Record<string, string> = {
-    "Amber": "#FFBF00", "Blue": "#4287f5", "Blue-Grey": "#69829c", "Brown": "#634e34", 
-    "Dark Brown": "#3d2b1f", "Green": "#4d8c57", "Grey": "#8c9491", "Hazel": "#8e7618", 
-    "Honey": "#ba8e23", "Violet": "#7a4988", "Black": "#1a1a1a", "Heterochromia": "#d4af37", 
-    "Albino Red": "#b0413e", "Pale Blue": "#a8c8e8", "Emerald": "#0f7028"
+    // ===== Darkest =====
+    "Black": "#1A1A1A",
+    "Brown (Very Dark)": "#2A1B14",
+    "Brown (Dark)": "#3D2B1F",
+    "Brown": "#634E34",
+    "Brown (Medium)": "#6B4A2F",
+    "Brown (Light)": "#7A5A3A",
+    "Chocolate Brown": "#3B241A",
+    "Espresso Brown": "#2B1A14",
+
+    // ===== Brown variations (warm/cool) =====
+    "Warm Brown": "#6A3F2A",
+    "Cool Brown": "#5A463B",
+    "Cognac": "#7B4A2A",
+    "Chestnut Brown": "#6D3F2B",
+
+    // ===== Amber / Honey / Gold =====
+    "Amber": "#FFBF00",
+    "Amber (Deep)": "#D79A00",
+    "Amber (Light)": "#FFD36B",
+    "Honey": "#BA8E23",
+    "Honey (Light)": "#D0A53A",
+    "Gold": "#D4AF37",
+    "Golden Brown": "#8A6A2A",
+
+    // ===== Hazel (mixed brown/green) =====
+    "Hazel": "#8E7618",
+    "Hazel (Green-Dominant)": "#6F7A22",
+    "Hazel (Brown-Dominant)": "#7B6216",
+    "Hazel (Golden)": "#9A7B1F",
+
+    // ===== Greens =====
+    "Green": "#4D8C57",
+    "Green (Dark)": "#2F6E3B",
+    "Green (Light)": "#77B37A",
+    "Emerald": "#0F7028",
+    "Emerald (Deep)": "#0B4E22",
+    "Forest Green": "#1F5A3A",
+    "Olive Green": "#5B6E3B",
+    "Sage Green": "#7E9A7A",
+
+    // ===== Teal / Blue-Green (common in real photos) =====
+    "Teal": "#2F7F7A",
+    "Teal (Light)": "#4CA7A0",
+    "Aqua": "#5BB9C9",
+
+    // ===== Greys =====
+    "Grey": "#8C9491",
+    "Grey (Light)": "#A7B0AD",
+    "Grey (Dark)": "#66706E",
+    "Steel Grey": "#6E7D8B",
+    "Slate Grey": "#5F6E7A",
+
+    // ===== Blue-Grey =====
+    "Blue-Grey": "#69829C",
+    "Blue-Grey (Light)": "#8FA3B7",
+    "Blue-Grey (Dark)": "#4F667E",
+
+    // ===== Blues =====
+    "Blue": "#4287F5",
+    "Blue (Deep)": "#1E57C8",
+    "Blue (Light)": "#78A8FF",
+    "Pale Blue": "#A8C8E8",
+    "Sky Blue": "#7FB4E6",
+    "Ice Blue": "#C7E6FF",
+    "Navy Blue": "#203A73",
+
+    // ===== Violet / Purple =====
+    "Violet": "#7A4988",
+    "Violet (Deep)": "#5A2E6D",
+    "Lavender": "#A78BFA",
+
+    // ===== Rare / Special cases =====
+    "Albino Red": "#B0413E",
+    "Heterochromia": "#D4AF37",
 };
 
 export const EYE_SHAPES = [
-    "Almond", "Round", "Monolid", "Hooded", "Upturned", "Downturned", "Deep Set", "Wide Set", 
-    "Close Set", "Protruding", "Small", "Large", "Asian", "Cat-eye", "Droopy", "Sleepy", 
-    "Squinting", "Uneven", "Sanpaku", "Doe-eyed", "Smiling"
-].sort();
+    "Almond",
+    "Round",
+    "Oval",
+    "Elongated",
+    "Tapered",
+    "Triangular",
+];
+
+export const EYE_LID_TYPES = [
+    "Monolid",
+    "Low Crease",
+    "Double Eyelid",
+    "Deep Crease",
+    "Hooded",
+    "Partially Hooded",
+    "Heavy Upper Lid",
+];
+
+export const EYE_TILTS = [
+    "Upturned",
+    "Downturned",
+    "Straight Set",
+    "Cat-Eye",
+    "Fox-Eye",
+];
+
+export const EYE_EXPRESSIONS = [
+    "Doe-Eyed",
+    "Soft Gaze",
+    "Sharp Gaze",
+    "Intense",
+    "Piercing",
+    "Relaxed",
+    "Smiling",
+    "Sleepy",
+    "Bedroom Eyes",
+    "Droopy",
+    "Wide Open",
+    "Squinting",
+    "Narrowed",
+];
+
+export const EYE_SPACING = [
+    "Close Set",
+    "Balanced Set",
+    "Wide Set",
+];
+
+export const EYE_DEPTH = [
+    "Deep Set",
+    "Recessed",
+    "Balanced Depth",
+    "Prominent",
+    "Protruding",
+];
+
 
 export const DISTINCT_FEATURES = [
     "Freckles", "Moles", "Acne Scars", "Surgical Scar", "Cleft Chin", "Dimples", "High Cheekbones", 

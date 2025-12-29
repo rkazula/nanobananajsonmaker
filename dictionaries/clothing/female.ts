@@ -3,6 +3,7 @@ import { ClothingPlacement } from "../wardrobe_common";
 
 export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   "Head": [
+    "Gray Knit Beanie",
     "Sun Hat",
     "Wide-Brim Hat",
     "Straw Hat",
@@ -43,6 +44,10 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
     "Upper Body": [
+    "Bikini Top (Light Gray Triangle)",
+    "Bikini Top (White Crisscross)",
+    "Sleeveless Ribbed Crop Top",
+    "Puffer Jacket (White, Hooded)",
     "Sports Bra (Matte Performance)",
     "Off-shoulder Ruched Dress",
     "Crochet Bandeau Top",
@@ -156,6 +161,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Lower Body": [
+    "Bikini Bottom (Navy Classic)",
+    "Bikini Bottom (Black Classic)",
     "High-waist Athletic Shorts",
     "Mini Dress (Flared Hem)",
     "Crochet Bottoms",
@@ -229,6 +236,7 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Full Body": [
+    "Red Satin Evening Gown (Slit & Train)",
     "Mini Dress (White with Black Trim)",
     "Off-shoulder Ruched Mini Dress",
     "Triangle Bikini Top",
@@ -312,6 +320,8 @@ export const FEMALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   ],
 
   "Feet": [
+    "Nude Strappy Heels",
+    "Barefoot (Beach/Pool)",
     "Crew Socks (Mid-calf)",
     "Strappy Heels (Ankle Strap)",
     "Heels",

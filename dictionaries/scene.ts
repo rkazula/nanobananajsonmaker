@@ -35,7 +35,8 @@ export const SCENES = [
   ,"Wizard's Tower", "Workshop", "Yoga Studio",
   "Mediterranean Terrace", "Stone Terrace", "Mirror Area",
   "Tropical Resort", "Tropical Lagoon", "Overwater Bungalow", "Wooden Boardwalk", "Tropical Beach", "Palm Grove", "Shallow Surf", "Sunset Beach Shoreline",
-  "Building Lobby", "Hotel Lounge", "Hallway with Stairs", "Decorated Entryway", "Stone Porch", "Christmas Hotel Lobby"
+  "Building Lobby", "Hotel Lounge", "Hallway with Stairs", "Decorated Entryway", "Stone Porch", "Christmas Hotel Lobby",
+  "Wide Empty Beach", "Grand Staircase (Marble)", "Open Field / Meadow", "Indoor Water Park / Lagoon", "Snowy Forest Edge", "Snowy Clearing"
 ].sort();
 
 export const SCENE_STYLES = [
@@ -83,7 +84,8 @@ export const ATMOSPHERES = [
   ,"whimsical", "windswept",
   "casual_glam", "indoor_warmth", "clean_realism", "sunlit", "coastal_breeze", "soft_confident", "beauty_editorial",
   "vacation_vibe", "fresh_breeze", "salty_air", "windy_hair", "carefree", "relaxed_luxury",
-  "quiet_intensity", "festive", "elegant", "romantic", "fitness_editorial"
+  "quiet_intensity", "festive", "elegant", "romantic", "fitness_editorial",
+  "minimalist", "travel_editorial", "glamour", "cozy_cinematic", "lifestyle_editorial", "humid_tropical_indoor", "cold", "cozy_selfie", "quiet_winter"
 ].sort();
 
 export const TIMES_OF_DAY_DATA = [
@@ -175,7 +177,8 @@ export const PROPS = [
   ,"White Metal Tray", "White Neon Tube", "White Paper Bag", "White Plastic Chair", "White Silk Ribbon"
   ,"White Wooden Chair", "Wine Bottle", "Wine Glass", "Wool Coat", "Wrench", "Yoga Mat",
   "Sunglasses (on head)", "Palapa / Thatched Umbrella", "Resort Wristband", "Tropical Drink", "Coconut", "Beach Towel",
-  "Stone Planter / Fountain", "Christmas Tree (Decorated)", "Christmas Garland", "Wreaths", "Fairy Lights (Warm White)", "Baubles (Silver/Blue/White/Red)", "Snowflake Ornaments", "Small Handbag (Chain Strap)"
+  "Stone Planter / Fountain", "Christmas Tree (Decorated)", "Christmas Garland", "Wreaths", "Fairy Lights (Warm White)", "Baubles (Silver/Blue/White/Red)", "Snowflake Ornaments", "Small Handbag (Chain Strap)",
+  "Large Red Bows", "Gold Baubles", "Distant Cabin Lights", "Monstera Plants", "Stainless Steel Railing"
 ].sort();
 
 export const INTERIOR_STYLES = [
@@ -213,7 +216,8 @@ export const MATERIALS = [
   ,"Travertine", "Tulle", "Varnished Wood", "Velvet", "Walnut Wood", "Wallpaper", "Water", "Wet Pavement", "White Brick", "Wicker"
   ,"Wood", "Wool",
   "Wooden Planks (Weathered)", "Rope (Thick/Nautical)", "Turquoise Water", "Wet Sand", "Sea Foam", "Thatched Roof (Straw)",
-  "Beige Tiles", "Decorative Stones", "Dark Polished Stone", "Carved Wood (Door)", "Frosted Winter Decorations", "Stucco Wall"
+  "Beige Tiles", "Decorative Stones", "Dark Polished Stone", "Carved Wood (Door)", "Frosted Winter Decorations", "Stucco Wall",
+  "Light Sand", "White Marble with Grey Veining", "Black Wrought Iron", "Red Satin", "Ribbed Knit", "Thick Snow", "Frosted Trees", "Glass Atrium Structure"
 ].sort();
 
 export const CLUTTER_LEVELS = [
