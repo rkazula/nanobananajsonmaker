@@ -1,19 +1,17 @@
 
 import { z } from 'zod';
 import { 
-    ASPECT_RATIOS, QUALITY_MODES, FILM_STOCKS, SHOTS, ANGLES, LIGHTING_TYPES, LIGHTING_DIRECTIONS, LIGHTING_EFFECTS, 
-    CLOTHING_PLACEMENTS, CLOTHING_COVERAGE, TIMES_OF_DAY, CLUTTER_LEVELS, INTERIOR_STYLES, CAMERA_POV, CAMERA_FRAMING, 
-    CAMERA_FOCUS, CAMERA_DOF, CAMERA_LENS, TONES, GRAIN_AMOUNTS, ISO_VALUES, IMPERFECTION_PRESETS,
+    ASPECT_RATIOS, QUALITY_MODES, FILM_STOCKS, LIGHTING_TYPES, LIGHTING_DIRECTIONS, LIGHTING_EFFECTS,
+    CLOTHING_PLACEMENTS, CLOTHING_COVERAGE, TIMES_OF_DAY, CLUTTER_LEVELS,
+    CAMERA_LENS, GRAIN_AMOUNTS, ISO_VALUES, IMPERFECTION_PRESETS,
     SUBJECT_COUNTS, SUBJECT_GROUPING, SUBJECT_ROLES, IDENTITY_LOCKS, AGE_RANGES,
     ETHNICITIES, SKIN_QUALITIES, BODY_TYPES, SKIN_TONES, HAIR_STYLES, HAIR_COLORS, EYE_COLORS, EYE_SHAPES, TATTOO_SIZES, TATTOO_PLACEMENTS,
-    IMAGE_SIZES, WEATHER_CONDITIONS, OUTDOOR_TERRAINS
+    IMAGE_SIZES
 } from './constants';
 
 // --- Helper Schemas ---
 
 const ToggleSchema = z.boolean().default(false);
-const StringSchema = z.string().default("");
-const NumberSchema = z.number().default(0);
 
 // --- Sub-Schemas based on provided JSON ---
 
@@ -221,7 +219,9 @@ const AdvancedSchema = z.object({
   magic_prompt_enhancer: ToggleSchema.default(true),
   safety_constraints: z.object({
       no_minors: ToggleSchema.default(true),
-      no_nudity: ToggleSchema.default(true)
+      no_nudity: ToggleSchema.default(true),
+      no_explicit_sexual_content: ToggleSchema.default(true),
+      no_text_logos: ToggleSchema.default(true)
   })
 });
 
@@ -335,6 +335,11 @@ export const DEFAULT_VALUES: NanoBananaType = {
   advanced: {
       negative_prompt: ["nudity", "cartoon", "text"],
       magic_prompt_enhancer: true,
-      safety_constraints: { no_minors: true, no_nudity: true }
+      safety_constraints: {
+          no_minors: true,
+          no_nudity: true,
+          no_explicit_sexual_content: true,
+          no_text_logos: true
+      }
   }
 };

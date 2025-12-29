@@ -12,7 +12,7 @@ export const COLORS = Object.keys(COLOR_HEX_MAP).sort();
 
 export const NEGATIVE_PROMPT_GROUPS = {
   "Safety / Content": [
-    "nudity", "explicit nudity", "nsfw", "porn", "sexual content", "genitals", 
+    "nudity", "explicit nudity", "explicit sexual content", "nsfw", "porn", "sexual content", "genitals", 
     "nipples", "areola", "see-through", "erotic", "fetish", "bondage", 
     "sexual pose", "suggestive pose", "child", "minor", "teen", "loli", 
     "young-looking", "underage"
@@ -40,7 +40,8 @@ export const NEGATIVE_PROMPT_GROUPS = {
     "compression artifacts", "aliasing", "moire", "banding", "noise", 
     "oversharpened", "overprocessed", "plastic skin", "waxy skin", "airbrushed", 
     "over-smoothed", "overexposed", "underexposed", "blown highlights", 
-    "crushed blacks", "posterization", "static background", "frozen image"
+    "crushed blacks", "posterization", "static background", "frozen image",
+    "harsh flash", "dirty lens"
   ],
   "Focus / Geometry": [
     "blur", "motion blur", "camera shake", "out of focus", "soft focus", 
@@ -50,7 +51,7 @@ export const NEGATIVE_PROMPT_GROUPS = {
     "cropped feet", "cut off", "out of frame"
   ],
   "Text / Watermarks": [
-    "text", "caption", "subtitles", "logo", "brand logo", "watermark", 
+    "text", "caption", "subtitles", "logo", "brand logo", "brand name", "watermark", 
     "signature", "timestamp", "ui", "interface", "frame", "border", "qr code"
   ],
   "Style Blockers (Anti-Art)": [

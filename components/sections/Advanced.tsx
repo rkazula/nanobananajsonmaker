@@ -126,6 +126,8 @@ export const AdvancedSection: React.FC<Props> = ({ form }) => {
                     <div className="space-y-2">
                         <Toggle label="Safety: No Minors" registration={register('advanced.safety_constraints.no_minors')} />
                         <Toggle label="Safety: No Nudity" registration={register('advanced.safety_constraints.no_nudity')} />
+                        <Toggle label="Safety: No Explicit Sexual Content" registration={register('advanced.safety_constraints.no_explicit_sexual_content')} />
+                        <Toggle label="Safety: No Text/Logos" registration={register('advanced.safety_constraints.no_text_logos')} />
                     </div>
                  </div>
             </div>
