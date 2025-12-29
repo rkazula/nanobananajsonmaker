@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { NanoBananaType } from '../../schema';
-import { IDEAL_PARAMETERS_DATA } from '../../dictionaries/ideal_parameters';
+import { useIdealParametersPagination } from '../../hooks/useIdealParametersPagination';
 import { RandomizerService } from '../../utils/RandomizerService';
-import { Star, Check, Dice5 } from 'lucide-react';
+import { Star, Check, Dice5, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Props {
     form: UseFormReturn<NanoBananaType>;
@@ -14,7 +14,20 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
     const { setValue } = form;
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [randomSummary, setRandomSummary] = useState<string | null>(null);
-    
+    const {
+        currentPresets,
+        currentPage,
+        currentCategory,
+        totalPages,
+        categoryStats,
+        goToNextPage,
+        goToPreviousPage,
+        selectCategory,
+        goToNextCategory,
+        goToPreviousCategory,
+        currentCategoryIndex
+    } = useIdealParametersPagination();
+
     // Helper to traverse and apply the partial preset object
     const applyPresetValues = (presetData: any) => {
         const traverseAndSet = (obj: any, path: string = "") => {
@@ -61,9 +74,56 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
                 <h2 className="text-xl font-bold text-banana-800 mb-2">Ideal Parameters & Presets</h2>
                 <p className="text-sm text-banana-700">Select a professionally curated preset to configure the camera style. Use the <strong>Dice</strong> icon to keep the style but randomize the location, time, and mood.</p>
              </div>
-             
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {IDEAL_PARAMETERS_DATA.map((preset) => {
+
+             {/* Kategorie Navigation */}
+             <div className="flex items-center justify-between bg-slate-50 p-4 rounded-lg border border-slate-200">
+                <button
+                    onClick={goToPreviousCategory}
+                    disabled={currentCategoryIndex === 0}
+                    className="p-2 rounded hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    title="Poprzednia kategoria"
+                >
+                    <ChevronLeft size={20} className="text-slate-600" />
+                </button>
+
+                <div className="flex-1 text-center">
+                    <h3 className="text-sm font-bold text-slate-800">
+                        Kategoria: <span className="text-banana-600">{currentCategory}</span>
+                    </h3>
+                    <p className="text-xs text-slate-600 mt-1">
+                        Strona {currentPage + 1} z {totalPages} • {currentPresets.length} presetów
+                    </p>
+                </div>
+
+                <button
+                    onClick={goToNextCategory}
+                    disabled={currentCategoryIndex === categoryStats.length - 1}
+                    className="p-2 rounded hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    title="Następna kategoria"
+                >
+                    <ChevronRight size={20} className="text-slate-600" />
+                </button>
+             </div>
+
+             {/* Mini kategorie - szybka nawigacja */}
+             <div className="flex flex-wrap gap-2">
+                {categoryStats.map((cat) => (
+                    <button
+                        key={cat.name}
+                        onClick={() => selectCategory(cat.name)}
+                        className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${
+                            currentCategory === cat.name
+                                ? 'bg-banana-600 text-white shadow-md'
+                                : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                        }`}
+                    >
+                        {cat.name.substring(0, 15)}... ({cat.count})
+                    </button>
+                ))}
+             </div>
+
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-in fade-in duration-200">
+                {currentPresets.map((preset) => {
                     const isSelected = selectedId === preset.id;
                     return (
                         <div
@@ -122,6 +182,31 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
                         </div>
                     );
                 })}
+             </div>
+
+             {/* Paginacja - Strony */}
+             <div className="flex items-center justify-between gap-4 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                <button
+                    onClick={goToPreviousPage}
+                    disabled={currentPage === 0}
+                    className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-sm"
+                >
+                    <ChevronLeft size={18} /> Poprzednia
+                </button>
+
+                <div className="text-center">
+                    <p className="text-sm font-semibold text-slate-800">
+                        Strona <span className="text-banana-600">{currentPage + 1}</span> z <span className="text-banana-600">{totalPages}</span>
+                    </p>
+                </div>
+
+                <button
+                    onClick={goToNextPage}
+                    disabled={currentPage >= totalPages - 1}
+                    className="flex items-center gap-2 px-4 py-2 bg-banana-600 text-white rounded-lg hover:bg-banana-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-sm"
+                >
+                    Następna <ChevronRight size={18} />
+                </button>
              </div>
         </div>
     );

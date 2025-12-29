@@ -3,11 +3,22 @@ import { NanoBananaType } from '../schema';
 // This implies a partial structure of the full Schema.
 // Only the defined fields will be updated when selected.
 
+export enum IdealParametersCategory {
+    BUSINESS = "Portrety Biznesowe",
+    INSTAGRAM = "Instagram & Lifestyle",
+    REPORTAGE = "Reportaże & Fotografia Uliczna",
+    EDITORIAL = "Magazyny & Edytorskie",
+    INTIMATE = "Akty & Intymne",
+    CINEMATIC = "Cinematic & Artystyczne",
+    OTHER = "Pozostałe"
+}
+
 export interface IdealParameterProfile {
     id: string;
     title: string;
     description: string;
     icon: string; // Lucide icon name mapping
+    category: IdealParametersCategory;
     data: DeepPartial<NanoBananaType>;
 }
 
@@ -25,6 +36,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Photoreal Headshot (Studio / Casting)",
     description: "Most natural, credible portraits (LinkedIn, casting, editorial headshot). Minimal risk of odd proportions.",
     icon: "User",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add to prompt: 'softbox/octabox 45° + subtle fill', 'natural skin texture, pores'.",
       api: {
@@ -54,6 +66,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Editorial Portrait (Magazine Close)",
     description: "Premium portrait with a slight 'magazine' feel, stronger facial plasticity, less 'passport-like' than a headshot.",
     icon: "Star",
+    category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'short lighting / Rembrandt lighting', 'clean background', 'subtle film grain'.",
       api: {
@@ -83,6 +96,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Fashion Full Body (Clean, Flattering)",
     description: "Fashion, silhouette, stance. Safer full-body (fewer anatomy issues) with controlled perspective.",
     icon: "Shirt",
+    category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'even studio light' or 'soft daylight'. Leave margin around feet (AI likes to crop).",
       api: {
@@ -112,6 +126,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Street / Reportage Candid",
     description: "Reportage and street — looks like a real camera shot: fast, authentic, unposed.",
     icon: "Camera",
+    category: IdealParametersCategory.REPORTAGE,
     data: {
       user_intent: "Add: 'available light', 'high ISO grain (subtle)', 'candid moment'.",
       api: {
@@ -141,6 +156,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Cinematic Establishing (Scope / Story First)",
     description: "Filmic shots, location as character, atmosphere. Ideal for scene intros, travel, architecture with human element.",
     icon: "Film",
+    category: IdealParametersCategory.CINEMATIC,
     data: {
       user_intent: "Add: 'cinematic lighting', 'atmospheric depth'. If native 2.39:1 not supported — generate wide and crop.",
       api: {
@@ -170,6 +186,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "IMAX-Style Large Format (Clarity + Scale)",
     description: "Large format impression: clarity, scale, vertical composition. Great for architecture, landscape, epic scenes.",
     icon: "Monitor",
+    category: IdealParametersCategory.CINEMATIC,
     data: {
       user_intent: "Add: 'large format feel', 'crisp micro-contrast', 'deep focus'. If 1.90:1 missing — generate 16:9 and slight crop.",
       api: {
@@ -199,6 +216,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Intimate Boudoir (Implied, Window Light)",
     description: "Sensuality without explicitness: mood, shadow, gesture. Best for bedroom/hotel shots, with sheer curtains and soft light.",
     icon: "Heart",
+    category: IdealParametersCategory.INTIMATE,
     data: {
       user_intent: "Add: 'soft diffused window light through sheer curtains', 'tasteful implied sensuality, no explicit nudity'.",
       api: {
@@ -228,6 +246,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Noir / Low-Key Portrait (Drama)",
     description: "Strong mood: shadow defines form. Ideal for black, smoke, rain, neon, dramatic portrait.",
     icon: "Moon",
+    category: IdealParametersCategory.CINEMATIC,
     data: {
       user_intent: "Add: 'single hard key + rim light', 'low key', 'subtle halation', 'film grain'.",
       api: {
@@ -257,6 +276,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Product Macro (Jewelry / Details)",
     description: "Details of jewelry, cosmetics, material textures. Maximum micro-detail readability.",
     icon: "Gem",
+    category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'controlled studio reflections', 'soft gradient background', 'sharp facets, no CGI look'.",
       api: {
@@ -286,6 +306,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Reflection / Mirror Editorial",
     description: "Mirror/reflection shots — instant 'real world' feeling and narrative. Great for fashion, backstage, hotel bathroom.",
     icon: "Layers",
+    category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'single clean reflection', 'no double faces', 'natural imperfections on mirror/glass'.",
       api: {
@@ -315,6 +336,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Dynamic Motion (Panning Realism)",
     description: "Movement and energy (street, sports, dance, cars). Looks like real camera panning — huge credibility boost.",
     icon: "Zap",
+    category: IdealParametersCategory.REPORTAGE,
     data: {
       user_intent: "Add: 'motion streaked background', 'subject sharp', 'shutter 1/30–1/60 vibe' (descriptive).",
       api: {
@@ -344,6 +366,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Group / Event Portrait (Clean & Safe)",
     description: "Groups and events: faces must be readable, no character blending. Least 'AI merge' risk.",
     icon: "Users",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'distinct faces, clear separation, realistic spacing', 'even soft light'.",
       api: {
@@ -373,6 +396,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Premium Minimal (Negative Space)",
     description: "High-end editorial minimalism, space for layout/text, luxurious compositional calm.",
     icon: "Crop",
+    category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'clean wall / fog / sky negative space', 'editorial composition', 'subtle film grain'.",
       api: {
@@ -402,6 +426,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Final Delivery (4K Workflow Preset)",
     description: "When you need 4K as final output: wallpaper, poster, heavy crop. (This is a pipeline preset — usually via upscale).",
     icon: "CheckSquare",
+    category: IdealParametersCategory.OTHER,
     data: {
       user_intent: "Best practice: generate master at native max (e.g. 1536/1792), then upscale to 4K and optional light detail refine.",
       api: {
@@ -431,6 +456,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Golden Hour Lifestyle",
         description: "Warm, backlit, dreamy look typical of influencer travel photography. Flattering skin tones and magical atmosphere.",
         icon: "Sun",
+        category: IdealParametersCategory.INSTAGRAM,
         data: {
           user_intent: "Add: 'sun flare', 'warm haze', 'backlit hair', 'dreamy atmosphere'. Avoid: 'harsh shadows'.",
           api: {
@@ -460,6 +486,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Cyberpunk Neon Portrait",
         description: "High contrast, colorful night photography. Teal and orange cinematic look with strong urban energy.",
         icon: "Zap",
+        category: IdealParametersCategory.CINEMATIC,
         data: {
           user_intent: "Add: 'wet streets', 'reflection on skin', 'futuristic vibe', 'chromatic aberration'.",
           api: {
@@ -489,6 +516,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "90s Flash aesthetic",
         description: "Direct on-camera flash look. High contrast, hard shadows, nostalgic 'disposable camera' vibe.",
         icon: "Camera",
+        category: IdealParametersCategory.OTHER,
         data: {
           user_intent: "Add: 'direct flash', 'point and shoot aesthetic', 'hard shadows on wall', 'vignette'.",
           api: {
@@ -518,6 +546,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Corporate Headshot (LinkedIn)",
         description: "Professional, trustworthy, and clean. Even lighting, neutral background, sharp focus on eyes.",
         icon: "Briefcase",
+        category: IdealParametersCategory.BUSINESS,
         data: {
           user_intent: "Add: 'business attire', 'confident smile', 'neutral grey background', 'high quality'.",
           api: {
@@ -547,6 +576,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Cinematic Anamorphic",
         description: "The Hollywood movie look. Widescreen aspect ratio, oval bokeh, horizontal flares.",
         icon: "Film",
+        category: IdealParametersCategory.CINEMATIC,
         data: {
           user_intent: "Add: 'anamorphic lens artifacts', 'cinematic color grading', 'film grain', 'letterbox'.",
           api: {
@@ -576,6 +606,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Beauty Macro (Eyes/Lips)",
         description: "Extreme close-up for makeup or skincare. Hyper-detailed texture, sharp focus.",
         icon: "Eye",
+        category: IdealParametersCategory.EDITORIAL,
         data: {
           user_intent: "Add: 'visible skin pores', 'iris detail', 'makeup texture', 'no airbrushing'.",
           api: {
@@ -605,6 +636,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Moody Rainy Window",
         description: "Melancholic vibe shot through glass with raindrops. Soft focus, cool tones.",
         icon: "CloudRain",
+        category: IdealParametersCategory.CINEMATIC,
         data: {
           user_intent: "Add: 'raindrops on glass', 'condensation', 'city lights in bokeh background', 'melancholy'.",
           api: {
@@ -634,6 +666,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Architectural Interior (Wide)",
         description: "Clean, spacious interior design photography. Straight lines, deep depth of field.",
         icon: "Home",
+        category: IdealParametersCategory.OTHER,
         data: {
           user_intent: "Add: 'interior design magazine', 'symmetrical composition', 'leading lines', 'decluttered'.",
           api: {
@@ -663,6 +696,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "High Fashion Studio",
         description: "Dramatic, sculpted lighting typical of Vogue editorials. Strong shapes and confidence.",
         icon: "Star",
+        category: IdealParametersCategory.EDITORIAL,
         data: {
           user_intent: "Add: 'avant-garde pose', 'designer clothing', 'confident expression', 'studio backdrop'.",
           api: {
@@ -692,6 +726,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Film Noir (B&W)",
         description: "Classic detective style. High contrast black and white, shadows, mystery.",
         icon: "Moon",
+        category: IdealParametersCategory.CINEMATIC,
         data: {
           user_intent: "Add: 'black and white', 'film grain', 'smoke', 'shadows', 'mystery', '1940s vibe'.",
           api: {
@@ -721,6 +756,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "70s Analog (Kodak)",
         description: "Vintage, warm, grainy look. Nostalgic colors and imperfect composition.",
         icon: "Image",
+        category: IdealParametersCategory.OTHER,
         data: {
           user_intent: "Add: 'vintage film stock', 'Kodak Portra', 'warm hues', 'film grain', 'nostalgia'.",
           api: {
@@ -750,6 +786,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "E-Commerce Product (Clean)",
         description: "Pure white background, shadowless, perfectly lit product photography.",
         icon: "ShoppingBag",
+        category: IdealParametersCategory.EDITORIAL,
         data: {
           user_intent: "Add: 'pure white background', 'studio lighting', 'sharp details', 'commercial photography'.",
           api: {
@@ -779,6 +816,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Dramatic Silhouette",
         description: "Subject dark against a bright background. Graphic, mysterious, form-focused.",
         icon: "User",
+        category: IdealParametersCategory.CINEMATIC,
         data: {
           user_intent: "Add: 'silhouette', 'contour only', 'bright background', 'mystery', 'no face detail'.",
           api: {
@@ -808,6 +846,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Sports / Action Freeze",
         description: "High shutter speed look. Freezing movement, sweat, intensity, telephoto compression.",
         icon: "Activity",
+        category: IdealParametersCategory.REPORTAGE,
         data: {
           user_intent: "Add: 'frozen motion', 'flying particles', 'intense expression', 'high shutter speed'.",
           api: {
@@ -837,6 +876,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Ethereal / Dreamy",
         description: "Soft focus, pastel colors, angelcore aesthetic. Very gentle and romantic.",
         icon: "Feather",
+        category: IdealParametersCategory.INSTAGRAM,
         data: {
           user_intent: "Add: 'soft focus', 'diffusion filter', 'pastel colors', 'angelic', 'glow'.",
           api: {
@@ -866,6 +906,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Top-Down Flat Lay",
         description: "Overhead shot for food, desk setups, or products. Graphic and organized.",
         icon: "Coffee",
+        category: IdealParametersCategory.EDITORIAL,
         data: {
           user_intent: "Add: 'knolling', 'organized', 'symmetrical', 'tabletop photography'.",
           api: {
@@ -895,6 +936,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Gothic Dark Fantasy",
         description: "Dark, moody, ancient atmosphere. Candlelight, deep shadows, rich textures.",
         icon: "Ghost",
+        category: IdealParametersCategory.CINEMATIC,
         data: {
           user_intent: "Add: 'dark atmosphere', 'mystery', 'ancient vibe', 'rich textures', 'subtle horror'.",
           api: {
@@ -924,6 +966,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Paparazzi / Chaos",
         description: "Telephoto lens, chaotic framing, sense of urgency and movement.",
         icon: "Zap",
+        category: IdealParametersCategory.REPORTAGE,
         data: {
           user_intent: "Add: 'unposed', 'caught off guard', 'motion blur', 'chaotic background', 'flash'.",
           api: {
@@ -953,6 +996,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Minimalist Pastel",
         description: "Clean lines, soft colors, negative space. Wes Anderson aesthetic.",
         icon: "Layout",
+        category: IdealParametersCategory.INSTAGRAM,
         data: {
           user_intent: "Add: 'pastel color palette', 'symmetry', 'minimalism', 'clean lines', 'soft light'.",
           api: {
@@ -982,6 +1026,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
         title: "Documentary / Grit",
         description: "Raw, gritty, high contrast black and white or desaturated. Intense realism.",
         icon: "Globe",
+        category: IdealParametersCategory.REPORTAGE,
         data: {
           user_intent: "Add: 'grainy', 'high contrast', 'gritty realism', 'reportage', 'emotional intensity'.",
           api: {
@@ -1011,6 +1056,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Corporate Studio (Black Background)",
     description: "Modern professional headshot with a clean black background. Unlike 'Noir', the subject is brightly and softly lit, creating a sleek, high-contrast separation.",
     icon: "Briefcase",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'professional headshot', 'clean black background', 'soft even lighting', 'business casual', 'light blue shirt', 'friendly expression', 'bright face'. Avoid: 'shadows covering face', 'dramatic noir', 'dark clothes blending in'.",
       api: {
@@ -1040,6 +1086,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Outdoor Business Portrait (Natural Light)",
     description: "Professional portrait taken outdoors with a blurred nature background. Soft, diffused daylight and authentic colors. Approachable and realistic.",
     icon: "Sun", // Lub 'Camera' / 'User'
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'outdoor portrait', 'blurred green foliage background', 'natural daylight', 'soft bokeh', 'business attire', 'beige suit', 'realistic colors'. Avoid: 'studio lighting', 'harsh shadows', 'black and white'.",
       api: {
@@ -1069,6 +1116,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Classic Analog Portrait (Soft B&W)",
     description: "Traditional editorial/actor headshot with soft lighting and visible background texture. mimic the look of 35mm film with grain and a draped background.",
     icon: "Film",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'black and white', '35mm film grain', 'soft studio light', 'draped curtain background', 'distinguished look', 'mid-key lighting'. Avoid: 'pitch black background', 'harsh shadows'.",
       api: {
@@ -1098,6 +1146,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Studio Noir Headshot (B&W)",
     description: "Classic high-contrast black & white portrait with a pitch-black background. Intense, sharp, and focused on facial texture.",
     icon: "User",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'black and white photography', 'monochrome', 'pitch black background', 'high contrast', 'sharp skin texture', 'serious expression'. Avoid: 'color', 'background details'.",
       api: {
@@ -1127,6 +1176,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Fashion Editorial (Moody Grey Studio)",
     description: "High-end fashion lookbook style. Moody, cool-toned lighting with a dark grey gradient background. Sculpted shadows and sharp styling details.",
     icon: "Coat", // Ikona płaszcza pasuje idealnie do mody
+    category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'fashion editorial', 'male model in grey coat', 'turtleneck', 'glasses', 'dark grey studio background', 'moody lighting', 'cool tones', 'looking away', 'pensive pose'. Avoid: 'smiling', 'bright sunlight', 'flat lighting', 'pitch black background'.",
       api: {
@@ -1156,6 +1206,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Corporate Lifestyle (City Rooftop)",
     description: "Modern business portrait on a sunny rooftop with a blurred city skyline. Bright, airy, and optimistic 'success' vibe.",
     icon: "Building",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'modern businessman', 'navy suit', 'white shirt no tie', 'glasses', 'rooftop terrace', 'blurred city skyline background', 'skyscrapers', 'bright natural daylight', 'sun flare', 'smiling', 'looking away'. Avoid: 'dark studio', 'night', 'flash', 'gloomy'.",
       api: {
@@ -1185,6 +1236,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Casual Business (Cafe/Window Light)",
     description: "Relaxed professional portrait in a bright interior (cafe or modern office). Soft, directional window light with a blurred background containing greenery/lifestyle elements.",
     icon: "Coffee",
+    category: IdealParametersCategory.INSTAGRAM,
     data: {
       user_intent: "Add: 'professional woman', 'black blazer', 'sitting at table', 'hands clasped', 'modern cafe interior', 'large window', 'green plants in background', 'soft natural window light', 'shallow depth of field'. Avoid: 'dark studio', 'formal backdrop', 'artificial light'.",
       api: {
@@ -1214,6 +1266,7 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     title: "Dramatic Studio Portrait (B&W Intensity)",
     description: "Intense, masculine black & white studio portrait. Strong directional lighting sculpts the face with deep shadows. Best for confident, serious 'power' looks.",
     icon: "User",
+    category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'black and white', 'intense portrait', 'man in dark suit and dark shirt', 'hands holding jacket', 'serious expression', 'sculpted lighting', 'dark grey studio background', 'masculine', 'high contrast'. Avoid: 'flat lighting', 'smiling', 'bright colors'.",
       api: {
