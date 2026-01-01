@@ -116,7 +116,7 @@ export const TextArea: React.FC<TextAreaProps> = ({ label, registration, error, 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     label: string;
     options: readonly string[];
-    registration: UseFormRegisterReturn;
+    registration?: UseFormRegisterReturn;
     error?: FieldError;
     description?: string;
 }
@@ -126,7 +126,7 @@ export const Select: React.FC<SelectProps> = ({ label, options, registration, er
       <select
         {...registration}
         {...props}
-        className={`w-full px-3 py-2 border border-slate-300 rounded-md text-sm bg-white focus:outline-none focus:ring-2 focus:ring-banana-500 disabled:bg-slate-100 disabled:text-slate-400`}
+        className={`w-full px-3 py-2 border border-slate-300 rounded-md text-sm bg-white focus:outline-none focus:ring-2 focus:ring-banana-500 disabled:bg-slate-100 disabled:text-slate-400 ${props.className || ""}`}
       >
         {options.map(opt => (
             <option key={opt} value={opt}>{opt}</option>

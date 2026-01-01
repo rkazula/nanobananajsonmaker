@@ -148,11 +148,7 @@ const AppearanceSchema = z.object({
     skin_quality: z.enum(SKIN_QUALITIES as [string, ...string[]]).default("hyper-realistic"),
     body_type: z.enum(BODY_TYPES as [string, ...string[]]).default("average"),
     skin_tone: z.enum(SKIN_TONES as [string, ...string[]]).default("Fair Ivory"),
-    hair: z.object({
-        color: z.enum(HAIR_COLORS as [string, ...string[]]).default("Brown"),
-        length: z.string().default("Medium"),
-        style: z.enum(HAIR_STYLES as [string, ...string[]]).default("Layered Cut")
-    }),
+    hair: z.string().default("Layered Cut -> Medium -> Brown"),
     eyes: z.object({
         color: z.enum(EYE_COLORS as [string, ...string[]]).default("Blue"),
         shape: z.enum(EYE_SHAPES as [string, ...string[]]).default("Almond")
@@ -322,7 +318,7 @@ export const DEFAULT_VALUES: NanoBananaType = {
         skin_quality: "hyper-realistic",
         body_type: "average",
         skin_tone: "Fair Ivory",
-        hair: { color: "Brown", length: "Medium", style: "Layered Cut" },
+        hair: "Layered Cut -> Medium -> Brown",
         eyes: { color: "Blue", shape: "Almond" },
         distinct_features: [],
         tattoos: { description: "", placement: "", size: "" }

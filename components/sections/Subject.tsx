@@ -6,7 +6,7 @@ import { TextInput, TextArea, Select, ColorSelect, MultiSelect, Slider } from '.
 import { 
     SUBJECT_COUNTS, SUBJECT_GROUPING, SUBJECT_ROLES, IDENTITY_LOCKS, CONSISTENCY_TAGS, AGE_RANGES,
     ETHNICITIES, BODY_TYPES, SKIN_TONES, SKIN_TONE_MAP, SKIN_QUALITIES,
-    HAIR_COLORS, HAIR_COLORS_MAP, HAIR_STYLES, EYE_COLORS, EYE_COLOR_MAP, EYE_SHAPES,
+    HAIR_COLORS, HAIR_COLORS_MAP, HAIR_STYLES, HAIR_LENGTHS, HAIR_STYLE_LENGTH_MAP, EYE_COLORS, EYE_COLOR_MAP, EYE_SHAPES,
     DISTINCT_FEATURES, TATTOO_PLACEMENTS, TATTOO_SIZES,
     POSE_TEMPLATES, POSE_BODY, POSE_SHOULDERS, POSE_HANDS, POSE_HEAD, POSE_GAZE, POSE_EXPRESSIONS, POSE_INTERACTIONS
 } from '../../constants';
@@ -118,7 +118,10 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
         const skinDesc = [app.skin_quality, app.skin_tone].filter(Boolean).join(" ");
         if (skinDesc) physical.push(`${skinDesc} skin`);
         
-        if (app.hair) physical.push(`${app.hair.color} ${app.hair.style} hair`);
+        if (app.hair) {
+            const [hStyle, hLength, hColor] = app.hair.split(" -> ");
+            physical.push(`${hColor || ''} ${hLength || ''} ${hStyle || ''} hair`.replace(/\s+/g, ' ').trim());
+        }
         if (app.eyes) physical.push(`${app.eyes.color} ${app.eyes.shape} eyes`);
         
         if (physical.length > 0) parts.push(`Features: ${physical.join(', ')}.`);
@@ -165,8 +168,7 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
         subjectData?.appearance?.body_type,
         subjectData?.appearance?.skin_tone,
         subjectData?.appearance?.skin_quality,
-        subjectData?.appearance?.hair?.color,
-        subjectData?.appearance?.hair?.style,
+        subjectData?.appearance?.hair,
         subjectData?.pose,
         // Track serialized arrays to detect deep changes in clothing/accessories properties
         JSON.stringify(subjectData?.clothing),
@@ -234,9 +236,48 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
                     <Select label="Skin Quality" options={SKIN_QUALITIES} registration={register(`subject.${index}.appearance.skin_quality`)} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-4 rounded-lg border border-slate-100">
-                    <Controller control={control} name={`subject.${index}.appearance.hair.color`} render={({ field }) => (<ColorSelect label="Hair Color" options={HAIR_COLORS} value={field.value} onChange={field.onChange} colorMap={HAIR_COLORS_MAP} />)} />
-                    <TextInput label="Hair Length" registration={register(`subject.${index}.appearance.hair.length`)} />
-                    <Select label="Hair Style" options={HAIR_STYLES} registration={register(`subject.${index}.appearance.hair.style`)} />
+                    <Controller 
+                        control={control} 
+                        name={`subject.${index}.appearance.hair`} 
+                        render={({ field }) => {
+                            const [currentStyle, currentLength, currentColor] = field.value.split(" -> ");
+                            
+                            const handleHairChange = (style: string, length: string, color: string) => {
+                                field.onChange(`${style} -> ${length} -> ${color}`);
+                            };
+
+                            const lengthOptions = HAIR_STYLE_LENGTH_MAP[currentStyle] || HAIR_LENGTHS;
+
+                            return (
+                                <>
+                                    <Select 
+                                        label="Hair Style" 
+                                        options={HAIR_STYLES} 
+                                        value={currentStyle}
+                                        onChange={(e: any) => {
+                                            const newStyle = e.target.value;
+                                            const availableLengths = HAIR_STYLE_LENGTH_MAP[newStyle] || HAIR_LENGTHS;
+                                            const newLength = availableLengths.includes(currentLength) ? currentLength : availableLengths[0];
+                                            handleHairChange(newStyle, newLength, currentColor);
+                                        }} 
+                                    />
+                                    <Select 
+                                        label="Hair Length" 
+                                        options={lengthOptions} 
+                                        value={currentLength}
+                                        onChange={(e: any) => handleHairChange(currentStyle, e.target.value, currentColor)} 
+                                    />
+                                    <ColorSelect 
+                                        label="Hair Color" 
+                                        options={HAIR_COLORS} 
+                                        value={currentColor} 
+                                        onChange={(val) => handleHairChange(currentStyle, currentLength, val)} 
+                                        colorMap={HAIR_COLORS_MAP} 
+                                    />
+                                </>
+                            );
+                        }} 
+                    />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-4 rounded-lg border border-slate-100">
                     <Controller control={control} name={`subject.${index}.appearance.eyes.color`} render={({ field }) => (<ColorSelect label="Eye Color" options={EYE_COLORS} value={field.value} onChange={field.onChange} colorMap={EYE_COLOR_MAP} />)} />
@@ -308,7 +349,7 @@ export const SubjectSection: React.FC<Props> = ({ form }) => {
                 
                 <button
                     type="button"
-                    onClick={() => append({ id: `sub_${Date.now()}`, type: 'person', count: "1", grouping: "solo", role: "secondary", importance: 5, identity_lock: "none", consistency_tags: [], age_range: "young_adult", appearance: { gender: "Female", ethnicity: "Caucasian", skin_quality: "hyper-realistic", body_type: "average", skin_tone: "Fair Ivory", hair: { color: "Brown", length: "Medium", style: "Layered Cut" }, eyes: { color: "Blue", shape: "Almond" }, distinct_features: [], tattoos: { description: "", placement: "Forearm", size: "small" } }, description: '', pose: '', clothing: [], accessories: [] })}
+                    onClick={() => append({ id: `sub_${Date.now()}`, type: 'person', count: "1", grouping: "solo", role: "secondary", importance: 5, identity_lock: "none", consistency_tags: [], age_range: "young_adult", appearance: { gender: "Female", ethnicity: "Caucasian", skin_quality: "hyper-realistic", body_type: "average", skin_tone: "Fair Ivory", hair: "Layered Cut -> Medium -> Brown", eyes: { color: "Blue", shape: "Almond" }, distinct_features: [], tattoos: { description: "", placement: "Forearm", size: "small" } }, description: '', pose: '', clothing: [], accessories: [] })}
                     className="w-full py-4 border-2 border-dashed border-slate-300 rounded-xl text-slate-500 hover:border-banana-500 hover:text-banana-600 hover:bg-banana-50 transition-all font-bold flex items-center justify-center gap-2"
                 >
                     <Plus size={20} /> Add Another Subject
