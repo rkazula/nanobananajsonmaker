@@ -8,8 +8,9 @@ import {
     ETHNICITIES, BODY_TYPES, SKIN_TONES, SKIN_TONE_MAP, SKIN_QUALITIES,
     HAIR_COLORS, HAIR_COLORS_MAP, HAIR_STYLES, HAIR_LENGTHS, HAIR_STYLE_LENGTH_MAP, EYE_COLORS, EYE_COLOR_MAP, EYE_SHAPES,
     DISTINCT_FEATURES, TATTOO_PLACEMENTS, TATTOO_SIZES,
-    POSE_TEMPLATES, POSE_BODY, POSE_SHOULDERS, POSE_HANDS, POSE_HEAD, POSE_GAZE, POSE_EXPRESSIONS, POSE_INTERACTIONS
-} from '../../constants';
+    POSE_TEMPLATES, POSE_BODY, POSE_SHOULDERS, POSE_HANDS, POSE_HEAD, POSE_GAZE, POSE_EXPRESSIONS, POSE_INTERACTIONS,
+    NAIL_SHAPES, NAIL_LENGTHS, NAIL_FINISHES, NAIL_DESIGNS, NAIL_COLORS, NAIL_COLORS_MAP
+} from '../../dictionaries';
 import { User, Trash2, Palette, Wand2, Sparkles, Plus, Info } from 'lucide-react';
 
 interface Props {
@@ -66,12 +67,20 @@ const PoseBuilder = ({ form, index }: { form: UseFormReturn<NanoBananaType>, ind
                     value={templateVal}
                 >
                     <option value="" disabled>-- Select a full pose template --</option>
-                    {POSE_TEMPLATES.map(t => (<option key={t} value={t}>{t}</option>))}
+                    {POSE_TEMPLATES.map(tmpl => (<option key={tmpl} value={tmpl}>{tmpl}</option>))}
                 </select>
             </div>
 
             <div className="text-xs font-bold text-slate-500 mb-2 uppercase">Or build manually:</div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4"><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setBody(e.target.value)} value={body}><option value="">-- Body Orientation --</option>{POSE_BODY.map(o => <option key={o} value={o}>{o}</option>)}</select><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setShoulders(e.target.value)} value={shoulders}><option value="">-- Shoulders --</option>{POSE_SHOULDERS.map(o => <option key={o} value={o}>{o}</option>)}</select><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setHands(e.target.value)} value={hands}><option value="">-- Hands --</option>{POSE_HANDS.map(o => <option key={o} value={o}>{o}</option>)}</select><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setHead(e.target.value)} value={head}><option value="">-- Head Angle --</option>{POSE_HEAD.map(o => <option key={o} value={o}>{o}</option>)}</select><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setGaze(e.target.value)} value={gaze}><option value="">-- Gaze --</option>{POSE_GAZE.map(o => <option key={o} value={o}>{o}</option>)}</select><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setExpr(e.target.value)} value={expr}><option value="">-- Expression --</option>{POSE_EXPRESSIONS.map(o => <option key={o} value={o}>{o}</option>)}</select><select className="p-2 rounded border border-slate-300 text-xs text-slate-700 bg-slate-50 md:col-span-2 focus:ring-2 focus:ring-banana-500 focus:outline-none" onChange={e => setInteraction(e.target.value)} value={interaction}><option value="">-- Interaction / Micro-movement --</option>{POSE_INTERACTIONS.map(o => <option key={o} value={o}>{o}</option>)}</select></div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <Select label="Body Orientation" options={POSE_BODY} value={body} onChange={(e) => setBody(e.target.value)} className="h-9 text-xs" />
+                <Select label="Shoulders" options={POSE_SHOULDERS} value={shoulders} onChange={(e) => setShoulders(e.target.value)} className="h-9 text-xs" />
+                <Select label="Hands" options={POSE_HANDS} value={hands} onChange={(e) => setHands(e.target.value)} className="h-9 text-xs" />
+                <Select label="Head Angle" options={POSE_HEAD} value={head} onChange={(e) => setHead(e.target.value)} className="h-9 text-xs" />
+                <Select label="Gaze" options={POSE_GAZE} value={gaze} onChange={(e) => setGaze(e.target.value)} className="h-9 text-xs" />
+                <Select label="Expression" options={POSE_EXPRESSIONS} value={expr} onChange={(e) => setExpr(e.target.value)} className="h-9 text-xs" />
+                <Select label="Interactions" options={POSE_INTERACTIONS} value={interaction} onChange={(e) => setInteraction(e.target.value)} className="h-9 text-xs" />
+            </div>
             <button type="button" onClick={buildPose} className="w-full py-2.5 bg-slate-800 text-white text-xs font-bold rounded hover:bg-slate-700 transition-colors shadow-md active:scale-[0.99] mb-4">Generate from Manual Dropdowns</button>
             
             <TextArea 
@@ -96,7 +105,7 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
     });
 
     useEffect(() => {
-        if (!autoGenDesc || !subjectData) return;
+        if (!autoGenDesc || !subjectData || !subjectData.appearance) return;
 
         const app = subjectData.appearance;
         const clothes = subjectData.clothing || [];
@@ -107,7 +116,12 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
         const parts = [];
 
         // 1. Core Demographics
-        const core = `A ${subjectData.age_range || 'person'} ${app.ethnicity || ''} ${app.gender || ''}, acting as ${subjectData.role || 'subject'}`;
+        const ageId = subjectData.age_range || 'YOUNG_ADULT';
+        const agePreset = AGE_RANGES.find(r => r.id === ageId);
+        
+        // Use prompt tags for the actual description
+        const ageTags = agePreset ? agePreset.promptTags.join(", ") : "young adult";
+        const core = `A ${ageTags} ${app.ethnicity || ''} ${app.gender || ''}, acting as ${subjectData.role || 'subject'}`;
         parts.push(core.replace(/\s+/g, ' ').trim());
 
         // 2. Physical Details & Biometrics (Integrated)
@@ -119,8 +133,11 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
         if (skinDesc) physical.push(`${skinDesc} skin`);
         
         if (app.hair) {
-            const [hStyle, hLength, hColor] = app.hair.split(" -> ");
-            physical.push(`${hColor || ''} ${hLength || ''} ${hStyle || ''} hair`.replace(/\s+/g, ' ').trim());
+            const parts = app.hair.split(" -> ");
+            const hStyle = parts[0] || "";
+            const hLength = parts[1] || "";
+            const hColor = parts[2] || "";
+            physical.push(`${hColor} ${hLength} ${hStyle} hair`.replace(/\s+/g, ' ').trim());
         }
         if (app.eyes) physical.push(`${app.eyes.color} ${app.eyes.shape} eyes`);
         
@@ -146,9 +163,21 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
             parts.push(`Action/Pose: ${pose}`);
         }
 
-        // 6. Distinct Features
+        // 6. Nails integration
+        if (app.nails) {
+            const { length, finish, color, shape, design } = app.nails;
+            const nailDesc = `${length} ${finish} ${color} ${shape} ${design === 'Solid Color' ? '' : design} nails`.replace(/\s+/g, ' ').trim();
+            parts.push(`Nails: ${nailDesc}.`);
+        }
+
+        // 7. Distinct Features
         if (app.distinct_features && app.distinct_features.length > 0) {
-            parts.push(`Distinctive: ${app.distinct_features.join(', ')}.`);
+            parts.push(`Distinctive features: ${app.distinct_features.join(', ')}.`);
+        }
+
+        // 8. Guardrails (Hidden hints for the model)
+        if (agePreset?.guardrails && agePreset.guardrails.length > 0) {
+            parts.push(`[Guardrails: ${agePreset.guardrails.join(', ')}]`);
         }
 
         const fullDescription = parts.join(' ');
@@ -208,7 +237,6 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
                         <Select label="Identity Lock" options={IDENTITY_LOCKS} registration={register(`subject.${index}.identity_lock`)} />
                         {/* Yellow Info Box */}
                         <div className="mt-3 text-xs text-yellow-800 flex items-start gap-2">
-                            <Info className="w-4 h-4 mt-0.5 flex-shrink-0 text-yellow-600" />
                             <p className="leading-relaxed">
                                 <strong>Identity Lock Control:</strong> <br/>
                                 • <strong>None:</strong> Random face every time.<br/>
@@ -222,7 +250,11 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                <Select label="Age Range" options={AGE_RANGES} registration={register(`subject.${index}.age_range`)} />
+                <Select label="Age Range" options={AGE_RANGES.map(r => r.id)} registration={register(`subject.${index}.age_range`)} />
+                {/* Visual Feedback for Age Range */}
+                <div className="mt-1 text-[10px] text-slate-400 italic">
+                    {AGE_RANGES.find(r => r.id === (subjectData?.age_range || "YOUNG_ADULT"))?.label}
+                </div>
                 <TextInput label="Exact Age (Optional)" type="number" registration={register(`subject.${index}.exact_age`, { valueAsNumber: true })} />
                 <Select label="Gender" options={["Male", "Female", "Non-binary"]} registration={register(`subject.${index}.appearance.gender`)} />
                 <Select label="Ethnicity" options={ETHNICITIES} registration={register(`subject.${index}.appearance.ethnicity`)} />
@@ -240,7 +272,11 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
                         control={control} 
                         name={`subject.${index}.appearance.hair`} 
                         render={({ field }) => {
-                            const [currentStyle, currentLength, currentColor] = field.value.split(" -> ");
+                            const hairVal = field.value || "";
+                            const parts = hairVal.split(" -> ");
+                            const currentStyle = parts[0] || "Straight";
+                            const currentLength = parts[1] || "Medium";
+                            const currentColor = parts[2] || "Brown";
                             
                             const handleHairChange = (style: string, length: string, color: string) => {
                                 field.onChange(`${style} -> ${length} -> ${color}`);
@@ -283,8 +319,19 @@ const SubjectCard = ({ form, index, remove }: { form: UseFormReturn<NanoBananaTy
                     <Controller control={control} name={`subject.${index}.appearance.eyes.color`} render={({ field }) => (<ColorSelect label="Eye Color" options={EYE_COLORS} value={field.value} onChange={field.onChange} colorMap={EYE_COLOR_MAP} />)} />
                     <Select label="Eye Shape" options={EYE_SHAPES} registration={register(`subject.${index}.appearance.eyes.shape`)} />
                 </div>
-                <div className="mt-4"><Controller control={control} name={`subject.${index}.appearance.distinct_features`} render={({ field }) => (<MultiSelect label="Distinct Features" options={DISTINCT_FEATURES} value={field.value} onChange={field.onChange} maxSelections={5} />)} /></div>
+                <div className="mt-4"><Controller control={control} name={`subject.${index}.appearance.distinct_features`} render={({ field }) => (<MultiSelect label="Distinct Features" options={DISTINCT_FEATURES} value={field.value || []} onChange={field.onChange} maxSelections={5} />)} /></div>
                 
+                <div className="mt-4 p-4 bg-slate-100 rounded-lg border border-slate-200">
+                    <h6 className="font-bold text-xs uppercase text-slate-500 mb-2">Nails (Optional)</h6>
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <Select label="Shape" options={NAIL_SHAPES} registration={register(`subject.${index}.appearance.nails.shape`)} />
+                        <Select label="Length" options={NAIL_LENGTHS} registration={register(`subject.${index}.appearance.nails.length`)} />
+                        <Select label="Finish" options={NAIL_FINISHES} registration={register(`subject.${index}.appearance.nails.finish`)} />
+                        <Select label="Design" options={NAIL_DESIGNS} registration={register(`subject.${index}.appearance.nails.design`)} />
+                        <Controller control={control} name={`subject.${index}.appearance.nails.color`} render={({ field }) => (<ColorSelect label="Color" options={NAIL_COLORS} value={field.value || "Nude Beige"} onChange={field.onChange} colorMap={NAIL_COLORS_MAP} />)} />
+                    </div>
+                </div>
+
                 <div className="mt-4 p-4 bg-slate-100 rounded-lg border border-slate-200">
                     <h6 className="font-bold text-xs uppercase text-slate-500 mb-2">Tattoos (Optional)</h6>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -330,7 +377,7 @@ export const SubjectSection: React.FC<Props> = ({ form }) => {
         fields.forEach((field, index) => {
             const role = watch(`subject.${index}.role`);
             const gender = watch(`subject.${index}.appearance.gender`);
-            const age = watch(`subject.${index}.age_range`);
+            const age = watch(`subject.${index}.age_range`) || "YOUNG_ADULT";
             const currentId = watch(`subject.${index}.id`);
             if (role && gender && age && (currentId.includes("main_subject") || currentId.startsWith("sub_"))) {
                  const newId = `${role}_${age}_${gender}_${index + 1}`.toLowerCase();
@@ -349,7 +396,7 @@ export const SubjectSection: React.FC<Props> = ({ form }) => {
                 
                 <button
                     type="button"
-                    onClick={() => append({ id: `sub_${Date.now()}`, type: 'person', count: "1", grouping: "solo", role: "secondary", importance: 5, identity_lock: "none", consistency_tags: [], age_range: "young_adult", appearance: { gender: "Female", ethnicity: "Caucasian", skin_quality: "hyper-realistic", body_type: "average", skin_tone: "Fair Ivory", hair: "Layered Cut -> Medium -> Brown", eyes: { color: "Blue", shape: "Almond" }, distinct_features: [], tattoos: { description: "", placement: "Forearm", size: "small" } }, description: '', pose: '', clothing: [], accessories: [] })}
+                    onClick={() => append({ id: `sub_${Date.now()}`, type: 'person', count: "1", grouping: "solo", role: "secondary", importance: 5, identity_lock: "none", consistency_tags: [], age_range: "YOUNG_ADULT", appearance: { gender: "Female", ethnicity: "Caucasian", skin_quality: "hyper-realistic", body_type: "average", skin_tone: "Fair Ivory", hair: "Layered Cut -> Medium -> Brown", eyes: { color: "Blue", shape: "Almond" }, distinct_features: [], nails: { shape: "Natural", length: "Natural", finish: "Glossy", design: "Solid Color", color: "Nude Beige" }, tattoos: { description: "", placement: "Forearm", size: "small" } }, description: '', pose: '', clothing: [], accessories: [] })}
                     className="w-full py-4 border-2 border-dashed border-slate-300 rounded-xl text-slate-500 hover:border-banana-500 hover:text-banana-600 hover:bg-banana-50 transition-all font-bold flex items-center justify-center gap-2"
                 >
                     <Plus size={20} /> Add Another Subject

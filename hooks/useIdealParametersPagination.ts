@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { IDEAL_PARAMETERS_DATA, IdealParametersCategory, IdealParameterProfile } from '../dictionaries/ideal_parameters';
 
-const PRESETS_PER_PAGE = 6; // 6 presetów na stronę (2x3 grid)
+const PRESETS_PER_PAGE = 6; // 6 presets per page (2x3 grid)
 
 interface CategoryStats {
   name: IdealParametersCategory;
@@ -29,7 +29,7 @@ export const useIdealParametersPagination = (): UsePaginationReturn => {
   );
   const [currentPage, setCurrentPage] = useState(0);
 
-  // Oblicz statystyki kategorii
+  // Calculate category statistics
   const categoryStats = useMemo(() => {
     const categories = Object.values(IdealParametersCategory) as IdealParametersCategory[];
     return categories.map((cat, index) => ({
@@ -39,43 +39,43 @@ export const useIdealParametersPagination = (): UsePaginationReturn => {
     }));
   }, []);
 
-  // Filtruj presety dla aktualnej kategorii
+  // Filter presets for the current category
   const filteredPresets = useMemo(() => {
     if (!currentCategory) return IDEAL_PARAMETERS_DATA;
     return IDEAL_PARAMETERS_DATA.filter(p => p.category === currentCategory);
   }, [currentCategory]);
 
-  // Oblicz liczbę stron
+  // Calculate number of pages
   const totalPages = Math.ceil(filteredPresets.length / PRESETS_PER_PAGE);
 
-  // Pobierz presety dla aktualnej strony
+  // Get presets for the current page
   const currentPresets = useMemo(() => {
     const start = currentPage * PRESETS_PER_PAGE;
     const end = start + PRESETS_PER_PAGE;
     return filteredPresets.slice(start, end);
   }, [filteredPresets, currentPage]);
 
-  // Obsługuj przecięcie na następną stronę
+  // Handle transition to the next page
   const goToNextPage = () => {
     if (currentPage < totalPages - 1) {
       setCurrentPage(prev => prev + 1);
     }
   };
 
-  // Obsługuj powrót na poprzednią stronę
+  // Handle return to the previous page
   const goToPreviousPage = () => {
     if (currentPage > 0) {
       setCurrentPage(prev => prev - 1);
     }
   };
 
-  // Zmień kategorię (resetuj stronę na 0)
+  // Change category (reset page to 0)
   const selectCategory = (category: IdealParametersCategory) => {
     setCurrentCategory(category);
     setCurrentPage(0);
   };
 
-  // Przejdź do następnej kategorii
+  // Go to the next category
   const goToNextCategory = () => {
     const currentIndex = categoryStats.findIndex(c => c.name === currentCategory);
     if (currentIndex < categoryStats.length - 1) {
@@ -83,7 +83,7 @@ export const useIdealParametersPagination = (): UsePaginationReturn => {
     }
   };
 
-  // Przejdź do poprzedniej kategorii
+  // Go to the previous category
   const goToPreviousCategory = () => {
     const currentIndex = categoryStats.findIndex(c => c.name === currentCategory);
     if (currentIndex > 0) {

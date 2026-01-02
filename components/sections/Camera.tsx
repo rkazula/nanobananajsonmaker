@@ -6,7 +6,7 @@ import { Select } from '../ui/FormComponents';
 import { 
     CAMERA_POV, CAMERA_FRAMING, CAMERA_LENS, CAMERA_FOCUS, CAMERA_DOF,
     CAMERA_POV_DATA, CAMERA_FRAMING_DATA, CAMERA_LENS_DATA, CAMERA_FOCUS_DATA, CAMERA_DOF_DATA 
-} from '../../constants';
+} from '../../dictionaries';
 import { FieldInfo } from './common';
 import { Eye, Crop, ZoomIn, Scan, Layers } from 'lucide-react';
 

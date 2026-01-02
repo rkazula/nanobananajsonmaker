@@ -3,7 +3,7 @@ import React from 'react';
 import { UseFormReturn, useWatch } from 'react-hook-form';
 import { NanoBananaType } from '../../schema';
 import { Toggle } from '../ui/FormComponents';
-import { NEGATIVE_PROMPT_GROUPS } from '../../constants';
+import { NEGATIVE_PROMPT_GROUPS } from '../../dictionaries';
 import { ShieldAlert, CheckSquare2, Square, X, Plus } from 'lucide-react';
 
 interface Props {
@@ -115,19 +115,19 @@ export const AdvancedSection: React.FC<Props> = ({ form }) => {
     const { register } = form;
     return (
         <div className="space-y-6 animate-in fade-in duration-300">
-            <h2 className="text-2xl font-bold text-slate-800 border-b pb-4 mb-6">Advanced Constraints & Safety</h2>
+            <h2 className="text-2xl font-bold text-slate-800 border-b pb-4 mb-6">Advanced Settings</h2>
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                  <div className="flex items-center gap-2 mb-4 text-slate-700 font-bold"><ShieldAlert size={20} className="text-red-500" /> Negative Prompts</div>
                  
                  <NegativePromptManager form={form} />
 
                  <div className="mt-6 pt-6 border-t border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Toggle label="Magic Prompt Enhancer (Auto-Detail)" registration={register('advanced.magic_prompt_enhancer')} description="Allow the model to hallucinate extra details for better aesthetics." />
+                    <Toggle label="Magic Prompt Enhancer" registration={register('advanced.magic_prompt_enhancer')} description="Allow the model to hallucinate extra details for better aesthetics." />
                     <div className="space-y-2">
-                        <Toggle label="Safety: No Minors" registration={register('advanced.safety_constraints.no_minors')} />
-                        <Toggle label="Safety: No Nudity" registration={register('advanced.safety_constraints.no_nudity')} />
-                        <Toggle label="Safety: No Explicit Sexual Content" registration={register('advanced.safety_constraints.no_explicit_sexual_content')} />
-                        <Toggle label="Safety: No Text/Logos" registration={register('advanced.safety_constraints.no_text_logos')} />
+                        <Toggle label="No Minors" registration={register('advanced.safety_constraints.no_minors')} />
+                        <Toggle label="No Nudity" registration={register('advanced.safety_constraints.no_nudity')} />
+                        <Toggle label="No Explicit Content" registration={register('advanced.safety_constraints.no_explicit_sexual_content')} />
+                        <Toggle label="No Text/Logos" registration={register('advanced.safety_constraints.no_text_logos')} />
                     </div>
                  </div>
             </div>

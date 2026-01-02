@@ -3,7 +3,7 @@ import React from 'react';
 import { UseFormReturn, useWatch } from 'react-hook-form';
 import { NanoBananaType } from '../../schema';
 import { Select } from '../ui/FormComponents';
-import { ASPECT_RATIOS, ASPECT_RATIOS_DATA, IMAGE_SIZES_DATA } from '../../constants';
+import { ASPECT_RATIOS, ASPECT_RATIOS_DATA, IMAGE_SIZES_DATA } from '../../dictionaries';
 import { FieldInfo } from './common';
 import { Monitor, Maximize } from 'lucide-react';
 

@@ -84,3 +84,5 @@ export const ASPECT_RATIOS_DATA = [
     desc: "ISO A-series paper ratio (√2:1, e.g., A4/A3). The print king: scaling preserves proportions perfectly. Ideal for posters, covers, and print-ready editorial layouts."
   }
 ] as const;
+
+export const ASPECT_RATIOS = ASPECT_RATIOS_DATA.map(d => d.value);

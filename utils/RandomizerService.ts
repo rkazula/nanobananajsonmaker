@@ -3,7 +3,7 @@ import {
     SCENES, TIMES_OF_DAY, ATMOSPHERES, 
     LIGHTING_TYPES, LIGHTING_DIRECTIONS, LIGHTING_EFFECTS, 
     FILM_STOCKS, QUALITY_MODES, WEATHER_CONDITIONS, INTERIOR_STYLES
-} from '../constants';
+} from '../dictionaries';
 
 // Helper to pick random element
 const pick = <T>(arr: readonly T[] | T[]): T => arr[Math.floor(Math.random() * arr.length)];

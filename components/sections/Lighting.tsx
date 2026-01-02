@@ -6,7 +6,7 @@ import { Select } from '../ui/FormComponents';
 import { 
     LIGHTING_TYPES, LIGHTING_DIRECTIONS, LIGHTING_EFFECTS,
     LIGHTING_TYPES_DATA, LIGHTING_DIRECTIONS_DATA, LIGHTING_EFFECTS_DATA 
-} from '../../constants';
+} from '../../dictionaries';
 import { FieldInfo } from './common';
 import { Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
 

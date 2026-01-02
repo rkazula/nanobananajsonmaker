@@ -135,6 +135,8 @@ export const TIMES_OF_DAY_DATA = [
   }
 ] as const;
 
+export const TIMES_OF_DAY = TIMES_OF_DAY_DATA.map(d => d.value);
+
 export const PROPS = [
   "Backpack", "Baguette", "Baseball Cap", "Basketball", "Bathrobe", "Beanie", "Beauty Dish", "Bed frame", "Bicycle"
   ,"Bicycle Basket", "Binoculars", "Black Canvas Tote", "Black Ceramic Vase", "Black Glass Bottle"

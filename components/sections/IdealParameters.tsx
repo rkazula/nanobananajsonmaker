@@ -75,23 +75,23 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
                 <p className="text-sm text-banana-700">Select a professionally curated preset to configure the camera style. Use the <strong>Dice</strong> icon to keep the style but randomize the location, time, and mood.</p>
              </div>
 
-             {/* Kategorie Navigation */}
+             {/* Categories Navigation */}
              <div className="flex items-center justify-between bg-slate-50 p-4 rounded-lg border border-slate-200">
                 <button
                     onClick={goToPreviousCategory}
                     disabled={currentCategoryIndex === 0}
                     className="p-2 rounded hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    title="Poprzednia kategoria"
+                    title="Previous Category"
                 >
                     <ChevronLeft size={20} className="text-slate-600" />
                 </button>
 
                 <div className="flex-1 text-center">
                     <h3 className="text-sm font-bold text-slate-800">
-                        Kategoria: <span className="text-banana-600">{currentCategory}</span>
+                        Category: <span className="text-banana-600">{currentCategory}</span>
                     </h3>
                     <p className="text-xs text-slate-600 mt-1">
-                        Strona {currentPage + 1} z {totalPages} • {currentPresets.length} presetów
+                        Page {currentPage + 1} of {totalPages} • {currentPresets.length} presets
                     </p>
                 </div>
 
@@ -99,13 +99,13 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
                     onClick={goToNextCategory}
                     disabled={currentCategoryIndex === categoryStats.length - 1}
                     className="p-2 rounded hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    title="Następna kategoria"
+                    title="Next Category"
                 >
                     <ChevronRight size={20} className="text-slate-600" />
                 </button>
              </div>
 
-             {/* Mini kategorie - szybka nawigacja */}
+             {/* Mini categories - quick navigation */}
              <div className="flex flex-wrap gap-2">
                 {categoryStats.map((cat) => (
                     <button
@@ -184,19 +184,19 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
                 })}
              </div>
 
-             {/* Paginacja - Strony */}
+             {/* Pagination - Pages */}
              <div className="flex items-center justify-between gap-4 bg-slate-50 p-4 rounded-lg border border-slate-200">
                 <button
                     onClick={goToPreviousPage}
                     disabled={currentPage === 0}
                     className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-sm"
                 >
-                    <ChevronLeft size={18} /> Poprzednia
+                    <ChevronLeft size={18} /> Previous
                 </button>
 
                 <div className="text-center">
                     <p className="text-sm font-semibold text-slate-800">
-                        Strona <span className="text-banana-600">{currentPage + 1}</span> z <span className="text-banana-600">{totalPages}</span>
+                        Page <span className="text-banana-600">{currentPage + 1}</span> of <span className="text-banana-600">{totalPages}</span>
                     </p>
                 </div>
 
@@ -205,7 +205,7 @@ export const IdealParametersSection: React.FC<Props> = ({ form }) => {
                     disabled={currentPage >= totalPages - 1}
                     className="flex items-center gap-2 px-4 py-2 bg-banana-600 text-white rounded-lg hover:bg-banana-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-sm"
                 >
-                    Następna <ChevronRight size={18} />
+                    Next <ChevronRight size={18} />
                 </button>
              </div>
         </div>

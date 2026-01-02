@@ -7,7 +7,7 @@ import {
     SCENES, ATMOSPHERES, TIMES_OF_DAY, 
     INTERIOR_STYLES, MATERIALS, CLUTTER_LEVELS, LAYOUT_STYLES, MICRO_DETAILS, PROPS, 
     WEATHER_CONDITIONS, OUTDOOR_TERRAINS, OUTDOOR_ELEMENTS
-} from '../../constants';
+} from '../../dictionaries';
 import { Sofa, Trees, CloudRain, MapPin } from 'lucide-react';
 import { FieldInfo } from './common';
 

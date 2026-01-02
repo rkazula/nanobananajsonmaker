@@ -4,13 +4,13 @@ import { NanoBananaType } from '../schema';
 // Only the defined fields will be updated when selected.
 
 export enum IdealParametersCategory {
-    BUSINESS = "Portrety Biznesowe",
+    BUSINESS = "Business Portraits",
     INSTAGRAM = "Instagram & Lifestyle",
-    REPORTAGE = "Reportaże & Fotografia Uliczna",
-    EDITORIAL = "Magazyny & Edytorskie",
-    INTIMATE = "Akty & Intymne",
-    CINEMATIC = "Cinematic & Artystyczne",
-    OTHER = "Pozostałe"
+    REPORTAGE = "Reportage & Street Photography",
+    EDITORIAL = "Magazine & Editorial",
+    INTIMATE = "Nude & Intimate",
+    CINEMATIC = "Cinematic & Artistic",
+    OTHER = "Other"
 }
 
 export interface IdealParameterProfile {
@@ -1062,22 +1062,22 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "4:3", // Klasyczna proporcja cyfrowa, dobra do prezentacji na ekranach
+            aspect_ratio: "4:3", // Classic digital ratio, good for on-screen presentations
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
         pov: "eye_level",
-        framing: "medium_close_up", // Ujęcie popiersia (ramiona i głowa), lekko pod kątem
+        framing: "medium_close_up", // Bust shot (shoulders and head), slightly angled
         focus_point: "face",
-        depth_of_field: "deep", // Przy jednolitym czarnym tle głębia jest mniej istotna wizualnie, ale twarz musi być w pełni ostra
+        depth_of_field: "deep", // With uniform black background, depth is less visually critical, but face must be fully sharp
         lens: "85mm"
       },
       lighting: {
-        type: "softbox", // Duże, miękkie źródło światła
-        direction: "three_quarter_front_lit", // Klasyczne oświetlenie pod kątem 45 stopni
-        effect: "soft_shadow_edges" // Miękkie, nierzucające się w oczy cienie na twarzy
+        type: "softbox", // Large, soft light source
+        direction: "three_quarter_front_lit", // Classic 45-degree lighting
+        effect: "soft_shadow_edges" // Soft, subtle shadows on the face
       }
     }
   },
@@ -1085,29 +1085,29 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     id: "outdoor_business_natural",
     title: "Outdoor Business Portrait (Natural Light)",
     description: "Professional portrait taken outdoors with a blurred nature background. Soft, diffused daylight and authentic colors. Approachable and realistic.",
-    icon: "Sun", // Lub 'Camera' / 'User'
+    icon: "Sun", // Or 'Camera' / 'User'
     category: IdealParametersCategory.BUSINESS,
     data: {
       user_intent: "Add: 'outdoor portrait', 'blurred green foliage background', 'natural daylight', 'soft bokeh', 'business attire', 'beige suit', 'realistic colors'. Avoid: 'studio lighting', 'harsh shadows', 'black and white'.",
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "3:2", // Standardowa proporcja lustrzanki
+            aspect_ratio: "3:2", // Standard SLR ratio
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
         pov: "eye_level",
-        framing: "bust_shot", // Kadr od klatki piersiowej w górę
+        framing: "bust_shot", // Framing from the chest up
         focus_point: "face",
-        depth_of_field: "shallow", // Tło jest wyraźnie rozmyte (separacja)
-        lens: "85mm" // Klasyczna portretówka dająca ładny bokeh i kompresję
+        depth_of_field: "shallow", // Background is clearly blurred (separation)
+        lens: "85mm" // Classic portrait lens providing nice bokeh and compression
       },
       lighting: {
-        type: "overcast_daylight", // Miękkie światło dzienne (brak ostrego słońca)
-        direction: "ambient_wraparound", // Światło otacza modela równomiernie
-        effect: "soft_shadows" // Bardzo łagodne przejścia tonalne
+        type: "overcast_daylight", // Soft daylight (no harsh sun)
+        direction: "ambient_wraparound", // Light surrounds the model evenly
+        effect: "soft_shadows" // Very gentle tonal transitions
       }
     }
   },
@@ -1122,22 +1122,22 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "3:4", // Klasyczne proporcje portretowe
+            aspect_ratio: "3:4", // Classic portrait proportions
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
         pov: "eye_level",
-        framing: "bust_shot", // Kadr obejmujący ramiona i krawat/ubiór
+        framing: "bust_shot", // Framing including shoulders and tie/clothing
         focus_point: "face",
-        depth_of_field: "medium", // Tło (kurtyna) jest lekko nieostre, ale czytelne
+        depth_of_field: "medium", // Background (curtain) is slightly out of focus but legible
         lens: "85mm"
       },
       lighting: {
-        type: "softbox", // Miękkie źródło światła
-        direction: "broad_lighting_left", // Twarz oświetlona szeroko, łagodne cienie
-        effect: "film_grain" // Kluczowy element estetyki analogowej
+        type: "softbox", // Soft light source
+        direction: "broad_lighting_left", // Face lit broadly, gentle shadows
+        effect: "film_grain" // Key element of analog aesthetic
       }
     }
   },
@@ -1152,22 +1152,22 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "1:1", // Zdjęcie jest kwadratowe/bliskie kwadratu
+            aspect_ratio: "1:1", // Photo is square/close to square
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
-        pov: "eye_level", // Poziom oczu, bardzo bezpośredni
-        framing: "close_up", // Ciasny kadr na twarz
-        focus_point: "eyes", // Ostrość na oczy
-        depth_of_field: "medium", // Cała twarz jest ostra, nie tylko oczy
-        lens: "85mm" // Klasyczna ogniskowa portretowa, minimalne zniekształcenia
+        pov: "eye_level", // Eye level, very direct
+        framing: "close_up", // Tight frame on face
+        focus_point: "eyes", // Focus on eyes
+        depth_of_field: "medium", // Entire face is sharp, not just eyes
+        lens: "85mm" // Classic portrait focal length, minimal distortion
       },
       lighting: {
-        type: "studio_strobe", // Mocne, studyjne światło błyskowe
-        direction: "butterfly_angle", // Światło z góry/na wprost (cień pod nosem)
-        effect: "low_key_lighting" // Ciemne tło, światło tylko na twarzy
+        type: "studio_strobe", // Powerful, studio flash light
+        direction: "butterfly_angle", // Light from above/front (shadow under nose)
+        effect: "low_key_lighting" // Dark background, light only on face
       }
     }
   },
@@ -1175,29 +1175,29 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
     id: "fashion_editorial_moody_grey",
     title: "Fashion Editorial (Moody Grey Studio)",
     description: "High-end fashion lookbook style. Moody, cool-toned lighting with a dark grey gradient background. Sculpted shadows and sharp styling details.",
-    icon: "Coat", // Ikona płaszcza pasuje idealnie do mody
+    icon: "Coat", // Coat icon fits fashion perfectly
     category: IdealParametersCategory.EDITORIAL,
     data: {
       user_intent: "Add: 'fashion editorial', 'male model in grey coat', 'turtleneck', 'glasses', 'dark grey studio background', 'moody lighting', 'cool tones', 'looking away', 'pensive pose'. Avoid: 'smiling', 'bright sunlight', 'flat lighting', 'pitch black background'.",
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "2:3", // Standardowa proporcja portretowa w modzie/Instagramie
+            aspect_ratio: "2:3", // Standard portrait ratio in fashion/Instagram
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
-        pov: "eye_level", // Poziom wzroku lub delikatnie niżej dla powagi
-        framing: "three_quarter_shot", // Kadr 3/4 (od ud w górę) by pokazać płaszcz
-        focus_point: "subject", // Ostrość na całą sylwetkę/stylizację
-        depth_of_field: "medium", // Tło jest gładkie (gradient), postać w pełni ostra
-        lens: "85mm" // Klasyczna ogniskowa modowa, dobra kompresja
+        pov: "eye_level", // Eye level or slightly lower for seriousness
+        framing: "three_quarter_shot", // 3/4 shot (from thighs up) to show coat
+        focus_point: "subject", // Focus on entire silhouette/styling
+        depth_of_field: "medium", // Background is smooth (gradient), subject fully sharp
+        lens: "85mm" // Classic fashion focal length, good compression
       },
       lighting: {
-        type: "octabox", // Daje miękkie, ale plastyczne światło (charakterystyczne dla mody)
-        direction: "rembrandt_angle_left", // Światło boczne/górne tworzące rzeźbę na twarzy
-        effect: "low_key_lighting" // Utrzymanie nastroju, ale bez całkowitej czerni
+        type: "octabox", // Gives soft but sculptural light (typical for fashion)
+        direction: "rembrandt_angle_left", // Side/top light creating sculpture on face
+        effect: "low_key_lighting" // Maintaining mood but without complete black
       }
     }
   },
@@ -1212,22 +1212,22 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "3:2", // Poziomy kadr (landscape) typowy dla tego typu zdjęć stockowych/lifestyle
+            aspect_ratio: "3:2", // Horizontal framing (landscape) typical for this type of stock/lifestyle photos
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
         pov: "eye_level",
-        framing: "medium_shot", // Kadr od ud/pasa w górę (tzw. plan amerykański)
-        focus_point: "subject", // Postać ostra, miasto w tle rozmyte
-        depth_of_field: "shallow", // Wyraźne odcięcie od tła (bokeh na budynkach)
-        lens: "85mm" // Idealna ogniskowa do portretów w plenerze (kompresja tła)
+        framing: "medium_shot", // Framing from thighs/waist up (American shot)
+        focus_point: "subject", // Subject sharp, city in background blurred
+        depth_of_field: "shallow", // Clear cut from background (bokeh on buildings)
+        lens: "85mm" // Ideal focal length for outdoor portraits (background compression)
       },
       lighting: {
-        type: "natural_sunlight", // Jasne słońce
-        direction: "back_rim_right", // Światło konturowe z tyłu/boku dodające "blasku" + wypełnienie z przodu
-        effect: "high_key_lighting" // Ogólna jasna tonacja zdjęcia
+        type: "natural_sunlight", // Bright sun
+        direction: "back_rim_right", // Rim light from back/side adding "glow" + fill from front
+        effect: "high_key_lighting" // Overall bright tone of the photo
       }
     }
   },
@@ -1242,22 +1242,22 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "2:3", // Pionowy kadr portretowy
+            aspect_ratio: "2:3", // Vertical portrait framing
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
-        pov: "eye_level", // Naturalna perspektywa siedzącej osoby
-        framing: "medium_shot", // Ujęcie od pasa w górę, obejmujące ręce na stole
+        pov: "eye_level", // Natural perspective of a seated person
+        framing: "medium_shot", // Waist-up shot, including hands on the table
         focus_point: "face",
-        depth_of_field: "shallow", // Tło (rośliny, wnętrze) jest rozmyte
-        lens: "50mm" // Ogniskowa zbliżona do ludzkiego oka, naturalna
+        depth_of_field: "shallow", // Background (plants, interior) is blurred
+        lens: "50mm" // Focal length close to the human eye, natural
       },
       lighting: {
-        type: "window_light", // Główne źródło światła z boku (z okna)
-        direction: "side_lit_left", // Światło pada z lewej strony kadru
-        effect: "soft_shadows" // Łagodne przejścia światłocienia na twarzy
+        type: "window_light", // Main light source from the side (from window)
+        direction: "side_lit_left", // Light comes from the left side of the frame
+        effect: "soft_shadows" // Gentle chiaroscuro transitions on the face
       }
     }
   },
@@ -1272,22 +1272,22 @@ export const IDEAL_PARAMETERS_DATA: IdealParameterProfile[] = [
       api: {
         generation_config: {
           image_config: {
-            aspect_ratio: "2:3", // Klasyczny pionowy format portretowy
+            aspect_ratio: "2:3", // Classic vertical portrait format
             image_size: "1536"
           }
         }
       },
       camera_perspective: {
         pov: "eye_level",
-        framing: "medium_shot", // Ujęcie od pasa w górę, pokazujące dłonie
+        framing: "medium_shot", // Waist-up shot, showing hands
         focus_point: "face",
-        depth_of_field: "medium", // Postać ostra, tło gładkie
-        lens: "85mm" // Klasyczna ogniskowa portretowa
+        depth_of_field: "medium", // Subject sharp, background smooth
+        lens: "85mm" // Classic portrait focal length
       },
       lighting: {
-        type: "fresnel_light", // Światło o charakterystyce "filmowej", bardziej skupione i kontrastowe
-        direction: "side_lit_left", // Wyraźne światło boczne tworzące cień na drugiej połowie twarzy
-        effect: "chiaroscuro" // Malarskie operowanie światłocieniem
+        type: "fresnel_light", // Film-style light, more focused and contrasty
+        direction: "side_lit_left", // Clear side light creating shadow on the other half of the face
+        effect: "chiaroscuro" // Painterly chiaroscuro handling
       }
     }
   }

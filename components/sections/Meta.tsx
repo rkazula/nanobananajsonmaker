@@ -8,7 +8,7 @@ import {
     GRAIN_AMOUNTS, GRAIN_AMOUNTS_DATA, ISO_VALUES, ISO_VALUES_DATA,
     IMPERFECTION_PRESETS, IMPERFECTION_DETAILS,
     PRO_APARATY_TOP50, TELEFONY_FOTO_PRO_TOP15, KAMERY_SPORTOWE_TOP20, DRONY_FOTO_PRO_TOP15, KOMPAKTY_PREMIUM_TOP10, OverlayDeviceProfile
-} from '../../constants';
+} from '../../dictionaries';
 import { Wand2, Image, Film, Activity, Sparkles, Camera, Sliders, Info } from 'lucide-react';
 import { FieldInfo } from './common';
 

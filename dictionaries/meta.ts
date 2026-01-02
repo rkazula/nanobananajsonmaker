@@ -98,6 +98,8 @@ export const QUALITY_MODES_DATA = [
   }
 ] as const;
 
+export const QUALITY_MODES = QUALITY_MODES_DATA.map(d => d.value);
+
 export const TONES = [
   "warm", "cool", "neutral", "balanced", "natural", "golden", "amber", "sun_kissed", "honey_warm",
   "peachy", "rosy", "dusty_rose", "pastel", "muted", "desaturated", "vibrant", "punchy",
@@ -125,6 +127,8 @@ export const GRAIN_AMOUNTS_DATA = [
   { value: "over_the_top", desc: "Maximum interference. Use only for specific 'broken camera' or abstract effects." }
 ] as const;
 
+export const GRAIN_AMOUNTS = GRAIN_AMOUNTS_DATA.map(d => d.value);
+
 export const ISO_VALUES_DATA = [
   { value: "ISO 25", desc: "Extremely clean, practically grainless. Maximum sharpness and dynamic range. Sun-drenched landscapes and macro." },
   { value: "ISO 50", desc: "Very fine grain. Studio quality, rich colors, deep blacks. Ideal for high-end fashion and fine art." },
@@ -147,6 +151,8 @@ export const ISO_VALUES_DATA = [
   { value: "ISO 6400", desc: "Modern digital night vision. Color noise enters, shadows lift. Documentary/Surveillance aesthetic." },
   { value: "ISO 12800", desc: "Extreme low light. Significant loss of color accuracy, heavy speckling. Use for 'found footage' looks." }
 ] as const;
+
+export const ISO_VALUES = ISO_VALUES_DATA.map(d => d.value);
 
 export const IMPERFECTION_PRESETS = [
   "clean_digital", "film_clean", "film_subtle", "film_classic_35mm", "film_heavy_35mm", 
@@ -213,6 +219,8 @@ export const FILM_STOCKS_DATA = [
   { value: "Generic 35mm B&W", desc: "Standard monochrome analog look." },
   { value: "Disposable Camera Look", desc: "Plastic lens feel, flash falloff, cheap film stock aesthetic." }
 ];
+
+export const FILM_STOCKS = FILM_STOCKS_DATA.map(d => d.value);
 
 export const FILM_STOCK_DEFAULTS: Record<string, { iso: string, grain: string }> = {
   "Kodak Portra 160": { iso: "ISO 160", grain: "ultra_subtle" },

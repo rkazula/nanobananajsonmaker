@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes, TextareaHTMLAttributes, useState, useRef, useEffect } from 'react';
 import { UseFormRegisterReturn, FieldError, UseFormSetValue } from 'react-hook-form';
 import { Info, ChevronDown, Check, X, Trash2 } from 'lucide-react';
-import { COLOR_HEX_MAP } from '../../constants';
+import { COLOR_HEX_MAP } from '../../dictionaries';
 
 interface WrapperProps {
   label: string;

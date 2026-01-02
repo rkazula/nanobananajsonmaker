@@ -28,7 +28,9 @@ import {
     KAMERY_SPORTOWE_TOP20,
     DRONY_FOTO_PRO_TOP15,
     KOMPAKTY_PREMIUM_TOP10,
-    NAKLADKA_STYLISTYCZNA_FILMY_TOP300_DATA
+    NAKLADKA_STYLISTYCZNA_FILMY_TOP300_DATA,
+    NAIL_COLORS_MAP,
+    AGE_RANGES
 } from './dictionaries';
 
 export * from './dictionaries';
@@ -38,6 +40,7 @@ export * from './dictionaries';
 export const SKIN_TONES = Object.keys(SKIN_TONE_MAP);
 export const HAIR_COLORS = Object.keys(HAIR_COLORS_MAP);
 export const EYE_COLORS = Object.keys(EYE_COLOR_MAP);
+export const NAIL_COLORS = Object.keys(NAIL_COLORS_MAP);
 export const FILM_STOCKS = FILM_STOCKS_DATA.map(f => f.value);
 // Map the objects back to a simple string array for Schema/Select compatibility
 export const ASPECT_RATIOS = ASPECT_RATIOS_DATA.map(r => r.value) as [string, ...string[]];
@@ -58,6 +61,9 @@ export const LIGHTING_EFFECTS = LIGHTING_EFFECTS_DATA.map(x => x.value) as [stri
 
 // Scene Derived Arrays
 export const TIMES_OF_DAY = TIMES_OF_DAY_DATA.map(x => x.value) as [string, ...string[]];
+
+// Subject Derived Arrays
+export const AGE_RANGE_IDS = AGE_RANGES.map(r => r.id) as [string, ...string[]];
 
 // Meta Derived Arrays
 export const QUALITY_MODES = QUALITY_MODES_DATA.map(x => x.value) as [string, ...string[]];

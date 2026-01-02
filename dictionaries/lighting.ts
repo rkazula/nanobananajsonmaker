@@ -279,6 +279,7 @@ export const LIGHTING_TYPES_DATA = [
   }
 ] as const;
 
+export const LIGHTING_TYPES = LIGHTING_TYPES_DATA.map(d => d.value);
 
 export const LIGHTING_DIRECTIONS_DATA = [
   // --- Standard / foundational directions ---
@@ -470,6 +471,8 @@ export const LIGHTING_DIRECTIONS_DATA = [
   }
 ] as const;
 
+export const LIGHTING_DIRECTIONS = LIGHTING_DIRECTIONS_DATA.map(d => d.value);
+
 export const LIGHTING_EFFECTS_DATA = [
   // --- Highlights, Edges & Separation ---
   {
@@ -629,3 +632,5 @@ export const LIGHTING_EFFECTS_DATA = [
     desc: "Projected text/graphics/patterns onto the subject (like a projector). Best for avant-garde editorial and concept portraits. AI tip: keep projections simple to avoid unreadable pseudo-text artifacts."
   }
 ] as const;
+
+export const LIGHTING_EFFECTS = LIGHTING_EFFECTS_DATA.map(d => d.value);

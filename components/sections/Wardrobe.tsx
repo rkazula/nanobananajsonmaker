@@ -6,7 +6,7 @@ import { Select, Combobox, ColorSelect } from '../ui/FormComponents';
 import { 
     WARDROBE_PRESETS, CLOTHING_PLACEMENTS, FABRICS, COLORS, CLOTHING_COVERAGE,
     ACCESSORIES, MATERIALS, CLOTHING_PATTERNS
-} from '../../constants';
+} from '../../dictionaries';
 import { Shirt, UserSquare2, UserCircle2, Users2, Trash2, Plus } from 'lucide-react';
 import { getFilteredClothingOptions, getFilteredFitOptions } from './common';
 
@@ -151,11 +151,11 @@ const ClothingManager = ({ form, subjectIndex }: { form: UseFormReturn<NanoBanan
                                         control={control}
                                         name={`subject.${subjectIndex}.clothing.${k}.color`}
                                         render={({ field }) => (
-                                            <ColorSelect 
-                                                label="Color" 
-                                                options={COLORS} 
-                                                value={field.value} 
-                                                onChange={field.onChange} 
+                                            <ColorSelect
+                                                label="Color"
+                                                options={COLORS}
+                                                value={field.value}
+                                                onChange={field.onChange}
                                             />
                                         )}
                                     />

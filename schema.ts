@@ -4,10 +4,10 @@ import {
     ASPECT_RATIOS, QUALITY_MODES, FILM_STOCKS, LIGHTING_TYPES, LIGHTING_DIRECTIONS, LIGHTING_EFFECTS,
     CLOTHING_PLACEMENTS, CLOTHING_COVERAGE, TIMES_OF_DAY, CLUTTER_LEVELS,
     CAMERA_LENS, GRAIN_AMOUNTS, ISO_VALUES, IMPERFECTION_PRESETS,
-    SUBJECT_COUNTS, SUBJECT_GROUPING, SUBJECT_ROLES, IDENTITY_LOCKS, AGE_RANGES,
+    SUBJECT_COUNTS, SUBJECT_GROUPING, SUBJECT_ROLES, IDENTITY_LOCKS, AGE_RANGE_IDS,
     ETHNICITIES, SKIN_QUALITIES, BODY_TYPES, SKIN_TONES, HAIR_STYLES, HAIR_COLORS, EYE_COLORS, EYE_SHAPES, TATTOO_SIZES, TATTOO_PLACEMENTS,
-    IMAGE_SIZES
-} from './constants';
+    IMAGE_SIZES, NAIL_SHAPES, NAIL_LENGTHS, NAIL_FINISHES, NAIL_DESIGNS, NAIL_COLORS
+} from './dictionaries';
 
 // --- Helper Schemas ---
 
@@ -81,15 +81,15 @@ const MetaSchema = z.object({
   project_name: z.string().default("auto_gen_project"),
   version: z.string().default("2.0_UltraRealism"),
   aspect_ratio: z.enum(ASPECT_RATIOS).default("4:5"),
-  quality_mode: z.enum(QUALITY_MODES as [string, ...string[]]).default("ultra_photorealistic"),
+  quality_mode: z.string().default("ultra_photorealistic"),
   seed: z.number().int().default(-1),
   steps: z.number().min(1).max(100).default(40),
   guidance_scale: z.number().min(0).max(20).default(7.5),
   film_grain: z.object({
     enabled: ToggleSchema,
-    amount: z.enum(GRAIN_AMOUNTS).default("subtle"),
-    iso_emulation: z.enum(ISO_VALUES).default("ISO 400"),
-    imperfection_preset: z.enum(IMPERFECTION_PRESETS as [string, ...string[]]).default("film_clean"),
+    amount: z.string().default("subtle"),
+    iso_emulation: z.string().default("ISO 400"),
+    imperfection_preset: z.string().default("film_clean"),
     imperfection_details: z.array(z.string()).default([]),
   }),
   camera: z.object({
@@ -97,7 +97,7 @@ const MetaSchema = z.object({
     capture_medium: z.string().default("35mm analog"),
   }),
   film_stock_emulation: z.object({
-    film_stock: z.enum(FILM_STOCKS as [string, ...string[]]).default("Kodak Portra 400"),
+    film_stock: z.string().default("Kodak Portra 400"),
     tone: z.array(z.string()).default(["warm"]), // Changed to array for MultiSelect
   }),
   camera_gear: CameraGearSchema.default(CAMERA_GEAR_DEFAULTS),
@@ -144,20 +144,27 @@ const LightingSchema = z.object({
 
 const AppearanceSchema = z.object({
     gender: z.enum(["Male", "Female", "Non-binary"]).default("Female"),
-    ethnicity: z.enum(ETHNICITIES as [string, ...string[]]).default("Caucasian"),
-    skin_quality: z.enum(SKIN_QUALITIES as [string, ...string[]]).default("hyper-realistic"),
-    body_type: z.enum(BODY_TYPES as [string, ...string[]]).default("average"),
-    skin_tone: z.enum(SKIN_TONES as [string, ...string[]]).default("Fair Ivory"),
+    ethnicity: z.string().default("Caucasian"),
+    skin_quality: z.string().default("hyper-realistic"),
+    body_type: z.string().default("average"),
+    skin_tone: z.string().default("Fair Ivory"),
     hair: z.string().default("Layered Cut -> Medium -> Brown"),
     eyes: z.object({
-        color: z.enum(EYE_COLORS as [string, ...string[]]).default("Blue"),
-        shape: z.enum(EYE_SHAPES as [string, ...string[]]).default("Almond")
+        color: z.string().default("Blue"),
+        shape: z.string().default("Almond")
     }),
     distinct_features: z.array(z.string()).default([]),
+    nails: z.object({
+        shape: z.string().default("Natural"),
+        length: z.string().default("Natural"),
+        finish: z.string().default("Glossy"),
+        design: z.string().default("Solid Color"),
+        color: z.string().default("Nude Beige")
+    }).optional(),
     tattoos: z.object({
         description: z.string().optional(),
-        placement: z.enum(TATTOO_PLACEMENTS as [string, ...string[]]).optional(),
-        size: z.enum(TATTOO_SIZES as [string, ...string[]]).optional()
+        placement: z.string().optional(),
+        size: z.string().optional()
     }).optional()
 });
 
@@ -166,15 +173,15 @@ const SubjectSchema = z.object({
   type: z.string().default("person"),
   
   // New Fields
-  count: z.enum(SUBJECT_COUNTS as [string, ...string[]]).default("1"),
-  grouping: z.enum(SUBJECT_GROUPING as [string, ...string[]]).default("solo"),
-  role: z.enum(SUBJECT_ROLES as [string, ...string[]]).default("primary"),
+  count: z.string().default("1"),
+  grouping: z.string().default("solo"),
+  role: z.string().default("primary"),
   importance: z.number().min(1).max(10).default(10),
-  identity_lock: z.enum(IDENTITY_LOCKS as [string, ...string[]]).default("none"),
+  identity_lock: z.string().default("none"),
   consistency_tags: z.array(z.string()).default([]),
   
   // Demographics
-  age_range: z.enum(AGE_RANGES as [string, ...string[]]).default("young_adult"),
+  age_range: z.enum(AGE_RANGE_IDS).default("YOUNG_ADULT"),
   exact_age: z.number().optional(),
 
   // Appearance
@@ -311,7 +318,7 @@ export const DEFAULT_VALUES: NanoBananaType = {
     importance: 10,
     identity_lock: "none",
     consistency_tags: [],
-    age_range: "young_adult",
+    age_range: "YOUNG_ADULT",
     appearance: {
         gender: "Female",
         ethnicity: "Caucasian",
@@ -321,6 +328,7 @@ export const DEFAULT_VALUES: NanoBananaType = {
         hair: "Layered Cut -> Medium -> Brown",
         eyes: { color: "Blue", shape: "Almond" },
         distinct_features: [],
+        nails: { shape: "Natural", length: "Natural", finish: "Glossy", design: "Solid Color", color: "Nude Beige" },
         tattoos: { description: "", placement: "", size: "" }
     },
     description: "",

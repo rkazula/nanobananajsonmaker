@@ -7,7 +7,7 @@ import {
     SCENES, SCENE_STYLES, CONTEXT_ERAS, CONTEXT_CULTURES,
     NAKLADKA_STYLISTYCZNA_OPTIONS, NAKLADKA_STYLISTYCZNA_FILMY_TOP300,
     NAKLADKA_STYLISTYCZNA_FILMY_TOP300_DATA
-} from '../../constants';
+} from '../../dictionaries';
 import { MapPin, Plus, Film } from 'lucide-react';
 import { FieldInfo } from './common';
 

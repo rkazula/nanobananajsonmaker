@@ -56,3 +56,5 @@ export const IMAGE_SIZES_DATA = [
     desc: "Classic tall IMAX ratio (premium large-format feel). If the model doesn’t support it directly, generate in 4:3 or 1:1 and crop/extend to 1.43:1. Compose with strong central geometry and vertical space."
   }
 ] as const;
+
+export const IMAGE_SIZES = IMAGE_SIZES_DATA.map(d => d.value);

@@ -121,6 +121,8 @@ export const CAMERA_POV_DATA = [
   }
 ] as const;
 
+export const CAMERA_POV = CAMERA_POV_DATA.map(d => d.value);
+
 export const CAMERA_FRAMING_DATA = [
   {
     value: "macro_shot",
@@ -211,6 +213,8 @@ export const CAMERA_FRAMING_DATA = [
     desc: "Framing from the top of the head to around the knees/mid-thigh (wider than a cowboy shot)."
   }
 ] as const;
+
+export const CAMERA_FRAMING = CAMERA_FRAMING_DATA.map(d => d.value);
 
 export const CAMERA_FOCUS_DATA = [
   // --- Core / most common ---
@@ -386,6 +390,8 @@ export const CAMERA_FOCUS_DATA = [
   }
 ] as const;
 
+export const CAMERA_FOCUS = CAMERA_FOCUS_DATA.map(d => d.value);
+
 export const CAMERA_DOF_DATA = [
   // --- Core buckets (kept for backwards compatibility) ---
   {
@@ -465,6 +471,8 @@ export const CAMERA_DOF_DATA = [
     desc: "Depth is secondary to motion: intentional blur conveys movement/time. Best for club/nightlife, chaotic reportage, and artsy narrative frames."
   }
 ] as const;
+
+export const CAMERA_DOF = CAMERA_DOF_DATA.map(d => d.value);
 
 export const CAMERA_LENS_DATA = [
   // --- Ultra-wide (environment, drama, architecture) ---
@@ -591,6 +599,8 @@ export const CAMERA_LENS_DATA = [
     desc: "Smartphone wide angle (approx. 24-28mm). Typical for selfies and travel photography."
   }
 ] as const;
+
+export const CAMERA_LENS = CAMERA_LENS_DATA.map(d => d.value);
 
 export const SHOTS_DATA = [
   // --- Portrait staples ---

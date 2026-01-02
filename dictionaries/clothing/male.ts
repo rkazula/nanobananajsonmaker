@@ -1,5 +1,5 @@
 
-import { ClothingPlacement } from "../wardrobe_common";
+import { ClothingPlacement } from "./clothing_features/wardrobe_common";
 
 export const MALE_CLOTHING: Partial<Record<ClothingPlacement, string[]>> = {
   "Head": [
